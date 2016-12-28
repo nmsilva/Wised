@@ -129,7 +129,7 @@ color:#d2d2d2;
   float:right;
 }
 .navbar-avatar{
-      padding-right: 50px !important;
+      padding-right: 60px !important;
 }
 .adminname{
   top: 5px;
@@ -143,6 +143,30 @@ color:#d2d2d2;
   position: relative;
 
 }
+span.chevron {
+    top: 4px;
+    position: relative;
+    left: 4px;
+    color: #e7a200 !important;
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    }
+    span.chevronnotifications{
+        top: -2px;
+        position: relative;
+        left: 7px;
+        color: #e7a200 !important;
+        font-weight: 600 !important;
+        font-size: 18px !important;
+        }
+        span.chevronflags{
+            top: 2px;
+            position: relative;
+            left: 7px;
+            color: #e7a200 !important;
+            font-weight: 600 !important;
+            font-size: 18px !important;
+            }
 .buttonuserarea {
     float: none;
     background-color: #00A1F3;
