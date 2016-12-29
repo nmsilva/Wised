@@ -9,6 +9,11 @@ a.iconestatic:hover{
 .titleorange{
   color:#ef7c00;
 }
+.lowercasenobold{
+  color:#757575;
+  font-size:11px ;
+  font-weight:lighter !important;
+}
 .lowercase{
   font-size:12px ;
 }
@@ -27,7 +32,39 @@ a.iconestatic:hover{
       padding: 0px 0 !important;
       border-radius:0;
   }
-
+  .questionicon{
+  font-size: 0.89em !important;
+line-height: .75em;
+vertical-align: -15%;
+color: #ef7c00;
+margin-left:10px;
+}
+a.breadcrumborange{
+  font-size:15px ;
+  color:#ef7c00 !important;
+  margin-right:10px
+}
+a.breadcrumborange.active{
+  font-size:15px ;
+  color:#000 !important;
+  margin-right:10px
+}
+.allstatus{
+  float: right;
+font-size: 12px;
+border: 1px solid #EDEDED;
+padding: 3px 15px;
+vertical-align: middle;
+color:#757575;
+}
+.maintd.task{
+width: 74%;
+}
+span.statustext {
+    position: relative;
+    bottom: 2px;
+    right: 6px;
+}
 .userareamail{
 top: 15%;
   position: relative;
@@ -35,6 +72,14 @@ top: 15%;
 a.aorange{
   font-size:12px ;
   color:#ef7c00;
+}
+p.basictext {
+    font-size: 12px;
+    width: 100%;
+    font-weight: 400;
+}
+.basictext{
+
 }
 .spanorange{
   color:#ef7c00;
@@ -151,7 +196,7 @@ span.chevron {
     font-weight: 600 !important;
     font-size: 18px !important;
     }
-    span.chevronnotifications{
+span.chevronnotifications{
         top: -2px;
         position: relative;
         left: 7px;
@@ -159,7 +204,7 @@ span.chevron {
         font-weight: 600 !important;
         font-size: 18px !important;
         }
-        span.chevronflags{
+  span.chevronflags{
             top: 2px;
             position: relative;
             left: 7px;
@@ -167,6 +212,13 @@ span.chevron {
             font-weight: 600 !important;
             font-size: 18px !important;
             }
+span.chevronstatus {
+    position: relative;
+    color: #757575!important;
+    font-weight: 600 !important;
+    font-size: 18px !important;
+    margin-left: 24px;
+}
 .buttonuserarea {
     float: none;
     background-color: #00A1F3;
@@ -208,6 +260,99 @@ span.chevron {
   border:0px;
   border-radius:0px;
 }
+.buttonmodelcompleted.task{
+  width:120px;
+  background-color: #3CA735;
+  border:0px;
+  border-radius:0px;
+}
+.buttonmodelactive.task{
+  width:120px;
+  background-color: #FF7E00;
+  border:0px;
+  border-radius:0px;
+
+}
+td.iconsize.task {
+    left: 10.5%;
+    position: relative;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.buttonsize.task {
+    width: 12%;
+    left: 10%;
+    position: relative;
+    padding-left: 0% !Important;
+}
+.back{
+  float:left;
+
+}
+.next{
+  float:right;
+}
+a.next:hover , a.back:hover{
+  text-decoration: none;
+    color: #ef7c00;
+}
+.pagination-gap>li:first-child>a, .pagination-gap>li:last-child>a {
+    border-radius: 0px;}
+    .pagination-gap>li>a {
+    margin: 0 5px;
+    border-radius: 0px;
+}
+.pagination {
+    display: inline;
+    padding-left: 0;
+    margin: 22px 0;
+    border-radius: 3px;
+    font-size: 11px;
+    left: 30vw;
+    position: relative;
+}
+.pagination>li>a:focus{
+  z-index: 2;
+color: #e0e0e0;
+background-color: transparent;
+border-color: #e0e0e0;
+}
+
+.pagination>.active>a , .pagination>.active>a:focus{
+z-index: 3;
+color: #e0e0e0;
+cursor: default;
+background-color: transparent;
+border-color: #ef7c00;
+}
+.pagination-gap>li>a:hover {
+    background-color: transparent;
+    border-color: #ef7c00;
+    color: #e0e0e0;
+}
+.pagination-gap>li>a {
+    color: #e0e0e0;
+}
+
+@media (max-width: 1600px){
+.buttonsize.task {
+    width: 17%;
+    left: 5%;
+    position: relative;
+    padding-left: 0% !Important;
+}}
+.buttonmodeleapproved.task{
+  width:120px;
+  background-color: #00A1F3;
+  border:0px;
+  border-radius:0px;
+}
+.buttonmodelonprocess.task{
+  width:120px;
+  background-color: #FFC900;
+  border:0px;
+  border-radius:0px;
+}
 .buttonsize {
     width: 27%;
     left: 12%;
@@ -217,6 +362,9 @@ span.chevron {
 
 .iconsize{
   width: 80px;
+}
+.iconsize.task{
+  width: 4%;
 }
 .verticalLine {
     border-left: 0.5px solid #E7E7E7;
