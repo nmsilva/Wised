@@ -56,7 +56,15 @@ border: 1px solid #EDEDED;
 padding: 3px 15px;
 vertical-align: middle;
 color:#757575;
+background-color:transparent;
 }
+
+.btn-info.focus, .btn-info:focus, .btn-info:hover, .btn-info:active, .open>.dropdown-toggle.btn-info, .open>.dropdown-toggle.btn-info:focus, .open>.dropdown-toggle.btn-info:hover, .btn-info:active:focus, .btn-info:active:hover  {
+    background-color: transparent;
+    border-color: #ef7c00;
+    color:#757575;
+}
+
 .maintd.task{
 width: 74%;
 }
@@ -68,6 +76,12 @@ span.statustext {
 .userareamail{
 top: 15%;
   position: relative;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover{
+  color: #fff;
+cursor: default;
+background-color: transparent;
+border-color: #ef7c00;
 }
 a.aorange{
   font-size:12px ;
@@ -140,7 +154,45 @@ text-align: center;
 .site-menubar {
     position: fixed;
     top: 122px; }
+.helpsupport{
+    float: right;
+  background-color: transparent;
+  margin-right: 75px;
+  padding-left: 50px;
+  border-radius: 0px;
+    border: 0px;
+  color:#fff;}
+  .questionsupport{
+    font-size: inherit;
+        margin-right: 5px;
+    }
 
+
+  .helpsupport:hover, .helpsupport:active, .helpsupport:focus{
+  text-decoration:none;
+      float: right;
+    background-color: transparent;
+margin-right:75px;
+    padding-left: 50px;
+    border-radius: 0px;
+      border: 0px;
+    color:#fff;}{
+      float: right;
+    background-color: transparent;
+    margin-right: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 0px;
+      border: 0px;
+    color:#fff;}{
+      float: right;
+    background-color: transparent;
+    margin-right: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 0px;
+      border: 0px;
+    color:#fff;}
     .buttonprimary{
     float: right;
 background-color: #FF7E00;
@@ -292,6 +344,9 @@ td.iconsize.task {
 .next{
   float:right;
 }
+.flagdrop{
+  top: 4px;
+}
 a.next:hover , a.back:hover{
   text-decoration: none;
     color: #ef7c00;
@@ -368,6 +423,19 @@ border-color: #ef7c00;
 }
 .verticalLine {
     border-left: 0.5px solid #E7E7E7;
+}
+a.homebreadcrumb {
+    color: #005388;
+    font-size: 13px;
+}
+a.homebreadcrumb.active {
+    color: #fff;
+    font-size: 14px;
+}
+a.homebreadcrumb.active:hover {
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
 }
 .site-footer {
     padding-top: 15px;
@@ -456,6 +524,13 @@ a.referencetask {
 .widthminimum{
   width:10px;
 }
+ul.dropdown-menu.dropdown-menu-right {
+    top: 70%;
+    border-radius: 0px;}
+
+.bar{
+  border-bottom: 1px solid #ececec;
+}
 @media (min-width: 1600px){
 .col-xlg-5 {
     width: 100%;
@@ -466,7 +541,23 @@ a.referencetask {
     left: 3%;
     position: relative;
     padding-left: 8% !Important;
-}}
+}
+.pagination {
+    display: inline;
+    padding-left: 0;
+    margin: 22px 0;
+    border-radius: 3px;
+    font-size: 11px;
+    left: 26vw;
+    position: relative;
+}
+td.iconsize.task {
+    left: 3.5%;
+    position: relative;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+}
 @media (max-width: 1300px){
 .buttonsize {
     width: 36%;
