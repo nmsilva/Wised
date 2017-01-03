@@ -1,0 +1,64 @@
+.page-content {
+  width: 50%;
+}
+.headertitle{
+background-color: #009CDF;
+color: #fff;
+padding: 7px;}
+h3.headertitlemodel{
+    padding-left: 20px;
+color:#fff;
+}
+.example {
+  margin-top: 0px !important;}
+  .form-material .form-control, .form-material .form-control.focus, .form-material .form-control:focus {
+    float: none;
+
+    background-image: linear-gradient(#FF7E00,#FF7E00),linear-gradient(#e0e0e0,#e0e0e0);
+    border: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.create {
+  border-radius: 0px;
+  background-color: #FF7E00;
+  border: 0px;
+  width: 13%;
+  float: right;
+}
+.create:hover, .create:focus , .create.active {
+ border-radius: 0px;
+ background-color: #e0e0e0 ;
+ border: 0px;
+ width: 13%;
+ float: right;
+}
+.cancel {
+ border-radius: 0px;
+ background-color: #6E6E6E;
+ border: 0px;
+ width: 13%;
+ float: left;
+}
+.cancel:hover, .cancel:focus , .cancel.active {
+border-radius: 0px;
+background-color: #e0e0e0 ;
+border: 0px;
+width: 13%;
+float: left;
+}
+.bottom{
+padding-top:25px;
+}
+.lowercasenobold{
+color:#FF7E00;
+font-size:11px ;
+font-weight:lighter !important;
+top: 10px;
+position: relative;
+left: 4%;
+}
+body{
+padding-top: 0px;
+}
