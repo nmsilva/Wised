@@ -48,7 +48,8 @@
   Breakpoints();
   </script>
 </head>
-<body style="background-color:#fff;" class="dashboard">
+
+<body style="background-color:#fff;" class="dashboard tasks">
   <!--[if lt IE 8]>
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -439,8 +440,8 @@
                  <li class="bar" role="presentation"><a href="javascript:void(0)" role="menuitem">Approved</a></li>
                  <li class="bar" role="presentation"><a href="javascript:void(0)" role="menuitem">On evaluation</a></li>
                  <li role="presentation"><a href="javascript:void(0)" role="menuitem">Completed</a></li>
-
                </ul>
+
 
               </div>
               <table class="table ">
@@ -453,12 +454,29 @@
 
                     <a class="iconeslaranja iconestatic"><i class="fa fa-user fa-2x" aria-hidden="true"></i><span> 7</span></a>
                   </td>
-                    <td class="buttonsize task"><button type="button" class="btn btn-primary waves-effect waves-light buttonmodelcompleted task">Completed</button>    <button type="button" class="btn btn-sm btn-icon btn-pure btn-default" data-toggle="tooltip"
-                        data-original-title="Edit">
-<i class="fa fa-search" aria-hidden="true"></i>                        </button>
+                    <td class="buttonsize task"><button type="button" class="btn btn-primary waves-effect waves-light buttonmodelcompleted task">Completed</button>  <button id="lupa" type="button" class="btn btn-sm btn-icon btn-pure btn-default" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+<i class="fa fa-search" aria-hidden="true" ></i> </button><button id="close" type="button" class="btn btn-sm btn-icon btn-pure btn-default" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"><i class="fa fa-times" aria-hidden="true" ></i></button>
                       </p></td>
                     <td>
                     </td>
+                  </tr>
+                  <div>
+                    <tbody class="collapse unique" id="collapseExample">
+                  <tr>
+                    <td class="maintd user">USER#1</td>
+                    <td class="email">user@gmail.com</td>
+                    <td class="pricetd">
+                      Preço
+                    </td>
+                    <td>Active</td>
+                  </tr>
+                  <tr>
+                    <td class="maintd user">USER#2</td>
+                    <td class="email">user@gmail.com</td>
+                    <td class="pricetd">
+                      Preço
+                    </td>
+                    <td>Completed</td>
                   </tr>
                 </tbody>
               </table>
@@ -472,14 +490,32 @@
 
                     <a class="iconeslaranja iconestatic"><i class="fa fa-user fa-2x" aria-hidden="true"></i><span> 7</span></a>
                   </td>
-                    <td class="buttonsize task"><button type="button" class="btn btn-primary waves-effect waves-light buttonmodelactive task">Active</button>    <button type="button" class="btn btn-sm btn-icon btn-pure btn-default" data-toggle="tooltip"
-                        data-original-title="Edit">
-<i class="fa fa-search" aria-hidden="true"></i>                        </button>
+                  <td class="buttonsize task"><button type="button" class="btn btn-primary waves-effect waves-light buttonmodelcompleted task">Completed</button>  <button type="button" class="btn btn-sm btn-icon btn-pure btn-default" type="button" data-toggle="collapse" data-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample">
+<i class="fa fa-search" aria-hidden="true" ></i> </button>
                       </p></td>
                     <td>
                     </td>
                   </tr>
                 </tbody>
+                <div>
+                  <tbody class="collapse unique" id="collapseExample1">
+                <tr>
+                  <td class="maintd user">USER#1</td>
+                  <td class="email">user@gmail.com</td>
+                  <td class="pricetd">
+                    Preço
+                  </td>
+                  <td>Active</td>
+                </tr>
+                <tr>
+                  <td class="maintd user">USER#2</td>
+                  <td class="email">user@gmail.com</td>
+                  <td class="pricetd">
+                    Preço
+                  </td>
+                  <td>Completed</td>
+                </tr>
+              </tbody>
               </table>
               <table class="table ">
 
@@ -491,8 +527,7 @@
 
                     <a class="iconeslaranja iconestatic"><i class="fa fa-user fa-2x" aria-hidden="true"></i><span> 7</span></a>
                   </td>
-                    <td class="buttonsize task"><button type="button" class="btn btn-primary waves-effect waves-light buttonmodelactive task">Active</button>    <button type="button" class="btn btn-sm btn-icon btn-pure btn-default" data-toggle="tooltip"
-                        data-original-title="Edit">
+                    <td class="buttonsize task"><button type="button" class="btn btn-primary waves-effect waves-light buttonmodelactive task">Active</button>    <button type="button" class="btn btn-sm btn-icon btn-pure btn-default" data-toggle="tooltip"  >
 <i class="fa fa-search" aria-hidden="true"></i>                        </button>
                       </p></td>
                     <td>
@@ -508,6 +543,7 @@
         </div>
         <div class="col-xlg-5 col-md-12">
           <!-- Panel Projects -->
+
 <h3 class="panel-title"><a class="back">Anterior</a>
       <ul class="pagination pagination-gap">
         <li class="active"><a href="javascript:void(0)">1 <span class="sr-only">(current)</span></a></li>
@@ -566,5 +602,8 @@
   <script src="global/js/components/jvectormap.js"></script>
   <script src="global/js/components/peity.js"></script>
   <script src="assets/examples/js/dashboard/v1.js"></script>
+  <!-- Fusion -->
+  <script src="assets/js/js_fusion.js"></script>
+
 </body>
 </html>

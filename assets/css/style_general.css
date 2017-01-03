@@ -5,7 +5,6 @@ a.iconestatic {
 a.iconestatic:hover{
   color:#ef7c00;
 }
-
 .titleorange{
   color:#ef7c00;
 }
@@ -32,8 +31,8 @@ a.iconestatic:hover{
       padding: 0px 0 !important;
       border-radius:0;
   }
-  .questionicon{
-  font-size: 0.89em !important;
+.questionicon{
+font-size: 0.89em !important;
 line-height: .75em;
 vertical-align: -15%;
 color: #ef7c00;
@@ -48,6 +47,9 @@ a.breadcrumborange.active{
   font-size:15px ;
   color:#000 !important;
   margin-right:10px
+}
+#close{
+  display:none;
 }
 .allstatus{
   float: right;
@@ -99,7 +101,6 @@ p.basictext {
   color:#ef7c00;
 }
 .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
-
   border-top:0px solid;
 }
 .md-notifications{
@@ -127,6 +128,9 @@ td.iconsize {
 }
 .maintd{
   width:36%;
+}
+.maintd.user{
+  width:42%;
 }
 .panel-title {
     display: block;
@@ -156,19 +160,36 @@ text-align: center;
     top: 122px; }
 .helpsupport{
     float: right;
-  background-color: transparent;
-  margin-right: 75px;
-  padding-left: 50px;
-  border-radius: 0px;
+    background-color: transparent;
+    margin-right: 75px;
+    padding-left: 50px;
+    border-radius: 0px;
     border: 0px;
-  color:#fff;}
-  .questionsupport{
+    color:#fff;}
+.questionsupport{
     font-size: inherit;
         margin-right: 5px;
     }
-
-
-  .helpsupport:hover, .helpsupport:active, .helpsupport:focus{
+    .tasks table {
+        border-spacing: 0;
+        border-collapse: initial;
+    }
+    .tasks tr {
+    display: flex;
+}
+td.pricetd {
+    width: 17%;
+}
+.table-responsive {
+    overflow-x: hidden;
+}
+td.pricetd {
+    padding-left: 100px;
+}
+tbody.unique {
+    border-top: 0px solid !important;
+}
+.helpsupport:hover, .helpsupport:active, .helpsupport:focus{
   text-decoration:none;
       float: right;
     background-color: transparent;
@@ -337,6 +358,12 @@ td.iconsize.task {
     position: relative;
     padding-left: 0% !Important;
 }
+.email {
+    width: 30%;
+    position: relative;
+    padding-left: 0% !Important;
+}
+
 .back{
   float:left;
 
