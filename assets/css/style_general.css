@@ -165,7 +165,7 @@ text-align: center;
 }
 .site-navbar {
     background-image: url("../../assets/images/1.jpeg");}
-.site-menubar {
+.site-menubar {    padding: 60px 0px;
     position: fixed;
     top: 122px; }
 .helpsupport{
@@ -555,6 +555,11 @@ a.referencetask {
     color: #6E6E6E;
     background: 0 0;
 }
+body.dashboard.site-menubar-fold .buttonsize {
+    padding-left: 11% !important;}
+body.dashboard.site-menubar-fold .panel-title {
+    display: block;
+    padding: 60px 0px;}
 
 .site-menu>.site-menu-item.active>a:hover {
     color: #FF7F00;
