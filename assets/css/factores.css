@@ -1,0 +1,49 @@
+td.headsub.active {
+  padding-top: 5%;
+    padding-bottom: 5%;
+    margin-left: 10%;
+        font-weight: 400;
+    color: #ef7c00;
+    width: 200px;
+    background-color: #fff;
+    text-align: center;
+
+}
+.factornext{
+  float:right;
+}
+td.headsub {
+    padding-top: 5%;
+        font-weight: 400;
+    padding-bottom: 5%;
+    color: #666;
+    width: 200px;
+    text-align: center;
+    margin-left: 10px;
+}
+.submenu{
+  background-color: #2c2c2c;
+    height: 100px;
+}
+td.headsub.first {
+    margin-left: 0px !important;
+}
+.headsub.active a {
+    font-weight: 400;
+    color: #ef7c00;
+}
+.headsub.active a:hover, .headsub.active a:focus, .headsub.active a:active {
+    font-weight: 400;
+    color: #ef7c00;
+    text-decoration: none;
+
+}
+.headsub a {
+    font-weight: 400;
+    color: #666;
+}
+.headsub a:hover, .headsub a:focus, .headsub a:active {
+    font-weight: 400;
+    color: #666;
+    text-decoration: none;
+}
