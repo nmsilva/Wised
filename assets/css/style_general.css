@@ -152,11 +152,21 @@ td.iconsize {
     background-color: white;
     box-shadow: 1px 0px 1px 1px #EDEDED;
 }
+.number{
+position: relative;
+top: -5.5px;}
+.table>tbody>tr>td{
+  padding-top: 0px !important;
+    padding-bottom: 0px !important;
+}
 .userarea{
   height:75px;
   margin: 2px 0;
 text-align: center;
 
+}
+span.site-menu-title {
+    margin-left: 20px;
 }
 .dropdown-user {
     left: auto;
@@ -165,7 +175,7 @@ text-align: center;
 }
 .site-navbar {
     background-image: url("../../assets/images/1.jpeg");}
-.site-menubar {    padding: 60px 0px;
+.site-menubar {    padding: 0px 0px;
     position: fixed;
     top: 122px; }
 .helpsupport{
