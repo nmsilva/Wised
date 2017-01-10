@@ -613,10 +613,48 @@ td.iconsize.task {
 }
 @media (max-width: 1300px){
 .buttonsize {
-    width: 36%;
-    left: 1%;
+    width: 32%;
+    left: 0%;
     position: relative;
-    padding-left: 5% !important;
+    padding-left: 4% !important;
+
+}
+.buttonmodelcompleted{
+  width:150px;
+  background-color: #3CA735;
+  border:0px;
+  border-radius:0px;
+}
+.buttonmodelevaluation{
+  width:150px;
+  background-color: #FF7E00;
+  border:0px;
+  border-radius:0px;
+
+}
+.buttonmodeleapproved{
+  width:150px;
+  background-color: #00A1F3;
+  border:0px;
+  border-radius:0px;
+}
+.buttonmodelonprocess{
+  width:150px;
+  background-color: #FFC900;
+  border:0px;
+  border-radius:0px;
+}
+.buttonmodelcompleted.task{
+  width:120px;
+  background-color: #3CA735;
+  border:0px;
+  border-radius:0px;
+}
+.buttonmodelactive.task{
+  width:120px;
+  background-color: #FF7E00;
+  border:0px;
+  border-radius:0px;
 
 }
 body.dashboard.site-menubar-fold .buttonsize {
