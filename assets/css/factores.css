@@ -9,8 +9,17 @@ td.headsub.active {
     text-align: center;
 
 }
+.site-menubar-fold .submenu{
+  top: 30px;
+position: relative;
+}
 .factornext{
   float:right;
+}
+.table {
+    width: 97%;
+    max-width: 100%;
+    margin-bottom: 22px;
 }
 td.headsub {
     padding-top: 5%;
