@@ -79,6 +79,8 @@ background-color:transparent;
 
 .maintd.task{
 width: 74%;
+top: 5px;
+position: relative;
 }
 span.statustext {
     position: relative;
@@ -373,12 +375,14 @@ td.iconsize.task {
     position: relative;
     padding-left: 0px !important;
     padding-right: 0px !important;
+    top:10px;
 }
 .buttonsize.task {
     width: 12%;
     left: 10%;
     position: relative;
     padding-left: 0% !Important;
+    top:10px;
 }
 .email {
     width: 30%;
@@ -447,6 +451,7 @@ border-color: #ef7c00;
     left: 5%;
     position: relative;
     padding-left: 0% !Important;
+    top:10px;
 }}
 .buttonmodeleapproved.task{
   width:120px;
@@ -613,6 +618,7 @@ td.iconsize.task {
     position: relative;
     padding-left: 0px !important;
     padding-right: 0px !important;
+    top:10px;
 }
 }
 @media (max-width: 1300px){
