@@ -24,14 +24,13 @@
   <link rel="stylesheet" href="global/vendor/jvectormap/jquery-jvectormap.css">
   <link rel="stylesheet" href="global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
   <link rel="stylesheet" href="assets/examples/css/dashboard/v1.css">
+  <link rel="stylesheet" href="assets/css/sortable.css">
   <!-- Fonts -->
   <link rel="stylesheet" href="global/fonts/material-design/material-design.min.css">
-  <link rel="stylesheet" href="global/fonts/brand-icsons/brand-icons.min.css">
   <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
   <!-- Css webexperts -->
   <link rel='stylesheet' href='assets/css/style_general.css'>
   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
-  <link rel="stylesheet" href="assets/css/jqtree.css">
   <link rel="stylesheet" href="assets/css/factores.css">
   <link rel="stylesheet" href="assets/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/css/materialdesignicons.css">
@@ -51,32 +50,9 @@
   Breakpoints();
 
   </script>
-  <script>
-  var data = [
-  {
-      name: 'node1', id: 1,
-      children: [
-          { name: 'child1', id: 2 },
-          { name: 'child2', id: 3 }
-      ]
-  },
-  {
-      name: 'node2', id: 4,
-      children: [
-          { name: 'child3', id: 5 }
-      ]
-  }
-];
-$('#tree1').tree({
-  data: data,
-  autoOpen: true,
-  dragAndDrop: true
-});</script>
+
 </head>
 <body style="background-color:#fff;" class="dashboard tasks">
-  <!--[if lt IE 8]>
-        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
   <nav class="site-navbar navbar navbar-inverse navbar-fixed-top navbar-mega" role="navigation">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided"
@@ -443,17 +419,10 @@ $('#tree1').tree({
     </tr>
   </table>
   </div>
-
-
     <div class="page-content container-fluid">
       <div class="row" data-plugin="matchHeight" data-by-row="true">
-
-          <!-- End Widget Linearea Three -->
         </div>
-          <!-- End Widget Current Chart -->
-
-
-        <div class="col-xlg-5 col-md-12">
+      <div class="col-xlg-5 col-md-12">
           <!-- Panel Projects -->
           <div class="" id="projects">
             <div class="panel-heading">
@@ -461,37 +430,49 @@ $('#tree1').tree({
 <p class="basictext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br/> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
 <a class="factornext"><button type="button" class="btn excel">+ Add New Task</button></a> <a class="factornext"><button type="button" class="btn newdata">Import Excel Data</button></a>
             </div>
-              <table class="table ">
-                <tbody>
-                  <tr>
-                    <td> New Blue Line mobile create 12 hours ago<br/>
-                      <div id="tree1" data-url="/example_data/">sldkhjslhfkj</div></td>
-                  </tr>
-                </tbody>
-              </table>
-
-            </div>
           </div>
-
-          <!-- End Panel Projects -->
+          </div>
         </div>
         <div class="col-xlg-5 col-md-12">
           <!-- Panel Projects -->
-<h3 class="panel-title">
+  <section>
 
-     <a class="factornext"><button type="button" class="btn buttonteste cancel">Next</button>
+    <ul class="sortable list">
+    <li class="parent disabled"><i class="fa fa-th" aria-hidden="true"></i><span class="chevronbottom">  ▾ </span><i class="fa fa-square" aria-hidden="true"></i><span class="item">   Área Técnica (2)</span></li></ul>
+      <ul class="sortable list">  <li class="second disabled"><i class="fa fa-th" aria-hidden="true"></i><span class="chevronbottom">  ▾  </span><i class="fa fa-square" aria-hidden="true"></i><span class="item">    Processamento(3)</span> <i class="mdi mdi-account mdi-12px" aria-hidden="true"></i></li>
+        </ul>
+    <ul class="sortable list">
+      <li class="child"><i class="fa fa-th" aria-hidden="true"></i><span class="item">  Resolução</span></li>
+      <li class="child"><i class="fa fa-th" aria-hidden="true"></i><span class="item">  Sistema Operativo</span></li>
+      <li class="child"><i class="fa fa-th" aria-hidden="true"></i><span class="item">  Autonomia</span></li>
+    </ul>
+    <ul class="sortable list">
+    <li class="second disabled"><i class="fa fa-th" aria-hidden="true"></i><span class="chevronbottom">  ▾ </span><i class="fa fa-square" aria-hidden="true"></i><span class="item">    Extras(2)</span></li>
+        </ul>
+    <ul class="sortable list">
+      <li class="child"><i class="fa fa-th" aria-hidden="true"></i><span class="item">  Camera</span></li>
+      <li class="child"><i class="fa fa-th" aria-hidden="true"></i><span class="item">  Gps</span></li>
+    </ul>
+    <ul class="sortable list">
+    <li class="parent disabled"><i class="fa fa-th" aria-hidden="true"></i><span class="item"><i class="fa fa-square" aria-hidden="true"></i>  Preço de equipamento </span></li>
+    <li class="parent disabled"><i class="fa fa-th" aria-hidden="true"></i><span class="item"><i class="fa fa-square" aria-hidden="true"></i> Cor</span></li>
+        </ul>
+  </section>
+
  </a> </span></h3>
           <!-- End Panel Projects -->
+          <a class="factornext"><button type="button" class="btn buttonteste cancel">Next</button>
+
         </div>
       </div>
     </div>
   </div>
   <!-- End Page -->
   <!-- Footer -->
-  <footer class="site-footer">
+  <!--<footer class="site-footer">
     <div class="site-footer-legal">© 2016 Wisedon powered by BlueLine</div>
 
-  </footer>
+  </footer>!-->
   <!-- Core  -->
   <script src="global/vendor/jquery/jquery.js"></script>
   <script src="global/vendor/bootstrap/bootstrap.js"></script>
@@ -528,22 +509,28 @@ $('#tree1').tree({
   <script src="global/js/components/jvectormap.js"></script>
   <script src="global/js/components/peity.js"></script>
   <script src="assets/examples/js/dashboard/v1.js"></script>
+  <script src="assets/examples/js/dashboard/v1.js"></script>
+<script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.sortable.js"></script>
+    <script src="assets/js/jquery.sortable.min.js"></script>
   <!-- Scripts -->
     <script src="assets/js/js_fusion.js"></script>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/tree.jquery.js"></script>
-    <script src="assets/js/jquery.cookie.js"></script>
-<script>$(function() {
-    $('#tree1').tree({
-        data: data,
-        autoOpen: true,
-        dragAndDrop: true,
-        closedIcon: $(' <i class="fa fa-square" aria-hidden="true"></i>'),
-        openedIcon: $('<i class="fa fa-caret-down" aria-hidden="true"></i> <i class="fa fa-square" aria-hidden="true"></i>')
 
-    });
+   <script>
+      $(function() {
+        $('.sortable').sortable();
+        $('.handles').sortable({
+          handle: 'span'
+        });
+        $('.connected').sortable({
+          connectWith: '.connected'
+        });
+        $('.exclude').sortable({
+          items: ':not(.disabled)'
+        });
+      });
+    </script>
 
-});</script>
 
 
 
