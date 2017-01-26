@@ -14,26 +14,274 @@
   <link rel="stylesheet" href="global/css/bootstrap-extend.min.css">
   <link rel="stylesheet" href="assets/css/site.min.css">
   <!-- Plugins -->
+  <link rel="stylesheet" href="global/vendor/animsition/animsition.css">
   <link rel="stylesheet" href="global/vendor/asscrollable/asScrollable.css">
   <link rel="stylesheet" href="global/vendor/switchery/switchery.css">
   <link rel="stylesheet" href="global/vendor/intro-js/introjs.css">
   <link rel="stylesheet" href="global/vendor/slidepanel/slidePanel.css">
   <link rel="stylesheet" href="global/vendor/flag-icon-css/flag-icon.css">
   <link rel="stylesheet" href="global/vendor/waves/waves.css">
-  <link rel="stylesheet" href="global/vendor/chartist-js/chartist.css">
   <link rel="stylesheet" href="global/vendor/jvectormap/jquery-jvectormap.css">
-  <link rel="stylesheet" href="global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.css">
   <link rel="stylesheet" href="assets/examples/css/dashboard/v1.css">
-  <link rel="stylesheet" href="assets/css/sortable.css">
   <!-- Fonts -->
   <link rel="stylesheet" href="global/fonts/material-design/material-design.min.css">
+  <link rel="stylesheet" href="global/fonts/brand-icons/brand-icons.min.css">
   <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
   <!-- Css webexperts -->
   <link rel='stylesheet' href='assets/css/style_general.css'>
-  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/factores.css">
+    <link rel="stylesheet" href="assets/css/sortable.css">
+
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
   <link rel="stylesheet" href="assets/css/materialdesignicons.min.css">
   <link rel="stylesheet" href="assets/css/materialdesignicons.css">
+  <script src="global/vendor/modernizr/modernizr.js"></script>
+  <script src="global/vendor/breakpoints/breakpoints.js"></script>
+  <script>
+  Breakpoints();
+  </script>
+  <style type="text/css">
+  .site-menubar {
+      padding: 0px 0px;
+      position: fixed;
+      top: 111px;
+  }
+
+
+  pre,code {
+    font-size: 12px;
+  }
+
+  pre {
+    width: 100%;
+    overflow: auto;
+  }
+
+  small {
+    font-size: 90%;
+  }
+
+  small code {
+    font-size: 11px;
+  }
+
+  .placeholder {
+    outline: 1px dashed #4183C4;
+  }
+
+  .mjs-nestedSortable-error {
+    background: #fbe3e4;
+    border-color: transparent;
+  }
+
+  #tree {
+    width: 550px;
+    margin: 0;
+  }
+
+  ol {
+    max-width: 100%;
+    padding-left: 25px;
+  }
+
+  ol.sortable,ol.sortable ol {
+    list-style-type: none;
+  }
+
+
+  .sortable li div {
+    border: 0px solid #d4d4d4;
+    border-top: 1px solid #d4d4d4;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    cursor: move;
+    border-color: #D4D4D4 #D4D4D4 #BCBCBC;
+    margin: 0;
+    padding: 3px;
+  }
+
+  li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
+    border-color: #999;
+  }
+
+  .disclose, .expandEditor {
+    cursor: pointer;
+    width: 20px;
+    display: none;
+  }
+
+  .sortable li.mjs-nestedSortable-collapsed > ol {
+    display: none;
+
+  }
+
+  .sortable li.mjs-nestedSortable-branch > div > .disclose {
+    display: inline-block;
+  }
+
+  .sortable span.ui-icon {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+  .menuDiv {
+    background: #f7f7f7;
+  }
+
+  .menuEdit {
+    background: #FFF;
+  }
+
+  .itemTitle {
+    vertical-align: middle;
+    cursor: pointer;
+  }
+
+  .deleteMenu {
+    float: right;
+    cursor: pointer;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin-bottom: 0;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    font-weight: 400;
+    font-style: italic;
+    margin-top: .2em;
+    margin-bottom: 1.5em;
+  }
+
+  h3 {
+    font-size: 1em;
+    margin: 1em 0 .3em;
+  }
+
+  p,ol,ul,pre,form {
+    margin-top: 0;
+    margin-bottom: 0em;
+  }
+
+  dl {
+    margin: 0;
+  }
+
+  dd {
+    margin: 0;
+    padding: 0 0 0 1.5em;
+  }
+
+  code {
+    background: #e5e5e5;
+  }
+
+  input {
+    vertical-align: text-bottom;
+  }
+
+  .notice {
+    color: #c33;
+  }
+  </style>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+<script type="text/javascript" src="jquery.mjs.nestedSortable.js"></script>
+
+<script>
+  $().ready(function(){
+    var ns = $('ol.sortable').nestedSortable({
+      forcePlaceholderSize: true,
+      handle: 'div',
+      helper:	'clone',
+      items: 'li',
+      opacity: .6,
+      placeholder: 'placeholder',
+      revert: 250,
+      tabSize: 25,
+      tolerance: 'pointer',
+      toleranceElement: '> div',
+      maxLevels: 4,
+      isTree: true,
+      expandOnHover: 700,
+      startCollapsed: false,
+      change: function(){
+        console.log('Relocated item');
+      }
+    });
+
+    $('.expandEditor').attr('title','Click to show/hide item editor');
+    $('.disclose').attr('title','Click to show/hide children');
+    $('.deleteMenu').attr('title', 'Click to delete item.');
+
+    $('.disclose').on('click', function() {
+      $(this).closest('li').toggleClass('mjs-nestedSortable-collapsed').toggleClass('mjs-nestedSortable-expanded');
+      $(this).toggleClass('ui-icon-plusthick').toggleClass('ui-icon-minusthick');
+    });
+
+    $('.expandEditor, .itemTitle').click(function(){
+      var id = $(this).attr('data-id');
+      $('#menuEdit'+id).toggle();
+      $(this).toggleClass('ui-icon-triangle-1-n').toggleClass('ui-icon-triangle-1-s');
+    });
+
+    $('.deleteMenu').click(function(){
+      var id = $(this).attr('data-id');
+      $('#menuItem_'+id).remove();
+    });
+
+    $('#serialize').click(function(){
+      serialized = $('ol.sortable').nestedSortable('serialize');
+      $('#serializeOutput').text(serialized+'\n\n');
+    })
+
+    $('#toHierarchy').click(function(e){
+      hiered = $('ol.sortable').nestedSortable('toHierarchy', {startDepthCount: 0});
+      hiered = dump(hiered);
+      (typeof($('#toHierarchyOutput')[0].textContent) != 'undefined') ?
+      $('#toHierarchyOutput')[0].textContent = hiered : $('#toHierarchyOutput')[0].innerText = hiered;
+    })
+
+    $('#toArray').click(function(e){
+      arraied = $('ol.sortable').nestedSortable('toArray', {startDepthCount: 0});
+      arraied = dump(arraied);
+      (typeof($('#toArrayOutput')[0].textContent) != 'undefined') ?
+      $('#toArrayOutput')[0].textContent = arraied : $('#toArrayOutput')[0].innerText = arraied;
+    });
+  });
+
+  function dump(arr,level) {
+    var dumped_text = "";
+    if(!level) level = 0;
+
+    //The padding given at the beginning of the line.
+    var level_padding = "";
+    for(var j=0;j<level+1;j++) level_padding += "    ";
+
+    if(typeof(arr) == 'object') { //Array/Hashes/Objects
+      for(var item in arr) {
+        var value = arr[item];
+
+        if(typeof(value) == 'object') { //If it is an array,
+          dumped_text += level_padding + "'" + item + "' ...\n";
+          dumped_text += dump(value,level+1);
+        } else {
+          dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+        }
+      }
+    } else { //Strings/Chars/Numbers etc.
+      dumped_text = "===>"+arr+"<===("+typeof(arr)+")";
+    }
+    return dumped_text;
+  }
+</script>
+
+
 
 
   <!--[if lt IE 9]>
@@ -44,15 +292,12 @@
     <script src="global/vendor/respond/respond.min.js"></script>
     <![endif]-->
   <!-- Scripts -->
-  <script src="global/vendor/modernizr/modernizr.js"></script>
-  <script src="global/vendor/breakpoints/breakpoints.js"></script>
-  <script>
-  Breakpoints();
-
-  </script>
 
 </head>
-<body style="background-color:#fff;" class="dashboard tasks">
+<body style="background-color:#fff;" class="dashboard">
+  <!--[if lt IE 8]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
   <nav class="site-navbar navbar navbar-inverse navbar-fixed-top navbar-mega" role="navigation">
     <div class="navbar-header">
       <button type="button" class="navbar-toggle hamburger hamburger-close navbar-toggle-left hided"
@@ -96,78 +341,6 @@
             <ul class="dropdown-menu dropdown-menu-right dropdown-menu-media" role="menu">
               <li class="dropdown-menu-header" role="presentation">
                 <h5>TEM 10 NOTIFICAÇÕES</h5>
-              </li>
-              <li class="list-group" role="presentation">
-                <div data-role="container">
-                  <div data-role="content">
-                    <a class="list-group-item" href="javascript:void(0)" role="menuitem">
-                      <div class="media">
-                        <div class="media-left padding-right-10">
-                        </div>
-                        <div class="media-body">
-                          <h6 class="media-heading">Admin adicionou um novo critério a Telemóvel</h6>
-                          <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">há 1 hora</time>
-                        </div>
-                      </div>
-                    </a>
-                    <a class="list-group-item" href="javascript:void(0)" role="menuitem">
-                      <div class="media">
-                        <div class="media-left padding-right-10">
-                        </div>
-                        <div class="media-body">
-                          <h6 class="media-heading">Admin adicionou um novo critério a Telemóvel</h6>
-                          <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">há 1 hora</time>
-                        </div>
-                      </div>
-                    </a>
-                    <a class="list-group-item" href="javascript:void(0)" role="menuitem">
-                      <div class="media">
-                        <div class="media-left padding-right-10">
-                        </div>
-                        <div class="media-body">
-                          <h6 class="media-heading">Admin adicionou um novo critério a Telemóvel</h6>
-                          <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">há 1 hora</time>
-                        </div>
-                      </div>
-                    </a>
-                    <a class="list-group-item" href="javascript:void(0)" role="menuitem">
-                      <div class="media">
-                        <div class="media-left padding-right-10">
-                        </div>
-                        <div class="media-body">
-                          <h6 class="media-heading">Admin adicionou um novo critério a Telemóvel</h6>
-                          <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">há 1 hora</time>
-                        </div>
-                      </div>
-                    </a>
-                    <a class="list-group-item" href="javascript:void(0)" role="menuitem">
-                      <div class="media">
-                        <div class="media-left padding-right-10">
-                        </div>
-                        <div class="media-body">
-                          <h6 class="media-heading">Admin adicionou um novo critério a Telemóvel</h6>
-                          <time class="media-meta" datetime="2015-06-12T20:50:48+08:00">há 1 hora</time>
-                        </div>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-              </li>
-              <li class="dropdown-menu-footer" role="presentation">
-
-                  <a class="aorange">VER TODAS</a>
-
-              </li>
-            </ul>
-          </li>
-          <li class="dropdown flagdrop">
-            <a data-toggle="dropdown" href="javascript:void(0)" title="tasks" aria-expanded="false"
-            data-animation="scale-up" role="button">
-              <i class="fa fa-flag" aria-hidden="true"></i><span class="awhite">Tasks</span><span class="chevronnotifications">  ▾ </span>
-            </a>
-            <ul class="dropdown-menu dropdown-menu-right dropdown-menu-media" role="menu">
-              <li class="dropdown-menu-header" role="presentation">
-                <h5>TEM 10 TASKS</h5>
               </li>
               <li class="list-group" role="presentation">
                 <div data-role="container">
@@ -307,10 +480,8 @@
       </div>
       <!-- End Site Navbar Seach -->
     </div>
-    <div style="height:40px;"><p class="buttonindex"><a type="button" class="helpsupport"><i class="fa fa-question-circle fa-lg questionsupport" aria-hidden="true"></i>Help & Support</a></p><p class="usertext"><a class="homebreadcrumb">Home</a> . <a class="homebreadcrumb"> New Blue Line mobile model</a>
-       . <a class="homebreadcrumb active"> Definir Factores</a></p></div>
+    <div style="height:40px;"><p class="buttonindex"><button type="button" class="btn btn-primary waves-effect waves-light buttonprimary">Start our Tour Guide</button></p><p class="usertext">Hello admin., you have...</p></div>
   </nav>
-
 
   <div class="site-menubar">
     <div class="site-menubar-body">
@@ -407,76 +578,214 @@
     </div>
   </div>
   <!-- Page -->
-  <div class="page ">
-    <div class="submenu">
-  <table>
-    <tr>
-      <td class="headsub first active"><a href="#">1. Definir Factores</a></td>
-      <td class="headsub"><a href="#">2. Definir Escalas</a></td>
-      <td class="headsub"><a href="#">3. Ponderar Factores</a></td>
-      <td class="headsub"><a href="#">4. Definir e Avaliar Opções</a></td>
-      <td class="headsub"><a href="#">5. Analisar Resultados</a> </td>
-    </tr>
-  </table>
-  </div>
+  <div class="page animsition">
     <div class="page-content container-fluid">
       <div class="row" data-plugin="matchHeight" data-by-row="true">
+
+          <!-- End Widget Linearea Three -->
         </div>
-      <div class="col-xlg-5 col-md-12">
-          <!-- Panel Projects -->
-          <div class="" id="projects">
-            <div class="panel-heading">
-              <h3 class="panel-title"><span class="titleorange">Definir Factores</span> <i class="fa fa-question-circle fa-lg questionicon" aria-hidden="true"></i><span class="lowercasenobold"> Show related help </span><i class="fa fa-play-circle fa-lg questionicon" aria-hidden="true"></i><span class="lowercasenobold"> View video Tutorial </span></h3>
-<p class="basictext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br/> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
-<a class="factornext"><button type="button" class="btn excel">+ Add New Task</button></a> <a class="factornext"><button type="button" class="btn newdata">Import Excel Data</button></a>
+        <div class="submenu">
+        <table>
+        <tr>
+          <td class="headsub first active"><a href="#">1. Definir Factores</a></td>
+          <td class="headsub"><a href="#">2. Definir Escalas</a></td>
+          <td class="headsub"><a href="#">3. Ponderar Factores</a></td>
+          <td class="headsub"><a href="#">4. Definir e Avaliar Opções</a></td>
+          <td class="headsub"><a href="#">5. Analisar Resultados</a> </td>
+        </tr>
+        </table>
+        </div>
+        <div class="page-content container-fluid">
+          <div class="row" data-plugin="matchHeight" data-by-row="true">
             </div>
-          </div>
-          </div>
-        </div>
-        <div class="col-xlg-5 col-md-12">
-          <!-- Panel Projects -->
-  <section>
+          <div class="col-xlg-5 col-md-12">
+              <!-- Panel Projects -->
+              <div class="" id="projects">
+                <div class="panel-heading">
+                  <h3 class="panel-title"><span class="titleorange">Definir Factores</span> <i class="fa fa-question-circle fa-lg questionicon" aria-hidden="true"></i><span class="lowercasenobold"> Show related help </span><i class="fa fa-play-circle fa-lg questionicon" aria-hidden="true"></i><span class="lowercasenobold"> View video Tutorial </span></h3>
+        <p class="basictext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br/> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
+        <a class="factornext"><button type="button" class="btn excel">+ Add New Task</button></a> <a class="factornext"><button type="button" class="btn newdata">Import Excel Data</button></a>
+                </div>
+              </div>
+              </div>
+            </div>
+            <ol class="sortable ui-sortable mjs-nestedSortable-branch mjs-nestedSortable-expanded">
+               <li style="display: list-item;" class="mjs-nestedSortable-branch mjs-nestedSortable-expanded " id="menuItem_1" data-foo="bar">
+               <div class="menuDiv">
+                 <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                 <span></span>
+                 </span>
+                 <span title="Click to show/hide item editor" data-id="2" class="expandEditor ui-icon ui-icon-triangle-1-n">
+                 <span></span>
+                 </span>
+                 <span>
+                 <span data-id="1" class="itemTitle">Área Técnica (2)<span title="Click to delete item." data-id="1" class="deleteMenu ui-icon ui-icon-closethick"></span></span>
 
-    <ul class="sortable list">
-    <li class="parent disabled"><i class="fa fa-th" aria-hidden="true"></i><span class="chevronbottom">  ▾ </span><i class="fa fa-square" aria-hidden="true"></i><span class="item">   Área Técnica (2)</span></li></ul>
-      <ul class="sortable list">  <li class="second disabled"><i class="fa fa-th" aria-hidden="true"></i><span class="chevronbottom">  ▾  </span><i class="fa fa-square" aria-hidden="true"></i><span class="item">    Processamento(3)</span> <i class="mdi mdi-account mdi-12px" aria-hidden="true"></i></li>
-        </ul>
-    <ul class="sortable list">
-      <li class="child"><i class="fa fa-th" aria-hidden="true"></i><span class="item">  Resolução</span></li>
-      <li class="child"><i class="fa fa-th" aria-hidden="true"></i><span class="item">  Sistema Operativo</span></li>
-      <li class="child"><i class="fa fa-th" aria-hidden="true"></i><span class="item">  Autonomia</span></li>
-    </ul>
-    <ul class="sortable list">
-    <li class="second disabled"><i class="fa fa-th" aria-hidden="true"></i><span class="chevronbottom">  ▾ </span><i class="fa fa-square" aria-hidden="true"></i><span class="item">    Extras(2)</span></li>
-        </ul>
-    <ul class="sortable list">
-      <li class="child"><i class="fa fa-th" aria-hidden="true"></i><span class="item">  Camera</span></li>
-      <li class="child"><i class="fa fa-th" aria-hidden="true"></i><span class="item">  Gps</span></li>
-    </ul>
-    <ul class="sortable list">
-    <li class="parent disabled"><i class="fa fa-th" aria-hidden="true"></i><span class="item"><i class="fa fa-square" aria-hidden="true"></i>  Preço de equipamento </span></li>
-    <li class="parent disabled"><i class="fa fa-th" aria-hidden="true"></i><span class="item"><i class="fa fa-square" aria-hidden="true"></i> Cor</span></li>
-        </ul>
-  </section>
+                 <span></span>
+                 </span>
+                 </span>
 
- </a> </span></h3>
+               </div>
+               <ol>
+                 <li style="display: list-item;" class="mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_2" data-foo="baz">
+                 <div class="menuDiv">
+                   <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                   <span></span>
+                   </span>
+                   <span title="s" data-id="2" class="expandEditor ui-icon ui-icon-triangle-1-n">
+                   <span></span>
+                   </span>
+                   <span>
+                   <span data-id="2" class="itemTitle">Processamento (3)</span>
+                   <span title="Click to delete item." data-id="2" class="deleteMenu ui-icon ui-icon-closethick"></span>
+
+                   <span></span>
+                   </span>
+                   </span>
+                 </div>
+                 <ol>
+                   <li class="mjs-nestedSortable-leaf" id="menuItem_3">
+                   <div class="menuDiv">
+                     <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                     <span></span>
+                     </span>
+                     <span title="Click to show/hide item editor" data-id="3" class="expandEditor ui-icon ui-icon-triangle-1-n">
+                     </span>
+
+                     <span data-id="3" class="itemTitle">Resolução</span>
+                     <span title="Click to delete item." data-id="3" class="deleteMenu ui-icon ui-icon-closethick">
+                     <span></span>
+                     </span>
+                     </span>
+                   </div>
+                   </li>
+                   <li class="mjs-nestedSortable-leaf" id="menuItem_4">
+                   <div class="menuDiv">
+                     <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                     <span></span>
+                     </span>
+                     <span title="Click to show/hide item editor" data-id="4" class="expandEditor ui-icon ui-icon-triangle-1-n">
+                     </span>
+                     <span data-id="4" class="itemTitle">Sistemas operativos</span>
+                     <span title="Click to delete item." data-id="4" class="deleteMenu ui-icon ui-icon-closethick">
+                     <span></span>
+                     </span>
+                     </span>
+                   </div>
+                   </li>
+                   <li class="mjs-nestedSortable-leaf" id="menuItem_5">
+                   <div class="menuDiv">
+                     <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                     <span></span>
+                     </span>
+                     <span title="Click to show/hide item editor" data-id="5" class="expandEditor ui-icon ui-icon-triangle-1-n">
+                     </span>
+
+                     <span data-id="5" class="itemTitle">Autonomia</span>
+                     <span title="Click to delete item." data-id="5" class="deleteMenu ui-icon ui-icon-closethick">
+                     <span></span>
+                     </span>
+                     </span>
+                   </div>
+                   </li>
+                 </ol>
+                 </li>
+                 <li style="display: list-item;" class="mjs-nestedSortable-leaf" id="menuItem_6">
+                 <div class="menuDiv">
+                   <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                   <span></span>
+                   </span>
+                   <span title="Click to show/hide item editor" data-id="6" class="expandEditor ui-icon ui-icon-triangle-1-n">
+                   <span></span>
+                   </span>
+                   <span>
+                   <span data-id="6" class="itemTitle">Extras (2)</span>
+                   <span title="Click to delete item." data-id="6" class="deleteMenu ui-icon ui-icon-closethick">
+                   <span></span>
+                   </span>
+                   </span>
+                 </div>
+                 </li>
+                 <ol>
+                   <li class="mjs-nestedSortable-leaf" id="menuItem_7">
+                   <div class="menuDiv">
+                     <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                     <span></span>
+                     </span>
+                     <span title="Click to show/hide item editor" data-id="7" class="expandEditor ui-icon ui-icon-triangle-1-n">
+                     </span>
+
+                     <span data-id="7" class="itemTitle">Camera</span>
+                     <span title="Click to delete item." data-id="7" class="deleteMenu ui-icon ui-icon-closethick">
+                     <span></span>
+                     </span>
+                     </span>
+                   </div>
+                   </li>
+                   <li class="mjs-nestedSortable-leaf" id="menuItem_8">
+                   <div class="menuDiv">
+                     <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                     <span></span>
+                     </span>
+                     <span title="Click to show/hide item editor" data-id="8" class="expandEditor ui-icon ui-icon-triangle-1-n">
+                     </span>
+
+                     <span data-id="8" class="itemTitle">Gps</span>
+                     <span title="Click to delete item." data-id="8" class="deleteMenu ui-icon ui-icon-closethick">
+                     <span></span>
+                     </span>
+                     </span>
+                   </div>
+                   </li>
+                 </ol>
+
+               </ol>
+               </li>
+               <ol>
+               </ol>
+               <li style="display: list-item;" class="mjs-nestedSortable-leaf" id="menuItem_9">
+               <div class="menuDiv">
+                 <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                 <span></span>
+                 </span>
+                 <span title="Click to show/hide item editor" data-id="9" class="expandEditor ui-icon ui-icon-triangle-1-n">
+                 <span></span>
+                 </span>
+                 <span>
+                 <span data-id="9" class="itemTitle">Preço de equipamento</span>
+                 <span title="Click to delete item." data-id="9" class="deleteMenu ui-icon ui-icon-closethick">
+                 <span></span>
+                 </span>
+                 </span>
+               </div>
+               </li>
+               <li class="mjs-nestedSortable-leaf" id="menuItem_10">
+               <div class="menuDiv">
+                 <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                 <span></span>
+                 </span>
+                 <span title="Click to show/hide item editor" data-id="10" class="expandEditor ui-icon ui-icon-triangle-1-n">
+                 </span>
+                 <span data-id="10" class="itemTitle">Cor</span>
+                 <span title="Click to delete item." data-id="10" class="deleteMenu ui-icon ui-icon-closethick">
+                 <span></span>
+                 </span>
+                 </span>
+               </div>
+               </li>
+             </ol>
+
+          <!-- End Widget Current Chart -->
+
+
+
           <!-- End Panel Projects -->
-          <a class="factornext"><button type="button" class="btn buttonteste cancel">Next</button>
 
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End Page -->
-  <!-- Footer -->
-  <!--<footer class="site-footer">
-    <div class="site-footer-legal">© 2016 Wisedon powered by BlueLine</div>
-
-  </footer>!-->
   <!-- Core  -->
   <script src="global/vendor/jquery/jquery.js"></script>
   <script src="global/vendor/bootstrap/bootstrap.js"></script>
-    <script src="global/vendor/asscroll/jquery-asScroll.js"></script>
+  <script src="global/vendor/animsition/animsition.js"></script>
+  <script src="global/vendor/asscroll/jquery-asScroll.js"></script>
   <script src="global/vendor/mousewheel/jquery.mousewheel.js"></script>
   <script src="global/vendor/asscrollable/jquery.asScrollable.all.js"></script>
   <script src="global/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
@@ -486,8 +795,6 @@
   <script src="global/vendor/intro-js/intro.js"></script>
   <script src="global/vendor/screenfull/screenfull.js"></script>
   <script src="global/vendor/slidepanel/jquery-slidePanel.js"></script>
-  <script src="global/vendor/chartist-js/chartist.min.js"></script>
-  <script src="global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.min.js"></script>
   <script src="global/vendor/jvectormap/jquery-jvectormap.min.js"></script>
   <script src="global/vendor/jvectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
   <script src="global/vendor/matchheight/jquery.matchHeight-min.js"></script>
@@ -502,6 +809,7 @@
   <script src="global/js/configs/config-colors.js"></script>
   <script src="assets/js/configs/config-tour.js"></script>
   <script src="global/js/components/asscrollable.js"></script>
+  <script src="global/js/components/animsition.js"></script>
   <script src="global/js/components/slidepanel.js"></script>
   <script src="global/js/components/switchery.js"></script>
   <script src="global/js/components/tabs.js"></script>
@@ -509,30 +817,22 @@
   <script src="global/js/components/jvectormap.js"></script>
   <script src="global/js/components/peity.js"></script>
   <script src="assets/examples/js/dashboard/v1.js"></script>
-  <script src="assets/examples/js/dashboard/v1.js"></script>
-<script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/jquery.sortable.js"></script>
-    <script src="assets/js/jquery.sortable.min.js"></script>
-  <!-- Scripts -->
-    <script src="assets/js/js_fusion.js"></script>
-
-   <script>
-      $(function() {
-        $('.sortable').sortable();
-        $('.handles').sortable({
-          handle: 'span'
-        });
-        $('.connected').sortable({
-          connectWith: '.connected'
-        });
-        $('.exclude').sortable({
-          items: ':not(.disabled)'
-        });
-      });
-    </script>
-
-
-
-
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+   <script type="text/javascript" src="jquery.mjs.nestedSortable.js"></script>
+  <script>
+     $(function() {
+       $('.sortable').sortable();
+       $('.handles').sortable({
+         handle: 'span'
+       });
+       $('.connected').sortable({
+         connectWith: '.connected'
+       });
+       $('.exclude').sortable({
+         items: ':not(.disabled)'
+       });
+     });
+   </script>
 </body>
 </html>

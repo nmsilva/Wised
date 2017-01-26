@@ -27,18 +27,7 @@
   .sortable.grid {
     overflow: hidden;
   }
-  .connected li, .sortable li, .exclude li, .handles li {
-    list-style: none;
-    border-top: 1px solid #ededed;
-    border-bottom:1px solid #ededed;
-    background: #F7F7F7;
-    font-family: "Tahoma";
 
-    margin: 0px;
-    font-size:11px;
-    padding: 5px;
-    height: 24px;
-  }
   .handles span {
     cursor: move;
   }
@@ -85,6 +74,9 @@ li.child{
   background-color:#fff;
 
 }
+ol{
+      padding-left: 0 !important;
+}
 li.disabled {
    opacity: 1;}
   #connected {
@@ -103,3 +95,34 @@ li.disabled {
     border: 0px dashed #CCC;
     background: none;
   }
+  ol li div:first-child{
+
+    }
+
+    ol li ol li ol div:nth-child(1) {
+      padding-left:7.1%;
+      background-color:#fff;
+      color:gray !important;
+      font-weight:lighter;
+
+    }
+    ol li ol ol li div {
+      padding-left:7.1% !important;
+      background-color:#fff !important;
+      color:gray !important;
+      font-weight:lighter;
+}
+ol li ol li div {
+  color:#009ee2 !important;
+  font-weight:600 ;
+      padding-left:5% !important;
+}
+ol li div {
+  color: #ef7c00;
+  font-weight:400;
+      padding-left: 1%;
+}
+ol li ol ol li div span:nth-child(2){
+  display:none !important;
+
+}
