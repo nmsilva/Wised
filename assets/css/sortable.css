@@ -74,6 +74,10 @@ li.child{
   background-color:#fff;
 
 }
+.always.child{
+    background-color:#fff;
+    color:#000;
+}
 ol{
       padding-left: 0 !important;
 }
