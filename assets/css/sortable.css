@@ -99,18 +99,24 @@ li.disabled {
 
     }
 
-    ol li ol li ol div:nth-child(1) {
+ol li ol li ol div:nth-child(1) {
       padding-left:7.1%;
       background-color:#fff;
-      color:gray !important;
+      color:black !important;
       font-weight:lighter;
 
     }
-    ol li ol ol li div {
+ol li ol ol li div {
       padding-left:7.1% !important;
       background-color:#fff !important;
-      color:gray !important;
+      color:black !important;
       font-weight:lighter;
+}
+ol li ol ol ol li div {
+  padding-left:9% !important;
+  background-color:#fff !important;
+  color:black !important;
+  font-weight:lighter;
 }
 ol li ol li div {
   color:#009ee2 !important;
