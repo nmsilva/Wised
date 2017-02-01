@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html class="no-js css-menubar" lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+  <meta name="description" content="bootstrap admin template">
+  <meta name="author" content="">
+  <title>WiseD On</title>
+  <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+  <link rel="shortcut icon" href="assets/images/favicon.ico">
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="global/css/bootstrap.min.css">
+  <link rel="stylesheet" href="global/css/bootstrap-extend.min.css">
+  <link rel="stylesheet" href="assets/css/site.min.css">
+  <!-- Plugins -->
+  <link rel="stylesheet" href="global/vendor/animsition/animsition.css">
+  <link rel="stylesheet" href="global/vendor/asscrollable/asScrollable.css">
+  <link rel="stylesheet" href="global/vendor/switchery/switchery.css">
+  <link rel="stylesheet" href="global/vendor/intro-js/introjs.css">
+  <link rel="stylesheet" href="global/vendor/slidepanel/slidePanel.css">
+  <link rel="stylesheet" href="global/vendor/flag-icon-css/flag-icon.css">
+  <link rel="stylesheet" href="global/vendor/waves/waves.css">
+  <link rel="stylesheet" href="global/vendor/jvectormap/jquery-jvectormap.css">
+  <link rel="stylesheet" href="assets/examples/css/dashboard/v1.css">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="global/fonts/material-design/material-design.min.css">
+  <link rel="stylesheet" href="global/fonts/brand-icons/brand-icons.min.css">
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic'>
+  <!-- Css webexperts -->
+  <link rel='stylesheet' href='assets/css/style_general.css'>
+  <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/materialdesignicons.min.css">
+  <link rel="stylesheet" href="assets/css/materialdesignicons.css">
+  <script src="global/vendor/modernizr/modernizr.js"></script>
+  <script src="global/vendor/breakpoints/breakpoints.js"></script>
+  <script>
+  Breakpoints();
+  </script>
+    <style type="text/css">
+		html {
+			background-color: #eee;
+		}
+
+		body {
+			-webkit-border-radius: 10px;
+			-moz-border-radius: 10px;
+			border-radius: 10px;
+			color: #444;
+			background-color: #fff;
+			font-size: 13px;
+			font-family: Freesans, sans-serif;
+			padding: 2em 4em;
+			width: 860px;
+			margin: 15px auto;
+			box-shadow: 1px 1px 8px #444;
+			-mox-box-shadow: 1px 1px 8px #444;
+			-webkit-box-shadow: 1px -1px 8px #444;
+		}
+
+		a,a:visited {
+			color: #4183C4;
+			text-decoration: none;
+		}
+
+		a:hover {
+			text-decoration: underline;
+		}
+
+		pre,code {
+			font-size: 12px;
+		}
+
+		pre {
+			width: 100%;
+			overflow: auto;
+		}
+
+		small {
+			font-size: 90%;
+		}
+
+		small code {
+			font-size: 11px;
+		}
+
+		.placeholder {
+			outline: 1px dashed #4183C4;
+		}
+
+		.mjs-nestedSortable-error {
+			background: #fbe3e4;
+			border-color: transparent;
+		}
+
+		#tree {
+			width: 550px;
+			margin: 0;
+		}
+
+		ol {
+			max-width: 100%;
+			padding-left: 25px;
+		}
+
+		ol.sortable,ol.sortable ol {
+			list-style-type: none;
+		}
+
+		.sortable li div {
+			border: 1px solid #d4d4d4;
+			-webkit-border-radius: 3px;
+			-moz-border-radius: 3px;
+			border-radius: 3px;
+			cursor: move;
+			border-color: #D4D4D4 #D4D4D4 #BCBCBC;
+			margin: 0;
+			padding: 3px;
+		}
+
+		li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
+			border-color: #999;
+		}
+
+		.disclose, .expandEditor {
+			cursor: pointer;
+			width: 20px;
+			display: none;
+		}
+
+		.sortable li.mjs-nestedSortable-collapsed > ol {
+			display: none;
+		}
+
+		.sortable li.mjs-nestedSortable-branch > div > .disclose {
+			display: inline-block;
+		}
+
+		.sortable span.ui-icon {
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+		}
+
+		.menuDiv {
+			background: #EBEBEB;
+		}
+
+		.menuEdit {
+			background: #FFF;
+		}
+
+		.itemTitle {
+			vertical-align: middle;
+			cursor: pointer;
+		}
+
+		.deleteMenu {
+			float: right;
+			cursor: pointer;
+		}
+
+		h1 {
+			font-size: 2em;
+			margin-bottom: 0;
+		}
+
+		h2 {
+			font-size: 1.2em;
+			font-weight: 400;
+			font-style: italic;
+			margin-top: .2em;
+			margin-bottom: 1.5em;
+		}
+
+		h3 {
+			font-size: 1em;
+			margin: 1em 0 .3em;
+		}
+
+		p,ol,ul,pre,form {
+			margin-top: 0;
+			margin-bottom: 0em;
+		}
+
+		dl {
+			margin: 0;
+		}
+
+		dd {
+			margin: 0;
+			padding: 0 0 0 1.5em;
+		}
+
+		code {
+			background: #e5e5e5;
+		}
+
+		input {
+			vertical-align: text-bottom;
+		}
+
+		.notice {
+			color: #c33;
+		}
+    </style>
+    	<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  	<script type="text/javascript" src="jquery.mjs.nestedSortable.js"></script>
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+
+
+
+	<script>
+		$().ready(function(){
+			var ns = $('ol.sortable').nestedSortable({
+				forcePlaceholderSize: true,
+				handle: 'div',
+				helper:	'clone',
+				items: 'li',
+				opacity: .6,
+				placeholder: 'placeholder',
+				revert: 250,
+				tabSize: 25,
+				tolerance: 'pointer',
+				toleranceElement: '> div',
+				maxLevels: 4,
+				isTree: true,
+				expandOnHover: 700,
+				startCollapsed: false,
+				change: function(){
+					console.log('Relocated item');
+				}
+			});
+
+			$('.expandEditor').attr('title','Click to show/hide item editor');
+			$('.disclose').attr('title','Click to show/hide children');
+			$('.deleteMenu').attr('title', 'Click to delete item.');
+
+			$('.disclose').on('click', function() {
+				$(this).closest('li').toggleClass('mjs-nestedSortable-collapsed').toggleClass('mjs-nestedSortable-expanded');
+				$(this).toggleClass('ui-icon-plusthick').toggleClass('ui-icon-minusthick');
+			});
+
+			$('.expandEditor, .itemTitle').click(function(){
+				var id = $(this).attr('data-id');
+				$('#menuEdit'+id).toggle();
+				$(this).toggleClass('ui-icon-triangle-1-n').toggleClass('ui-icon-triangle-1-s');
+			});
+
+			$('.deleteMenu').click(function(){
+				var id = $(this).attr('data-id');
+				$('#menuItem_'+id).remove();
+			});
+
+			$('#serialize').click(function(){
+				serialized = $('ol.sortable').nestedSortable('serialize');
+				$('#serializeOutput').text(serialized+'\n\n');
+			})
+
+			$('#toHierarchy').click(function(e){
+				hiered = $('ol.sortable').nestedSortable('toHierarchy', {startDepthCount: 0});
+				hiered = dump(hiered);
+				(typeof($('#toHierarchyOutput')[0].textContent) != 'undefined') ?
+				$('#toHierarchyOutput')[0].textContent = hiered : $('#toHierarchyOutput')[0].innerText = hiered;
+			})
+
+			$('#toArray').click(function(e){
+				arraied = $('ol.sortable').nestedSortable('toArray', {startDepthCount: 0});
+				arraied = dump(arraied);
+				(typeof($('#toArrayOutput')[0].textContent) != 'undefined') ?
+				$('#toArrayOutput')[0].textContent = arraied : $('#toArrayOutput')[0].innerText = arraied;
+			});
+		});
+
+		function dump(arr,level) {
+			var dumped_text = "";
+			if(!level) level = 0;
+
+			//The padding given at the beginning of the line.
+			var level_padding = "";
+			for(var j=0;j<level+1;j++) level_padding += "    ";
+
+			if(typeof(arr) == 'object') { //Array/Hashes/Objects
+				for(var item in arr) {
+					var value = arr[item];
+
+					if(typeof(value) == 'object') { //If it is an array,
+						dumped_text += level_padding + "'" + item + "' ...\n";
+						dumped_text += dump(value,level+1);
+					} else {
+						dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+					}
+				}
+			} else { //Strings/Chars/Numbers etc.
+				dumped_text = "===>"+arr+"<===("+typeof(arr)+")";
+			}
+			return dumped_text;
+		}
+	</script>
+</head>
+
+<body>
+
+
+		<ol class="sortable ui-sortable mjs-nestedSortable-branch mjs-nestedSortable-expanded">
+		   <li style="display: list-item;" class="mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_2" data-foo="bar">
+		   <div class="menuDiv">
+			   <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+			   <span></span>
+			   </span>
+			   <span title="Click to show/hide item editor" data-id="2" class="expandEditor ui-icon ui-icon-triangle-1-n">
+			   <span></span>
+			   </span>
+			   <span>
+			   <span data-id="2" class="itemTitle">Área Técnica (2)<span title="Click to delete item." data-id="2" class="deleteMenu ui-icon ui-icon-closethick"></span></span>
+         <span title="Click to delete item." data-id="2" class="deleteMenu ui-icon ui-icon-closethick"></span>
+          <span title="Click to delete item." data-id="2" class="deleteMenu ui-icon ui-icon-closethick"></span>
+			   <span title="Click to delete item." data-id="2" class="deleteMenu ui-icon ui-icon-closethick">
+			   <span></span>
+			   </span>
+			   </span>
+
+		   </div>
+		   <ol>
+			   <li style="display: list-item;" class="mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_4" data-foo="baz">
+			   <div class="menuDiv">
+				   <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+				   <span></span>
+				   </span>
+				   <span title="s" data-id="4" class="expandEditor ui-icon ui-icon-triangle-1-n">
+				   <span></span>
+				   </span>
+				   <span>
+				   <span data-id="4" class="itemTitle">Processamento</span>
+           <span title="Click to delete item." data-id="2" class="deleteMenu ui-icon ui-icon-closethick"></span>
+            <span title="Click to delete item." data-id="2" class="deleteMenu ui-icon ui-icon-closethick"></span>
+				   <span title="Click to delete item." data-id="4" class="deleteMenu ui-icon ui-icon-closethick">
+				   <span></span>
+				   </span>
+				   </span>
+			   </div>
+			   <ol>
+				   <li class="mjs-nestedSortable-leaf" id="menuItem_6">
+				   <div class="menuDiv">
+					   <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+					   <span></span>
+					   </span>
+					   <span title="Click to show/hide item editor" data-id="6" class="expandEditor ui-icon ui-icon-triangle-1-n">
+					   <span></span>
+					   </span>
+					   <span>
+					   <span data-id="6" class="itemTitle">e</span>
+					   <span title="Click to delete item." data-id="6" class="deleteMenu ui-icon ui-icon-closethick">
+					   <span></span>
+					   </span>
+					   </span>
+				   </div>
+				   </li>
+			   </ol>
+			   </li>
+			   <li style="display: list-item;" class="mjs-nestedSortable-leaf" id="menuItem_5">
+			   <div class="menuDiv">
+				   <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+				   <span></span>
+				   </span>
+				   <span title="Click to show/hide item editor" data-id="5" class="expandEditor ui-icon ui-icon-triangle-1-n">
+				   <span></span>
+				   </span>
+				   <span>
+				   <span data-id="5" class="itemTitle">d</span>
+				   <span title="Click to delete item." data-id="5" class="deleteMenu ui-icon ui-icon-closethick">
+				   <span></span>
+				   </span>
+				   </span>
+			   </div>
+			   </li>
+		   </ol>
+		   </li>
+		   <ol>
+		   </ol>
+		   <li style="display: list-item;" class="mjs-nestedSortable-leaf" id="menuItem_7">
+		   <div class="menuDiv">
+			   <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+			   <span></span>
+			   </span>
+			   <span title="Click to show/hide item editor" data-id="7" class="expandEditor ui-icon ui-icon-triangle-1-n">
+			   <span></span>
+			   </span>
+			   <span>
+			   <span data-id="7" class="itemTitle">f</span>
+			   <span title="Click to delete item." data-id="7" class="deleteMenu ui-icon ui-icon-closethick">
+			   <span></span>
+			   </span>
+			   </span>
+		   </div>
+		   </li>
+		   <li class="mjs-nestedSortable-leaf" id="menuItem_3">
+		   <div class="menuDiv">
+			   <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+			   <span></span>
+			   </span>
+			   <span title="Click to show/hide item editor" data-id="3" class="expandEditor ui-icon ui-icon-triangle-1-n">
+			   <span></span>
+			   </span>
+			   <span>
+			   <span data-id="3" class="itemTitle">b</span>
+			   <span title="Click to delete item." data-id="3" class="deleteMenu ui-icon ui-icon-closethick">
+			   <span></span>
+			   </span>
+			   </span>
+		   </div>
+		   </li>
+	   </ol>
+     <script src="assets/js/jquery.sortable.js"></script>
+       <script src="assets/js/jquery.sortable.min.js"></script>
+     <script src="global/vendor/jquery/jquery.js"></script>
+     <script src="global/vendor/bootstrap/bootstrap.js"></script>
+       <script src="global/vendor/asscroll/jquery-asScroll.js"></script>
+     <script src="global/vendor/mousewheel/jquery.mousewheel.js"></script>
+     <script src="global/vendor/asscrollable/jquery.asScrollable.all.js"></script>
+     <script src="global/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
+     <script src="global/vendor/waves/waves.js"></script>
+     <!-- Plugins -->
+     <script src="global/vendor/switchery/switchery.min.js"></script>
+     <script src="global/vendor/intro-js/intro.js"></script>
+     <script src="global/vendor/screenfull/screenfull.js"></script>
+     <script src="global/vendor/slidepanel/jquery-slidePanel.js"></script>
+     <script src="global/vendor/chartist-js/chartist.min.js"></script>
+     <script src="global/vendor/chartist-plugin-tooltip/chartist-plugin-tooltip.min.js"></script>
+     <script src="global/vendor/jvectormap/jquery-jvectormap.min.js"></script>
+     <script src="global/vendor/jvectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
+     <script src="global/vendor/matchheight/jquery.matchHeight-min.js"></script>
+     <script src="global/vendor/peity/jquery.peity.min.js"></script>
+     <!-- Scripts -->
+     <script src="global/js/core.js"></script>
+     <script src="assets/js/jquery.min.js"></script>
+     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+     <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
+     <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.min.js"></script>
+     <script type="text/javascript" src="jquery.mjs.nestedSortable.js"></script>
+
+
+     <script src="assets/js/site.js"></script>
+     <script src="assets/js/sections/menu.js"></script>
+     <script src="assets/js/sections/menubar.js"></script>
+     <script src="assets/js/sections/gridmenu.js"></script>
+     <script src="assets/js/sections/sidebar.js"></script>
+     <script src="global/js/configs/config-colors.js"></script>
+     <script src="assets/js/configs/config-tour.js"></script>
+     <script src="global/js/components/asscrollable.js"></script>
+     <script src="global/js/components/slidepanel.js"></script>
+     <script src="global/js/components/switchery.js"></script>
+     <script src="global/js/components/tabs.js"></script>
+     <script src="global/js/components/matchheight.js"></script>
+     <script src="global/js/components/jvectormap.js"></script>
+     <script src="global/js/components/peity.js"></script>
+     <script src="assets/examples/js/dashboard/v1.js"></script>
+     <script src="assets/examples/js/dashboard/v1.js"></script>
+
+
+     <!-- Scripts -->
+       <script src="assets/js/js_fusion.js"></script>
+
+      <script>
+         $(function() {
+           $('.sortable').sortable();
+           $('.handles').sortable({
+             handle: 'span'
+           });
+           $('.connected').sortable({
+             connectWith: '.connected'
+           });
+           $('.exclude').sortable({
+             items: ':not(.disabled)'
+           });
+         });
+       </script>
+
+
+
+
+   </body>
+   </html>

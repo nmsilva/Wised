@@ -15,6 +15,9 @@ body.dashboard.site-menubar-fold a.waves-effect.waves-light.waves-round {
 a.iconestatic:hover{
   color:#ef7c00;
 }
+.field{
+  padding-left:0px !important;
+}
 .titleorange{
   color:#ef7c00;
 }

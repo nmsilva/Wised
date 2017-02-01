@@ -116,11 +116,17 @@ ol li ol ol li div {
       color:black !important;
       font-weight:lighter;
 }
+ol li ol ol li div span:first-child{
+  display:none !important;
+}
 ol li ol ol ol li div {
   padding-left:9% !important;
   background-color:#fff !important;
   color:black !important;
   font-weight:lighter;
+}
+ol li ol ol ol li div span:first-child{
+  display:none !important;
 }
 ol li ol li div {
   color:#009ee2 !important;

@@ -90,11 +90,13 @@
 
 
   .sortable li div {
-    border-top: 1px solid #f0f0f0;
+    border: 0px solid #d4d4d4;
+    border-top: 1px solid #d4d4d4;
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
     cursor: move;
+    border-color: #D4D4D4 #D4D4D4 #BCBCBC;
     margin: 0;
     padding: 3px;
   }
@@ -103,7 +105,7 @@
     border-color: #999;
   }
 
-  .disclose, .disclose {
+  .disclose, .expandEditor {
     cursor: pointer;
     width: 20px;
     display: none;
@@ -125,7 +127,7 @@
   }
 
   .menuDiv {
-    background: #f7f7f7;
+    background: #EBEBEB;
   }
 
   .menuEdit {
@@ -204,7 +206,7 @@
       tabSize: 25,
       tolerance: 'pointer',
       toleranceElement: '> div',
-      maxLevels: 6,
+      maxLevels: 4,
       isTree: true,
       expandOnHover: 700,
       startCollapsed: false,
@@ -213,7 +215,7 @@
       }
     });
 
-    $('.disclose').attr('title','Click to expand');
+    $('.expandEditor').attr('title','Click to show/hide item editor');
     $('.disclose').attr('title','Click to show/hide children');
     $('.deleteMenu').attr('title', 'Click to delete item.');
 
@@ -222,7 +224,7 @@
       $(this).toggleClass('ui-icon-plusthick').toggleClass('ui-icon-minusthick');
     });
 
-    $('.disclose, .itemTitle').click(function(){
+    $('.expandEditor, .itemTitle').click(function(){
       var id = $(this).attr('data-id');
       $('#menuEdit'+id).toggle();
       $(this).toggleClass('ui-icon-triangle-1-n').toggleClass('ui-icon-triangle-1-s');
@@ -610,9 +612,10 @@
             <ol class="sortable ui-sortable mjs-nestedSortable-branch mjs-nestedSortable-expanded">
                <li style="display: list-item;" class="mjs-nestedSortable-branch mjs-nestedSortable-expanded " id="menuItem_1" data-foo="bar">
                <div class="menuDiv">
-                                  <span></span>
+                 <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                 <span></span>
                  </span>
-                 <span title="Click to expand" data-id="2" class="disclose ui-icon ui-icon-triangle-1-n">
+                 <span title="Click to show/hide item editor" data-id="2" class="expandEditor ui-icon ui-icon-triangle-1-n">
                  <span></span>
                  </span>
                  <span>
@@ -626,14 +629,16 @@
                <ol>
                  <li style="display: list-item;" class="mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_2" data-foo="baz">
                  <div class="menuDiv">
-                                      <span></span>
+                   <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                   <span></span>
                    </span>
-                   <span title="s" data-id="2" class="disclose ui-icon ui-icon-triangle-1-n">
+                   <span title="s" data-id="2" class="expandEditor ui-icon ui-icon-triangle-1-n">
                    <span></span>
                    </span>
                    <span>
                    <span data-id="2" class="itemTitle">Processamento (3)</span>
                    <span title="Click to delete item." data-id="2" class="deleteMenu ui-icon ui-icon-closethick"></span>
+
                    <span></span>
                    </span>
                    </span>
@@ -641,9 +646,10 @@
                  <ol>
                    <li class="mjs-nestedSortable-leaf" id="menuItem_3">
                    <div class="menuDiv">
-                                          <span></span>
+                     <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                     <span></span>
                      </span>
-                     <span title="Click to expand" data-id="3" class="disclose ui-icon ui-icon-triangle-1-n">
+                     <span title="Click to show/hide item editor" data-id="3" class="expandEditor ui-icon ui-icon-triangle-1-n">
                      </span>
 
                      <span data-id="3" class="itemTitle">Resolução</span>
@@ -655,9 +661,10 @@
                    </li>
                    <li class="mjs-nestedSortable-leaf" id="menuItem_4">
                    <div class="menuDiv">
-                                          <span></span>
+                     <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                     <span></span>
                      </span>
-                     <span title="Click to expand" data-id="4" class="disclose ui-icon ui-icon-triangle-1-n">
+                     <span title="Click to show/hide item editor" data-id="4" class="expandEditor ui-icon ui-icon-triangle-1-n">
                      </span>
                      <span data-id="4" class="itemTitle">Sistemas operativos</span>
                      <span title="Click to delete item." data-id="4" class="deleteMenu ui-icon ui-icon-closethick">
@@ -668,10 +675,12 @@
                    </li>
                    <li class="mjs-nestedSortable-leaf" id="menuItem_5">
                    <div class="menuDiv">
-                                          <span></span>
+                     <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                     <span></span>
                      </span>
-                     <span title="Click to expand" data-id="5" class="disclose ui-icon ui-icon-triangle-1-n">
+                     <span title="Click to show/hide item editor" data-id="5" class="expandEditor ui-icon ui-icon-triangle-1-n">
                      </span>
+                     
                      <span data-id="5" class="itemTitle">Autonomia</span>
                      <span title="Click to delete item." data-id="5" class="deleteMenu ui-icon ui-icon-closethick">
                      <span></span>
@@ -681,13 +690,12 @@
                    </li>
                  </ol>
                  </li>
-               </ol>
-               <ol style="display: list-item;" class="mjs-nestedSortable-branch mjs-nestedSortable-expanded" id="menuItem_2" data-foo="baz">
-                 <li >
+                 <li style="display: list-item;" class="mjs-nestedSortable-leaf" id="menuItem_6">
                  <div class="menuDiv">
-                                      <span></span>
+                   <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                   <span></span>
                    </span>
-                   <span title="Click to expand" data-id="6" class="disclose ui-icon ui-icon-triangle-1-n">
+                   <span title="Click to show/hide item editor" data-id="6" class="expandEditor ui-icon ui-icon-triangle-1-n">
                    <span></span>
                    </span>
                    <span>
@@ -697,15 +705,17 @@
                    </span>
                    </span>
                  </div>
-
+                 </li>
                  <ol>
                    <li class="mjs-nestedSortable-leaf" id="menuItem_7">
                    <div class="menuDiv">
-                                          <span></span>
+                     <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                     <span></span>
                      </span>
-                     <span title="Click to expand" data-id="7" class="disclose ui-icon ui-icon-triangle-1-n">
+                     <span title="Click to show/hide item editor" data-id="7" class="expandEditor ui-icon ui-icon-triangle-1-n">
+                     <span></span>
                      </span>
-
+                     <span>
                      <span data-id="7" class="itemTitle">Camera</span>
                      <span title="Click to delete item." data-id="7" class="deleteMenu ui-icon ui-icon-closethick">
                      <span></span>
@@ -715,26 +725,13 @@
                    </li>
                    <li class="mjs-nestedSortable-leaf" id="menuItem_8">
                    <div class="menuDiv">
-                                          <span></span>
-                     </span>
-                     <span title="Click to expand" data-id="8" class="disclose ui-icon ui-icon-triangle-1-n">
-                     </span>
-
-                     <span data-id="8" class="itemTitle">Gps</span>
-                     <span title="Click to delete item." data-id="8" class="deleteMenu ui-icon ui-icon-closethick">
+                     <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
                      <span></span>
                      </span>
+                     <span title="Click to show/hide item editor" data-id="8" class="expandEditor ui-icon ui-icon-triangle-1-n">
+                     <span></span>
                      </span>
-                   </div>
-                   </li>
-                   <ol>
-                   <li class="mjs-nestedSortable-leaf" id="menuItem_8">
-                   <div class="menuDiv">
-                                          <span></span>
-                     </span>
-                     <span title="Click to expand" data-id="8" class="disclose ui-icon ui-icon-triangle-1-n">
-                     </span>
-
+                     <span>
                      <span data-id="8" class="itemTitle">Gps</span>
                      <span title="Click to delete item." data-id="8" class="deleteMenu ui-icon ui-icon-closethick">
                      <span></span>
@@ -743,19 +740,21 @@
                    </div>
                    </li>
                  </ol>
-                 </ol>
+
                </ol>
                </li>
                <ol>
+               </ol>
                <li style="display: list-item;" class="mjs-nestedSortable-leaf" id="menuItem_9">
                <div class="menuDiv">
-                                  <span></span>
+                 <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                 <span></span>
                  </span>
-                 <span title="Click to expand" data-id="9" class="disclose ui-icon ui-icon-triangle-1-n">
+                 <span title="Click to show/hide item editor" data-id="9" class="expandEditor ui-icon ui-icon-triangle-1-n">
                  <span></span>
                  </span>
                  <span>
-                 <span data-id="9" class="itemTitle">Preço de equipamento</span>
+                 <span data-id="9" class="itemTitle">Preço de Equipmaento</span>
                  <span title="Click to delete item." data-id="9" class="deleteMenu ui-icon ui-icon-closethick">
                  <span></span>
                  </span>
@@ -764,10 +763,13 @@
                </li>
                <li class="mjs-nestedSortable-leaf" id="menuItem_10">
                <div class="menuDiv">
-                                  <span></span>
+                 <span title="Click to show/hide children" class="disclose ui-icon ui-icon-minusthick">
+                 <span></span>
                  </span>
-                 <span title="Click to expand" data-id="10" class="disclose ui-icon ui-icon-triangle-1-n">
+                 <span title="Click to show/hide item editor" data-id="10" class="expandEditor ui-icon ui-icon-triangle-1-n">
+                 <span></span>
                  </span>
+                 <span>
                  <span data-id="10" class="itemTitle">Cor</span>
                  <span title="Click to delete item." data-id="10" class="deleteMenu ui-icon ui-icon-closethick">
                  <span></span>

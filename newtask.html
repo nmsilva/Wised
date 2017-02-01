@@ -27,6 +27,10 @@
   <link rel="stylesheet" href="assets/examples/css/forms/layouts.css">
   <link rel="stylesheet" href="assets/css/popup.css">
   <link rel="stylesheet" href="assets/css/font-awesome.min.css">
+  <!-- Css webexperts -->
+  <!-- Css webexperts -->
+
+    <link rel="stylesheet" href="assets/css/sortable.css">
 
   <!-- Fonts -->
   <link rel="stylesheet" href="global/fonts/material-design/material-design.min.css">
@@ -55,9 +59,9 @@
 
         <!-- Navbar Toolbar -->
   <!-- Page -->
-  <div class="page criteria">
+  <div class="page">
 
-    <div class="page-content">
+    <div class="page-content newtaskbody">
       <div class="panel">
         <div class="headertitle">
   <h3 class="headertitlemodel">New Task</h3></div>
@@ -67,11 +71,11 @@
             <div class="col-sm-12">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br/> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.
               <!-- Example Basic Form -->
-              <div class="example-wrap">
-                <div class="example">
-                  <span>Task #1</span>
+              <div class="example">
+                <div class="example2">
+                  <span class="tasklabel">Task #1</span>
                   <form autocomplete="off">
-                    <div class="form-group form-material row">
+                    <div class="form-group form-material row mainfield">
 
                       <div class="col-sm-6">
                         <label class="control-label" for="inputdesignation">User</label>
@@ -79,29 +83,29 @@
                         <span>insert user(s) email address</span>
                       </div>
                       <div class="col-sm-6">
-                  <input type="text" class="placeholdertask" id="inputPlaceholder" placeholder="placeholder">
+                  <input type="text" class="placeholdertask" id="inputPlaceholder" placeholder="joanamarinho@wisedon.com">
                           </div>
-
+                        </div>
+                        <div class="form-group form-material row field">
                           <div class="col-sm-6">
-                            <label class="control-label" for="inputdesignation">User</label>
+                            <label class="control-label" for="inputdesignation">Name</label>
                             <br/>
-                            <span>insert user(s) email address</span>
+                            <span>task destination</span>
                           </div>
                           <div class="col-sm-6">
-                        <input type="text" class="placeholdertask" id="inputPlaceholder" placeholder="placeholder">
+                        <input type="text" class="placeholdertask" id="inputPlaceholder" placeholder="insert name">
                               </div>
 
-
-                <div class="col-sm-12">
-                  <label class="control-label" for="inputdesignation">Description</label>
-                  <textarea placeholder="description here" class="form-control" id="textarea" name="textarea" rows="3"></textarea>
-                </div>
-                <div class="col-sm-12">
-                  <div class="example">
-                    <label class="control-label" for="inputdesignation">Evaluation Method</label>
+    </div>
+                <div class="form-group form-material row field">
+                  <div class="col-sm-6">
+                    <label class="control-label" for="inputdesignation">Criteria</label>
                     <br/>
+                    <span>select the criteria</span>
+                  </div>
+                <div class="col-sm-6">
 
-                    <select data-plugin="selectpicker" title="None" class="" tabindex="-98"><option class="bs-title-option" value="">None</option>
+                    <select data-plugin="selectpicker" title="None" class="newtask" tabindex="-98"><option class="bs-title-option" value="">None</option>
                     <optgroup label="Picnic">
                       <option>Mustard</option>
                       <option>Ketchup</option>
@@ -113,9 +117,20 @@
                       <option>Toilet Paper</option>
                     </optgroup>
                   </select></div>
-                </div>
+                  <br/>
+                  <div class="form-group form-material bottom">
+ <button type="button" class="btn btn-primary save">Save</button><button type="button" class="btn btn-primary delete">Delete</button>
+</div>
+
                 </div>
 
+                </div>
+                <div>
+                <p class="newtaskbutton"><a href="#" class="referencemodel">Task#2</a><span class="plus"> + </span></p>
+                </div>
+                <div>
+                <p class="newtaskadd"><a href="#" class="referencemodel">+ New Task</p>
+                </div>
 
 
 
@@ -123,7 +138,7 @@
                                         <div class="form-group form-material bottom">
                                               <button type="button" class="btn btn-primary cancel">Cancel</button>
                                               <i class="fa fa-question-circle fa-lg questionicon" aria-hidden="true"></i><span class="lowercasenobold"> Show related help </span>
-                     <button type="button" class="btn btn-primary createnew">Create</button>  <button type="button" class="btn btn-primary create">Save and Create New</button>
+                     <button type="button" class="btn btn-primary createnew">Save</button>  
                     </div>
                   </form>
                 </div>
