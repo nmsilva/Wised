@@ -1,5 +1,27 @@
 /**General Elements login/register/return password/email verification**/
+.site-menubar {
+    padding: 0px 0px;
+    position: fixed;
+    top: 111px;
+}
 
+pre,
+code {
+    font-size: 12px;
+}
+
+pre {
+    width: 100%;
+    overflow: auto;
+}
+
+small {
+    font-size: 90%;
+}
+
+small code {
+    font-size: 11px;
+}
 .btn-lg {
     padding: 10px 18px;
     font-size: 18px;
@@ -7,36 +29,35 @@
     border-radius: 0px;
     width: 140px;
     height: 45px;
-        font-weight: 500;
+    font-weight: 500;
 }
-
 .social {
-background-color: #2e2a24 ;
-height:50px ;
-padding-top: 3px;
-padding-left: 10px;
+    background-color: #2e2a24;
+    height: 50px;
+    padding-top: 3px;
+    padding-left: 10px;
 }
-.socialsign{
-color:#c9c9c9;}
+.socialsign {
+    color: #c9c9c9;
+}
 .btn-primary {
     color: #fff;
     background-color: #f07d00;
     border-color: #f07d00;
 }
-.icon{
-  color: #008ec9;
+.icon {
+    color: #008ec9;
 }
 span.icontexto {
     color: #cececd;
-  }
-  .btn-icon {
-      padding-top: 0px !important;
-  }
-  .panel {
+}
+.btn-icon {
+    padding-top: 0px !important;
+}
+.panel {
     background-color: #009ee3 !important;
-  }
-
-  .checkbox-lg label {
+}
+.checkbox-lg label {
     padding-left: 12px;
     color: #fff;
     padding-top: 2px;
@@ -52,53 +73,45 @@ label.labelform {
     float: left;
     color: #fff;
 }
-.signin{
-color:#fff;
-font-size: 18px;
+.signin {
+    color: #fff;
+    font-size: 18px;
 }
-.lowercase{
-  text-transform: lowercase;
-
+.lowercase {
+    text-transform: lowercase;
 }
-.bluebold{
-  color:#00608b;
-  font-weight:bolder;
+.bluebold {
+    color: #00608b;
+    font-weight: bolder;
 }
-a.bluebold{
-
-   text-decoration: underline;
+a.bluebold {
+    text-decoration: underline;
 }
-a.bluebold:hover{
-  color:#fff;
+a.bluebold:hover {
+    color: #fff;
 }
-.logopanel{
-  background-color:#fff;
+.logopanel {
+    background-color: #fff;
 }
-
 img.brand-img {
     padding: 30px;
-    width:80%;
+    width: 80%;
 }
-.linkwhite{
-  margin-left:0px ;
+.linkwhite {
+    margin-left: 0px;
 }
-
-
-
 /** Specific Login Page **/
 
 .page-login-v3 form a {
     margin-left: 0px !important;
 }
-.page-login-v3 span.pw{
-  font-size: 12px !important;
-      color: #fff;
+.page-login-v3 span.pw {
+    font-size: 12px !important;
+    color: #fff;
 }
 .page-login-v3 .panel .panel-body {
     padding: 10px 40px 40px;
 }
-
-
 /** Specific register page **/
 
 .page-register-v3 .panel .panel-body {
@@ -123,15 +136,14 @@ img.brand-img {
     vertical-align: middle;
     color: #fff;
 }
- .page-register-v3  a.linkwhite {
-   text-decoration: underline;
-   color:#fff;
+.page-register-v3 a.linkwhite {
+    text-decoration: underline;
+    color: #fff;
 }
 a.linkwhite.already {
     top: 60px;
     position: relative;
 }
-
 /** Page Forget password // Verification of Email // Recover Password **/
 
 .btn-lg {
@@ -143,9 +155,25 @@ a.linkwhite.already {
     height: 45px;
     font-weight: 500;
 }
-.titleh4{
-  COLOR:#fff;
+.titleh4 {
+    COLOR: #fff;
 }
-.subtitlep{
-  color:#fff !important;
+.subtitlep {
+    color: #fff !important;
+}
+
+/* BUTTONS */
+.right-button {
+    float: right;
+}
+.border-button {
+  background: none;
+  border: 1px solid #333;
+  font-size: 12px;
+  font-weight: normal;
+  padding: 8px 15px;
+}
+.border-button.orange {
+  border-color: #f07d00;
+  color: #f07d00;
 }

@@ -713,12 +713,15 @@ td.iconsize.task {
 
 }
 body.dashboard.site-menubar-fold .buttonsize {
-padding-left: 10% !important;
+  padding-left: 10% !important;
 }
 body.dashboard.site-menubar-fold .panel-title {
-    display: block;
-    padding: 60px 0px;}
+  display: block;
+  padding: 60px 0px;
+}
 .buttonsize.task {
-    width: 18%;
+  width: 18%;
 }
-}
+
+
+

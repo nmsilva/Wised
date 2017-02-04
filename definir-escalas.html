@@ -354,11 +354,11 @@
             <div class="submenu">
                 <table>
                     <tr>
-                        <td class="headsub first active">
+                        <td class="headsub first">
                             <a href="factores.html">1. Definir Factores</a>
                         </td>
 
-                        <td class="headsub">
+                        <td class="headsub active">
                             <a href="definir-escalas.html">2. Definir Escalas</a>
                         </td>
 
@@ -387,14 +387,14 @@
                     <div class="" id="projects">
                         <div class="panel-heading">
                             <h3 class="panel-title">
-                                <span class="titleorange">Definir Factores</span>
+                                <span class="titleorange">Definir Escalas</span>
                                 <i aria-hidden="true" class="fa fa-question-circle fa-lg questionicon"></i>
                                 <span class="lowercasenobold">Show related help</span> <i aria-hidden="true" class="fa fa-play-circle fa-lg questionicon"></i>
                                 <span class="lowercasenobold">View video Tutorial</span>
                             </h3>
 
                             <p class="basictext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
-                            <a class="factornext"><button class="btn excel" type="button">+ Add New Task</button></a> <a class="factornext"><button class="btn newdata" type="button">Import Excel Data</button></a>
+                            <br>
                         </div>
                     </div>
                 </div>
@@ -404,39 +404,33 @@
                         <h3>
                             <span>New Blue Line mobile</span>
                             <span class="lowercasenobold">create 12hours ago</span>
-                            <button class="border-button orange right-button">+ New Criteria</button>
                         </h3>
-                        <ol class="is-sortable criterion-list sortable ui-sortable mjs-nestedSortable-branch mjs-nestedSortable-expanded">
+                        <ol class="criterion-list sortable ui-sortable mjs-nestedSortable-branch mjs-nestedSortable-expanded">
                            <li>
                               <div>
                                     <span class="disclose ui-icon ui-icon-triangle-1-n"></span>
                                     <span class="itemTitle">Área Técnica(2)</span>
-                                    <span class="deleteMenu ui-icon ui-icon-closethick"></span>
                               </div>
                               <ol>
                                  <li>
                                     <div>
                                         <span class="disclose ui-icon ui-icon-triangle-1-n"></span>
                                         <span class="itemTitle">Processamento(3)</span>
-                                        <span class="deleteMenu ui-icon ui-icon-closethick"></span>
                                     </div>
                                     <ol>
                                          <li>
                                             <div>
                                                 <span class="itemTitle">resolução</span>
-                                                <span class="deleteMenu ui-icon ui-icon-closethick"></span>
                                             </div>
                                          </li>
                                          <li>
                                             <div>
                                                 <span class="itemTitle">sistema operativo</span>
-                                                <span class="deleteMenu ui-icon ui-icon-closethick"></span>
                                             </div>
                                          </li>
                                          <li>
                                             <div>
                                                 <span class="itemTitle">autonomia</span>
-                                                <span class="deleteMenu ui-icon ui-icon-closethick"></span>
                                             </div>
                                          </li>
                                     </ol>
@@ -445,19 +439,16 @@
                                     <div>
                                         <span class="disclose ui-icon ui-icon-triangle-1-n"></span>
                                         <span class="itemTitle">Extras(2)</span>
-                                        <span class="deleteMenu ui-icon ui-icon-closethick"></span>
                                     </div>
                                     <ol>
                                          <li>
                                             <div>
                                                 <span class="itemTitle">camera</span>
-                                                <span class="deleteMenu ui-icon ui-icon-closethick"></span>
                                             </div>
                                          </li>
                                          <li>
                                             <div>
                                                 <span class="itemTitle">gps</span>
-                                                <span class="deleteMenu ui-icon ui-icon-closethick"></span>
                                             </div>
                                          </li>
                                     </ol>
@@ -468,14 +459,12 @@
                                 <div>
                                     <span class="disclose ui-icon ui-icon-triangle-1-n"></span>
                                     <span class="itemTitle">Preço de Equipamento</span>
-                                    <span class="deleteMenu ui-icon ui-icon-closethick"></span>
                                 </div>
                             </li>
                            <li>
                                 <div>
                                     <span class="disclose ui-icon ui-icon-triangle-1-n"></span>
                                     <span class="itemTitle">Cor</span>
-                                    <span class="deleteMenu ui-icon ui-icon-closethick"></span>
                                 </div>
                             </li>
                         </ol>
@@ -529,7 +518,8 @@
     <script src="assets/js/jquery.mjs.nestedSortable.js" type="text/javascript"></script>
     <script>
         $().ready(function() {
-            var ns = $('.is-sortable').nestedSortable({
+            /*
+            var ns = $('.criterion-list').nestedSortable({
                 forcePlaceholderSize: true,
                 handle: 'div',
                 helper: 'clone',
@@ -539,7 +529,7 @@
                 revert: 250,
                 tabSize: 50,
                 tolerance: 'pointer',
-                toleranceElement: '> div',
+                toleranceElement: '>     div',
                 maxLevels: 3,
                 isTree: true,
                 expandOnHover: 700,
@@ -559,70 +549,14 @@
 
                     return true;
                 }
-            });
+            }); */
 
             $('.disclose').attr('title', 'Click to show/hide children');
-            $('.deleteMenu').attr('title', 'Click to delete item.');
 
             $('.disclose, .itemTitle').on('click', function() {
                 $(this).closest('li').toggleClass('mjs-nestedSortable-collapsed').toggleClass('mjs-nestedSortable-expanded');
                 $(this).parent().find('.disclose').toggleClass('ui-icon-plusthick').toggleClass('ui-icon-minusthick');
             });
-
-            $('.deleteMenu').click(function() {
-                $(this).closest('li').fadeOut(300, function() { $(this).remove(); });
-            });
-
-            function dump(arr, level) {
-                var dumped_text = "";
-                if (!level) level = 0;
-
-                //The padding given at the beginning of the line.
-                var level_padding = "";
-                for (var j = 0; j < level + 1; j++) level_padding += "    ";
-
-                if (typeof(arr) == 'object') { //Array/Hashes/Objects
-                    for (var item in arr) {
-                        var value = arr[item];
-
-                        if (typeof(value) == 'object') { //If it is an array,
-                            dumped_text += level_padding + "'" + item + "' ...\n";
-                            dumped_text += dump(value, level + 1);
-                        } else {
-                            dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
-                        }
-                    }
-                } else { //Strings/Chars/Numbers etc.
-                    dumped_text = "===>" + arr + "<===(" + typeof(arr) + ")";
-                }
-                return dumped_text;
-            }
-
-            /*
-
-            $('#serialize').click(function() {
-                serialized = $('ol.sortable').nestedSortable('serialize');
-                $('#serializeOutput').text(serialized + '\n\n');
-            })
-
-            $('#toHierarchy').click(function(e) {
-                hiered = $('ol.sortable').nestedSortable('toHierarchy', {
-                    startDepthCount: 0
-                });
-                hiered = dump(hiered);
-                (typeof($('#toHierarchyOutput')[0].textContent) != 'undefined') ?
-                $('#toHierarchyOutput')[0].textContent = hiered: $('#toHierarchyOutput')[0].innerText = hiered;
-            })
-
-            $('#toArray').click(function(e) {
-                arraied = $('ol.sortable').nestedSortable('toArray', {
-                    startDepthCount: 0
-                });
-                arraied = dump(arraied);
-                (typeof($('#toArrayOutput')[0].textContent) != 'undefined') ?
-                $('#toArrayOutput')[0].textContent = arraied: $('#toArrayOutput')[0].innerText = arraied;
-            });
-            */
 
         });
     </script>
