@@ -87,9 +87,8 @@ li.sortable-placeholder {
 }
 .placeholder {
     outline: 1px dashed #CCC;
-    height: 45px !important;
+    height: 42px !important;
 }
-
 .mjs-nestedSortable-error {
     background: #fbe3e4;
     border-color: transparent;
@@ -99,13 +98,10 @@ li.sortable-placeholder {
     width: 550px;
     margin: 0;
 }
-
 ol {
     max-width: 100%;
     padding-left: 25px;
 }
-
-
 li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
     border-color: #999;
 }
@@ -116,17 +112,14 @@ li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
     width: 20px;
     display: none;
 }
-
 .sortable li.mjs-nestedSortable-collapsed>ol {
     display: none;
 }
-
 .sortable li.mjs-nestedSortable-branch>div>.disclose {
     display: inline-block;
     margin-top: 3px;
     margin-right: 5px;
 }
-
 .sortable span.ui-icon {
     display: inline-block;
     margin: 0;
@@ -136,26 +129,19 @@ li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
 .menuDiv {
     background: #f7f7f7;
 }
-
-.menuEdit {
-    background: #FFF;
-}
-
 .itemTitle {
     vertical-align: middle;
     cursor: pointer;
 }
 
-.deleteMenu {
+.delete, .duplicate, .edit {
     float: right;
     cursor: pointer;
 }
-
 h1 {
     font-size: 2em;
     margin-bottom: 0;
 }
-
 h2 {
     font-size: 1.2em;
     font-weight: 400;
@@ -163,7 +149,6 @@ h2 {
     margin-top: .2em;
     margin-bottom: 1.5em;
 }
-
 h3 {
     font-size: 1em;
     margin: 1em 0 .3em;
@@ -177,24 +162,19 @@ form {
     margin-top: 0;
     margin-bottom: 0em;
 }
-
 dl {
     margin: 0;
 }
-
 dd {
     margin: 0;
     padding: 0 0 0 1.5em;
 }
-
 code {
     background: #e5e5e5;
 }
-
 input {
     vertical-align: text-bottom;
 }
-
 .notice {
     color: #c33;
 }
@@ -215,12 +195,22 @@ input {
 }
 .criterion-list li div{
   padding: 8px 0;
-  display: inline-block;
+  display: inline-table;
   width: 100%;
   padding-right: 10px;
 }
-.criterion-list li div .deleteMenu{
+.criterion-list li div .delete,
+.criterion-list li div .duplicate,
+.criterion-list li div .edit,
+.criterion-list li div .users{
   float: right;
+  color: #6f6e6e;
+  font-size: 16px;
+  padding: 0 3px;
+}
+.criterion-list li div .users{
+  float: left;
+  margin-left: 8px;
 }
 .criterion-list li div span{
   float: left;
@@ -285,28 +275,34 @@ input {
   border-bottom: none;
 }
 .criterion-list li ol li ul div:nth-child(1) {
-    background-color: #fff;
-    color: black !important;
-    font-weight: lighter;
+  background-color: #fff;
+  color: black !important;
+  font-weight: lighter;
 }
 .criterion-list li ol ol li div {
-    background-color: #fff !important;
-    color: black !important;
-    font-weight: lighter;
+  color: black !important;
+  font-weight: lighter;
 }
-
 .criterion-list li ol ol ol li div {
-    background-color: #fff !important;
-    color: black !important;
-    font-weight: lighter;
+  color: black !important;
+  font-weight: lighter;
 }
 
 .criterion-list li ol li div {
-    color: #009ee2 !important;
-    font-weight: 600;
+  color: #009ee2 !important;
 }
 .criterion-list li div {
-    color: #ef7c00;
-    font-weight: 400;
+  color: #ef7c00;
+  font-weight: 400;
+}
+
+.define-scales li ol li ol li:hover{
+  background: #009ee2;
+  box-shadow: 0 1px 4px 0 rgba(0,0,0,.1);
+  transition: border .2s linear,color .2s linear,width .2s linear,background-color .2s linear;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+.define-scales li ol li ol li:hover div span{
+  color: #fff;
 }
 

@@ -405,7 +405,7 @@
                             <span>New Blue Line mobile</span>
                             <span class="lowercasenobold">create 12hours ago</span>
                         </h3>
-                        <ol class="criterion-list sortable ui-sortable mjs-nestedSortable-branch mjs-nestedSortable-expanded">
+                        <ol class="criterion-list define-scales sortable ui-sortable mjs-nestedSortable-branch mjs-nestedSortable-expanded">
                            <li>
                               <div>
                                     <span class="disclose ui-icon ui-icon-triangle-1-n"></span>
@@ -474,11 +474,22 @@
 
         </div>
     </div>
-
-    <!-- End Widget Current Chart -->
     <!-- End Panel Projects -->
+
+    <!-- MODALS-->
+    <div id="create-criteria-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+      <div class="criteria modal-dialog modal-md" role="document">
+        <div class="modal-content">
+            <div class="headertitle">
+                <h3 class="headertitlemodel">New Criteria</h3>
+            </div>
+            <div class="panel-body container-fluid">
+
+            </div>
+        </div>
+    </div>
+
     <!-- Core  -->
-    <!--<script src="global/vendor/jquery/jquery.js"></script>-->
     <script src="global/vendor/bootstrap/bootstrap.js"></script>
     <script src="global/vendor/animsition/animsition.js"></script>
     <script src="global/vendor/asscroll/jquery-asScroll.js"></script>
@@ -486,8 +497,8 @@
     <script src="global/vendor/asscrollable/jquery.asScrollable.all.js"></script>
     <script src="global/vendor/ashoverscroll/jquery-asHoverScroll.js"></script>
     <script src="global/vendor/waves/waves.js"></script>
-    <!-- Plugins -->
 
+    <!-- Plugins -->
     <script src="global/vendor/switchery/switchery.min.js"></script>
     <script src="global/vendor/intro-js/intro.js"></script>
     <script src="global/vendor/screenfull/screenfull.js"></script>
@@ -496,8 +507,8 @@
     <script src="global/vendor/jvectormap/maps/jquery-jvectormap-world-mill-en.js"></script>
     <script src="global/vendor/matchheight/jquery.matchHeight-min.js"></script>
     <script src="global/vendor/peity/jquery.peity.min.js"></script>
-    <!-- Scripts -->
 
+    <!-- Scripts -->
     <script src="global/js/core.js"></script>
     <script src="assets/js/site.js"></script>
     <script src="assets/js/sections/menu.js"></script>
@@ -518,38 +529,6 @@
     <script src="assets/js/jquery.mjs.nestedSortable.js" type="text/javascript"></script>
     <script>
         $().ready(function() {
-            /*
-            var ns = $('.criterion-list').nestedSortable({
-                forcePlaceholderSize: true,
-                handle: 'div',
-                helper: 'clone',
-                items: 'li',
-                opacity: .6,
-                placeholder: 'placeholder',
-                revert: 250,
-                tabSize: 50,
-                tolerance: 'pointer',
-                toleranceElement: '>     div',
-                maxLevels: 3,
-                isTree: true,
-                expandOnHover: 700,
-                startCollapsed: false,
-                isAllowed: function(placeholder, placeholderParent, currentItem) {
-                    var current_elem_level = 0;
-                    var target_level = 0;
-                    if (placeholderParent != undefined){
-                        target_level = placeholderParent.parents('ol').length;
-                    }
-                    if (currentItem != undefined){
-                        current_elem_level = currentItem.parents('ol').length;
-                    }
-                    if (current_elem_level == 3 && target_level < 2){
-                        return false;
-                    }
-
-                    return true;
-                }
-            }); */
 
             $('.disclose').attr('title', 'Click to show/hide children');
 

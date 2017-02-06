@@ -45,11 +45,11 @@ a.iconestatic:hover{
       border-radius:0;
   }
 .questionicon{
-font-size: 0.89em !important;
-line-height: .75em;
-vertical-align: -15%;
-color: #ef7c00;
-margin-left:10px;
+  font-size: 0.89em !important;
+  line-height: .75em;
+  vertical-align: -15%;
+  color: #ef7c00;
+  margin-left:10px;
 }
 a.breadcrumborange{
   font-size:15px ;
@@ -66,12 +66,12 @@ a.breadcrumborange.active{
 }
 .allstatus{
   float: right;
-font-size: 12px;
-border: 1px solid #EDEDED;
-padding: 3px 15px;
-vertical-align: middle;
-color:#757575;
-background-color:transparent;
+  font-size: 12px;
+  border: 1px solid #EDEDED;
+  padding: 3px 15px;
+  vertical-align: middle;
+  color:#757575;
+  background-color:transparent;
 }
 
 .btn-info.focus, .btn-info:focus, .btn-info:hover, .btn-info:active, .open>.dropdown-toggle.btn-info, .open>.dropdown-toggle.btn-info:focus, .open>.dropdown-toggle.btn-info:hover, .btn-info:active:focus, .btn-info:active:hover  {
@@ -81,30 +81,25 @@ background-color:transparent;
 }
 .cancel{
   color: #fff;
-background-color: #3d3d3d;
-border-color: transparent;
-border-radius: 0 !important;
-padding-left: 30px !important;
-padding-right: 30px !important;
-
-margin-right: 65px;
-
-
+  background-color: #3d3d3d;
+  border-color: transparent;
+  border-radius: 0 !important;
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+  margin-right: 65px;
 }
 .excel{
   color: #fff;
-background-color: #009ee3;
-border-color: transparent;
+  background-color: #009ee3;
+  border-color: transparent;
   float: right;
-bottom: 45px;
-margin-left: 15px;
-position: relative;
-border-radius:0px;
-padding-left: 40px !important;
-padding-right: 40px !important;
-margin-right: 35px;
-
-
+  bottom: 45px;
+  margin-left: 15px;
+  position: relative;
+  border-radius:0px;
+  padding-left: 40px !important;
+  padding-right: 40px !important;
+  margin-right: 35px;
 }
 .newdata{
   color: #fff;

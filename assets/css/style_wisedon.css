@@ -177,3 +177,16 @@ a.linkwhite.already {
   border-color: #f07d00;
   color: #f07d00;
 }
+
+.modal-content .headertitle{
+  background: #009ee3;
+  padding: 10px 30px;
+  font-size: 22px;
+}
+.modal-content .headertitle h3{
+  color: #fff;
+}
+
+.form-group > div{
+    margin: 10px 0;
+}
