@@ -457,7 +457,7 @@
                            </li>
                            <li>
                                 <div>
-                                    <span class="disclose ui-icon ui-icon-triangle-1-n"></span>
+                                    <span class="disclose ui-icon ui-icon-triangle-1-n" style="display:none;"></span>
                                     <span class="itemTitle">Preço de Equipamento</span>
                                     <span class="users"><i class="mdi mdi-account"></i></span>
                                     <span class="delete"><i class="mdi mdi-delete"></i></span>
@@ -467,7 +467,7 @@
                             </li>
                            <li>
                                 <div>
-                                    <span class="disclose ui-icon ui-icon-triangle-1-n"></span>
+                                    <span class="disclose ui-icon ui-icon-triangle-1-n" style="display:none;"></span>
                                     <span class="itemTitle">Cor</span>
                                     <span class="delete"><i class="mdi mdi-delete"></i></span>
                                     <span class="duplicate"><i class="mdi mdi-content-duplicate"></i></span>
@@ -540,18 +540,16 @@
                 isTree: true,
                 expandOnHover: 700,
                 startCollapsed: false,
-                isAllowed: function(placeholder, placeholderParent, currentItem){
-                    var target_level = 0;
-                    if (placeholderParent){
-                        var target_level = placeholderParent.parents('ol').length;
-                    }
-                    if (target_level < 2){
-                        currentItem.find('.disclose').show();
-                    } else {
-                        currentItem.find('.disclose').hide();
-                    }
-                    
-                    return true;
+                change: function(e){
+                    setTimeout(function(){
+                        $.each($('.is-sortable').find('li'), function(){
+                            if ($(this).find('li').length > 0){
+                                $(this).find('.disclose').show();
+                            } else {
+                                $(this).find('.disclose').hide();
+                            }
+                        });
+                    }, 800);
                 }
             });
 
