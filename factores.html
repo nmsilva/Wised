@@ -32,7 +32,7 @@
     <!-- Fonts -->
     <link href="global/fonts/material-design/material-design.min.css" rel="stylesheet">
     <link href="global/fonts/brand-icons/brand-icons.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,300italic' rel='stylesheet'>
+    <link href='//fonts.googleapis.com/css?family=Roboto:300,400,500,300italic' rel='stylesheet'>
 
     <!-- Css webexperts -->
     <link href="assets/css/style_general.css" rel="stylesheet">
@@ -394,6 +394,7 @@
                                     <ol>
                                          <li>
                                             <div>
+                                                <span class="disclose ui-icon ui-icon-triangle-1-n" style="display:none;"></span>
                                                 <span class="itemTitle">resolução</span>
                                                 <span class="delete"><i class="mdi mdi-delete"></i></span>
                                                 <span class="duplicate"><i class="mdi mdi-content-duplicate"></i></span>
@@ -402,6 +403,7 @@
                                          </li>
                                          <li>
                                             <div>
+                                                <span class="disclose ui-icon ui-icon-triangle-1-n" style="display:none;"></span>
                                                 <span class="itemTitle">sistema operativo</span>
                                                 <span class="users"><i class="mdi mdi-account"></i></span>
                                                 <span class="delete"><i class="mdi mdi-delete"></i></span>
@@ -411,6 +413,7 @@
                                          </li>
                                          <li>
                                             <div>
+                                                <span class="disclose ui-icon ui-icon-triangle-1-n" style="display:none;"></span>
                                                 <span class="itemTitle">autonomia</span>
                                                 <span class="delete"><i class="mdi mdi-delete"></i></span>
                                                 <span class="duplicate"><i class="mdi mdi-content-duplicate"></i></span>
@@ -430,6 +433,7 @@
                                     <ol>
                                          <li>
                                             <div>
+                                                <span class="disclose ui-icon ui-icon-triangle-1-n" style="display:none;"></span>
                                                 <span class="itemTitle">camera</span>
                                                 <span class="users"><i class="mdi mdi-account"></i></span>
                                                 <span class="delete"><i class="mdi mdi-delete"></i></span>
@@ -439,6 +443,7 @@
                                          </li>
                                          <li>
                                             <div>
+                                                <span class="disclose ui-icon ui-icon-triangle-1-n" style="display:none;"></span>
                                                 <span class="itemTitle">gps</span>
                                                 <span class="users"><i class="mdi mdi-account"></i></span>
                                                 <span class="delete"><i class="mdi mdi-delete"></i></span>
@@ -535,20 +540,17 @@
                 isTree: true,
                 expandOnHover: 700,
                 startCollapsed: false,
-                isAllowed: function(placeholder, placeholderParent, currentItem) {
-                    /*
-                    var current_elem_level = 0;
+                isAllowed: function(placeholder, placeholderParent, currentItem){
                     var target_level = 0;
-                    if (placeholderParent != undefined){
-                        target_level = placeholderParent.parents('ol').length;
+                    if (placeholderParent){
+                        var target_level = placeholderParent.parents('ol').length;
                     }
-                    if (currentItem != undefined){
-                        current_elem_level = currentItem.parents('ol').length;
+                    if (target_level < 2){
+                        currentItem.find('.disclose').show();
+                    } else {
+                        currentItem.find('.disclose').hide();
                     }
-                    if (current_elem_level == 3 && target_level < 2){
-                        return false;
-                    }*/
-
+                    
                     return true;
                 }
             });
