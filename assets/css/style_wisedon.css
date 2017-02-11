@@ -4,6 +4,9 @@
     position: fixed;
     top: 111px;
 }
+.modal{
+    z-index: 99999999999 !important;
+}
 
 pre,
 code {
@@ -178,6 +181,7 @@ a.linkwhite.already {
   color: #f07d00;
 }
 
+/* MODALS */
 .modal-content .headertitle{
   background: #009ee3;
   padding: 10px 30px;
@@ -187,6 +191,189 @@ a.linkwhite.already {
   color: #fff;
 }
 
+
+/* FORMS */
 .form-group > div{
     margin: 10px 0;
 }
+
+
+
+/* DEFINIR ESCALAS */
+
+.list-criteria-container{
+    opacity: .4;
+}
+.panel-dialog-container{
+    position: absolute;
+    top: 40px;
+    margin: 15px;
+    background: #fff;
+    width: calc(100% - 60px);
+    min-height: 376px;
+    border: 1px solid #008ec9;
+}
+.panel-dialog-container .headertitle{
+    margin-top: -15px;
+    background: #008ec9;
+    color: #FFF;
+    height: 50px;
+}
+.panel-dialog-container .headertitle h3{
+    color: #FFF;
+    padding: 15px;
+}
+.panel-dialog-container .headertitle span.done{
+    display: block;
+    background: #005A94;
+    padding: 13px 20px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+}
+.panel-dialog-container .dialog-breadcrumbs ul{
+    list-style: none;
+    padding: 0;
+    background: #00395B;
+    color: #006692;
+    display: inline-block;
+    width: 100%;
+}
+.panel-dialog-container .dialog-breadcrumbs ul li {
+    float: left;
+    padding: 10px 0;
+    width: calc(100% / 3);
+    text-align: center;
+}
+.panel-dialog-container .dialog-breadcrumbs ul li span{
+    position: relative;
+    display: block;
+    float: left;
+    width: 100%;
+}
+.panel-dialog-container .dialog-breadcrumbs ul li.active{
+    background: #005A94;
+    color: #FFF;
+}
+.panel-dialog-container .dialog-breadcrumbs ul li.active span:after{
+    border-left-color: #005A94;
+}
+.panel-dialog-container .dialog-breadcrumbs ul li:last-child span:before,
+.panel-dialog-container .dialog-breadcrumbs ul li:last-child span:after{
+    display: none;
+}
+.panel-dialog-container .dialog-breadcrumbs ul li span:before{
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+    border-left: 21px solid #008ec9;
+    position: absolute;
+    top: 50%;
+    margin-top: -22px;
+    margin-left: 1px;
+    left: 100%;
+    z-index: 1;
+}
+.panel-dialog-container .dialog-breadcrumbs ul li span:after{
+    content: " ";
+    display: block;
+    width: 0;
+    height: 0;
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+    border-left: 21px solid hsl(202, 100%, 18%);
+    position: absolute;
+    top: 50%;
+    margin-top: -22px;
+    left: 100%;
+    z-index: 2;
+}
+.panel-footer{
+    position: absolute;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    padding: 0;
+    width: 100%;
+}
+.panel-footer .buttons{
+    width: 100%;
+}
+.panel-footer .buttons a{
+    
+}
+.panel-footer .buttons .btn-previous{
+    float: left;
+}
+.panel-footer .buttons .btn-next{
+    float: right;
+}
+
+.references-table{
+    margin-top: 40px;
+    display: inline-block;
+}
+.references-table .row{
+    padding: 10px 0;
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+}
+.references-table ol{
+    list-style: none;
+}
+.references-table ol li{
+    display: block;
+    float: left;
+    width: 100%;
+}
+.references-table .ref-sort{
+    width: 25px;
+    float: left;
+    height: 50px;
+}
+.references-table .ref-content{
+    width: calc(100% - 25px);
+    float: left;
+}
+.references-table .ref-description{
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+.references-table .ref-name{
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    font-weight: bold;
+    padding: 25px 0;
+}
+.references-table .ref-actions{
+    padding: 20px 0;
+    font-size: 21px;
+}
+.references-table .row.add-new-ref{
+    margin-left: 25px;
+    width: calc(100% - 25px);
+    float: left;
+}
+.references-table .row.add-new-ref > div{
+    padding: 0;
+    margin: 0;
+}
+.references-table .row.add-new-ref a{
+    border: 1px solid #f07d00;
+    color: #f07d00;
+    display: block;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+
+    
