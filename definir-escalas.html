@@ -384,7 +384,7 @@
                 <div class="col-xlg-5 col-md-12">
                     <!-- Panel Projects -->
 
-                    <div class="" id="projects">
+                    <div id="projects">
                         <div class="panel-heading">
                             <h3 class="panel-title">
                                 <span class="titleorange">Definir Escalas</span>
@@ -600,6 +600,16 @@
             $('.disclose, .itemTitle').on('click', function() {
                 $(this).closest('li').toggleClass('mjs-nestedSortable-collapsed').toggleClass('mjs-nestedSortable-expanded');
                 $(this).parent().find('.disclose').toggleClass('ui-icon-plusthick').toggleClass('ui-icon-minusthick');
+            });
+            
+            $('.define-scales a').on('click', function(){
+               $('.list-criteria-container').addClass('show-dialog');
+               $('.panel-dialog-container').addClass('show'); 
+            });
+            
+            $('.done').on('click', function() {
+               $('.list-criteria-container').removeClass('show-dialog');
+               $('.panel-dialog-container').removeClass('show'); 
             });
 
         });

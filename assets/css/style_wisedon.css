@@ -201,10 +201,19 @@ a.linkwhite.already {
 
 /* DEFINIR ESCALAS */
 
-.list-criteria-container{
+.list-criteria-container.show-dialog{
     opacity: .4;
 }
+.list-criteria-container.show-dialog:after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
 .panel-dialog-container{
+    display: none;
     position: absolute;
     top: 40px;
     margin: 15px;
@@ -212,6 +221,9 @@ a.linkwhite.already {
     width: calc(100% - 60px);
     min-height: 376px;
     border: 1px solid #008ec9;
+}
+.panel-dialog-container.show{
+    display: block;
 }
 .panel-dialog-container .headertitle{
     margin-top: -15px;
@@ -303,7 +315,15 @@ a.linkwhite.already {
     width: 100%;
 }
 .panel-footer .buttons a{
-    
+    display: block;
+    background: #292929;
+    color: #fff;
+    padding: 5px 15px;
+    min-width: 85px;
+    text-align: center;
+}
+.panel-footer .buttons a.disabled{
+    background: #6E6E6E;
 }
 .panel-footer .buttons .btn-previous{
     float: left;

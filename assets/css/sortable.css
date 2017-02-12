@@ -302,7 +302,11 @@ input {
   transition: border .2s linear,color .2s linear,width .2s linear,background-color .2s linear;
   -webkit-font-smoothing: subpixel-antialiased;
 }
-.define-scales li ol li ol li:hover div span{
+.define-scales li ol li ol li:hover div span,
+.define-scales li ol li ol li:hover div span a{
   color: #fff;
+}
+.define-scales li ol li ol li a{
+  color: black;
 }
 
