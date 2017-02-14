@@ -331,6 +331,12 @@ a.linkwhite.already {
 .panel-footer .buttons .btn-next{
     float: right;
 }
+.panel-dialog-container .dialog-page{
+    display: none;
+}
+.panel-dialog-container .panel-body{
+    min-height: 280px;
+}
 
 .references-table{
     margin-top: 15px;
@@ -357,12 +363,12 @@ a.linkwhite.already {
     border-color: #fff;
 }
 .references-table ol li.neutral .row > div:not(.ref-actions){
-    background: blue;
+    background: #00ACEE;
     border-color: #fff;
     color: #fff;
 }
 .references-table ol li.good .row > div:not(.ref-actions){
-    background: green;
+    background: #3CA735;
     border-color: #fff;
     color: #fff;
 }
@@ -476,4 +482,27 @@ a.linkwhite.already {
 .ref-definition-buttons button.disabled{
     border-color: #e2e1e1;
     color: #e2e1e1;
+}
+
+#define-scales .start-scoring{
+    padding: 20px 0 0 0;
+}
+#define-scales .start-scoring button{
+    margin: 0 auto;
+}
+.btn-default{
+    display: block;
+    background: #757575;
+    color: #fff;
+    padding: 5px 15px;
+    min-width: 85px;
+    text-align: center;
+    border: none;
+}
+.btn-default.disabled{
+    
+}
+.btn-default:hover{
+    background: #757171;
+    color: #fff;
 }
