@@ -138,6 +138,10 @@ li.mjs-nestedSortable-collapsed.mjs-nestedSortable-hovering div {
     float: right;
     cursor: pointer;
 }
+.action-btn{
+    float: right;
+    cursor: pointer;
+}
 h1 {
     font-size: 2em;
     margin-bottom: 0;

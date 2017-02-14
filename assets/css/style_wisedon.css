@@ -333,8 +333,9 @@ a.linkwhite.already {
 }
 
 .references-table{
-    margin-top: 40px;
+    margin-top: 15px;
     display: inline-block;
+    width: 100%;
 }
 .references-table .row{
     padding: 10px 0;
@@ -344,16 +345,40 @@ a.linkwhite.already {
 }
 .references-table ol{
     list-style: none;
+    width: 100%;
 }
 .references-table ol li{
     display: block;
     float: left;
     width: 100%;
 }
+.references-table ol li.selected:not(.new-ref):not(.edit-ref) .row:not(.add-new-ref) > div:not(.ref-actions){
+    background: #ccc;
+    border-color: #fff;
+}
+.references-table ol li.neutral .row > div:not(.ref-actions){
+    background: blue;
+    border-color: #fff;
+    color: #fff;
+}
+.references-table ol li.good .row > div:not(.ref-actions){
+    background: green;
+    border-color: #fff;
+    color: #fff;
+}
 .references-table .ref-sort{
     width: 25px;
     float: left;
     height: 50px;
+}
+.references-table .ref-sort:before{
+  position: absolute;
+  content: '';
+  margin-left: 5px;
+  margin-top: 30px;
+  width: 8px;
+  height: 8px;
+  background-image: url(../images/dragListicon.png);
 }
 .references-table .ref-content{
     width: calc(100% - 25px);
@@ -393,7 +418,62 @@ a.linkwhite.already {
     padding: 20px;
     text-align: center;
     font-weight: bold;
+    cursor: pointer;
+}
+.references-table .new-ref-template{
+    display: none;
+}
+.references-table ol li textarea{
+    display: none;
+}
+.references-table ol li.new-ref textarea,
+.references-table ol li.edit-ref textarea{
+    width: 100%;
+    height: 80px;
+    border: none;
+    text-align: center;
+    display: block;
+}
+.references-table ol li.new-ref .ref-name,
+.references-table ol li.edit-ref .ref-name {
+    padding: 10px;
+    font-weight: normal;
+}
+.references-table ol li.new-ref .ref-sort:before,
+.references-table ol li.edit-ref .ref-sort:before{
+    display: none;
+}
+.references-table ol li .action-btn.save{
+    display: none;
+}
+.references-table ol li.new-ref .action-btn.save,
+.references-table ol li.edit-ref .action-btn.save{
+    display: block;
+}
+.references-table ol li.new-ref .action-btn.edit,
+.references-table ol li.new-ref .action-btn.delete,
+.references-table ol li.edit-ref .action-btn.edit,
+.references-table ol li.edit-ref .action-btn.delete{
+    display: none;
+}
+.references-table ol li.new-ref span,
+.references-table ol li.edit-ref span{
+    display: none;
 }
 
-
-    
+.ref-definition-buttons{
+    margin-top: 25px;
+    padding-right: 10px;
+}
+.ref-definition-buttons button{
+    float: right;
+    margin: 0 0 0 15px;
+    background: none;
+    border: 1px solid #ccc;
+    color: #757575;
+    padding: 5px 10px 5px 30px;
+}
+.ref-definition-buttons button.disabled{
+    border-color: #e2e1e1;
+    color: #e2e1e1;
+}

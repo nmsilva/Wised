@@ -1,3 +1,4 @@
+
 a.iconestatic {
     color: #9e9e9e;
     text-decoration: none;
@@ -267,26 +268,6 @@ tbody.unique {
     background-color: transparent;
     margin-right: 75px;
     padding-left: 50px;
-    border-radius: 0px;
-    border: 0px;
-    color: #fff;
-}
-{
-    float: right;
-    background-color: transparent;
-    margin-right: 100px;
-    padding-left: 50px;
-    padding-right: 50px;
-    border-radius: 0px;
-    border: 0px;
-    color: #fff;
-}
-{
-    float: right;
-    background-color: transparent;
-    margin-right: 100px;
-    padding-left: 50px;
-    padding-right: 50px;
     border-radius: 0px;
     border: 0px;
     color: #fff;

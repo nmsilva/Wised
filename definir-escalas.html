@@ -12,10 +12,12 @@
     <title>WiseD On</title>
     <link href="assets/images/apple-touch-icon.png" rel="apple-touch-icon">
     <link href="assets/images/favicon.ico" rel="shortcut icon">
+    
     <!-- Stylesheets -->
     <link href="global/css/bootstrap.min.css" rel="stylesheet">
     <link href="global/css/bootstrap-extend.min.css" rel="stylesheet">
     <link href="assets/css/site.min.css" rel="stylesheet">
+    
     <!-- Plugins -->
     <link href="global/vendor/animsition/animsition.css" rel="stylesheet">
     <link href="global/vendor/asscrollable/asScrollable.css" rel="stylesheet">
@@ -26,10 +28,12 @@
     <link href="global/vendor/waves/waves.css" rel="stylesheet">
     <link href="global/vendor/jvectormap/jquery-jvectormap.css" rel="stylesheet">
     <link href="assets/examples/css/dashboard/v1.css" rel="stylesheet">
+    
     <!-- Fonts -->
     <link href="global/fonts/material-design/material-design.min.css" rel="stylesheet">
     <link href="global/fonts/brand-icons/brand-icons.min.css" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Roboto:300,400,500,300italic' rel='stylesheet'>
+    
     <!-- Css webexperts -->
     <link href='assets/css/style_general.css' rel='stylesheet'>
     <link href="assets/css/style_wisedon.css" rel="stylesheet">
@@ -38,8 +42,10 @@
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="assets/css/materialdesignicons.css" rel="stylesheet">
+    
     <script src="global/vendor/modernizr/modernizr.js"></script>
     <script src="global/vendor/breakpoints/breakpoints.js"></script>
+    
     <script>
         Breakpoints();
     </script>
@@ -489,24 +495,29 @@
                                         <div class="col-md-12">
                                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
                                         </div>
+                                        <div class="col-md-11 ref-definition-buttons">
+                                            <button class="define-neutral disabled">Definir Neutro</button>
+                                            <button class="define-good disabled">Definir Bom</button>
+                                        </div>
                                     </div>
                                     
                                     <div class="references-table">
-                                        <ol>
-                                            <li>
+                                        <ol class="is-sortable">
+                                            <li class="new-ref-template">
                                                 <div class="ref-sort">
                                                     <span></span>
                                                 </div>
                                                 <div class="row ref-content">
                                                     <div class="col-md-9 ref-description">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.
+                                                        <textarea placeholder="Adicionar descrição"></textarea>
                                                     </div>
                                                     <div class="col-md-2 ref-name">
-                                                        IOS
+                                                        <textarea placeholder="Adicionar referência"></textarea>
                                                     </div>
                                                     <div class="col-md-1 ref-actions">
-                                                        <span class="delete"><i class="mdi mdi-delete"></i></span>
-                                                        <span class="edit"><i class="mdi mdi-pencil"></i></span>
+                                                        <span class="action-btn delete"><i class="mdi mdi-delete"></i></span>
+                                                        <span class="action-btn edit"><i class="mdi mdi-pencil"></i></span>
+                                                        <span class="action-btn save"><i class="mdi mdi-content-save"></i></span>
                                                     </div>
                                                 </div>
                                             </li>
@@ -516,21 +527,44 @@
                                                 </div>
                                                 <div class="row ref-content">
                                                     <div class="col-md-9 ref-description">
-                                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.
+                                                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</span>
+                                                        <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</textarea>
                                                     </div>
                                                     <div class="col-md-2 ref-name">
-                                                        ANDROID
+                                                        <span>IOS</span>
+                                                        <textarea>IOS</textarea>
                                                     </div>
                                                     <div class="col-md-1 ref-actions">
-                                                        <span class="delete"><i class="mdi mdi-delete"></i></span>
-                                                        <span class="edit"><i class="mdi mdi-pencil"></i></span>
+                                                        <span class="action-btn delete"><i class="mdi mdi-delete"></i></span>
+                                                        <span class="action-btn edit"><i class="mdi mdi-pencil"></i></span>
+                                                        <span class="action-btn save"><i class="mdi mdi-content-save"></i></span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="ref-sort">
+                                                    <span></span>
+                                                </div>
+                                                <div class="row ref-content">
+                                                    <div class="col-md-9 ref-description">
+                                                        <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</span>
+                                                        <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</textarea>
+                                                    </div>
+                                                    <div class="col-md-2 ref-name">
+                                                        <span>ANDROID</span>
+                                                        <textarea>ANDROID</textarea>
+                                                    </div>
+                                                    <div class="col-md-1 ref-actions">
+                                                        <span class="action-btn delete"><i class="mdi mdi-delete"></i></span>
+                                                        <span class="action-btn edit"><i class="mdi mdi-pencil"></i></span>
+                                                        <span class="action-btn save"><i class="mdi mdi-content-save"></i></span>
                                                     </div>
                                                 </div>
                                             </li>
                                             <li>
                                                 <div class="row add-new-ref">
                                                     <div class="col-md-11">
-                                                        <a>+ Adicionar Nova Referência</a>
+                                                        <a id="btn-add-new-ref">+ Adicionar Nova Referência</a>
                                                     </div>
                                                 </div>
                                             </li>
@@ -594,6 +628,23 @@
     <script src="assets/js/jquery.mjs.nestedSortable.js" type="text/javascript"></script>
     <script>
         $().ready(function() {
+            
+            var ns = $('.is-sortable').nestedSortable({
+                forcePlaceholderSize: true,
+                handle: 'div',
+                helper: 'clone',
+                items: 'li:not(.new-ref):not(.edit-ref)',
+                opacity: .6,
+                placeholder: 'placeholder',
+                revert: 250,
+                tabSize: 50,
+                tolerance: 'pointer',
+                toleranceElement: '> div',
+                maxLevels: 1,
+                isTree: true,
+                expandOnHover: 700,
+                startCollapsed: false
+            });
 
             $('.disclose').attr('title', 'Click to show/hide children');
 
@@ -611,6 +662,135 @@
                $('.list-criteria-container').removeClass('show-dialog');
                $('.panel-dialog-container').removeClass('show'); 
             });
+            
+            var DefineScalesPage;
+            DefineScalesPage = (function(){
+                function DefineScalesPage(){
+                    this.status = 'list';
+                    this._initEventHandlers();
+                };
+                
+                DefineScalesPage.prototype._initEventHandlers = function() {
+                    var self = this;
+                    
+                    // add new handler
+                    $('body').on('click', '#btn-add-new-ref', function(){
+                        self._addNewReference();
+                    });
+                    
+                    // edit handler
+                    $('body').on('click', '.references-table .action-btn.edit', function(){
+                        self._editReference($(this));
+                    });
+                    
+                    // delete handler
+                    $('body').on('click', '.references-table .action-btn.delete', function(){
+                        self._removeReference($(this));
+                    });
+                    
+                    // save handler
+                    $('body').on('click', '.references-table .action-btn.save', function(){
+                        self._saveReference($(this));
+                    });
+                    
+                    // reference click
+                    $('body').on('click', '.references-table ol li .row > div:not(.ref-actions)', function(){
+                        self._selectRow($(this));
+                    });
+                    
+                    // Define Neutral Button click
+                    $('body').on('click', 'button.define-neutral', function(){
+                        self._selectNeutralRow($(this));
+                    });
+                    
+                    // Define Good Button click
+                    $('body').on('click', 'button.define-good', function(){
+                        self._selectGoodRow($(this));
+                    });
+                };
+                
+                DefineScalesPage.prototype._addNewReference = function() {
+                    if (this.status !== 'list')
+                        return false;
+                    
+                    this.status = 'create';
+                    var template_row = $('.references-table .new-ref-template').clone();
+                    $(template_row).removeClass('new-ref-template').addClass('new-ref');
+                    $(template_row).insertBefore('.references-table ol li:last-child');
+                };
+                
+                DefineScalesPage.prototype._removeReference = function($button) {
+                    if (this.status !== 'list')
+                        return false;
+                        
+                    $button.closest('li').fadeOut(300, function() { $(this).remove(); });
+                };
+                
+                DefineScalesPage.prototype._editReference = function($button) {
+                    var self = this;
+                    
+                    if (this.status !== 'list')
+                        return false;
+                        
+                    this.status = 'edit';
+                    $button.closest('li').addClass('edit-ref');
+                };
+                
+                DefineScalesPage.prototype._saveReference = function($button) {
+                    var self = this;
+                    var $row = $button.closest('li');
+                    
+                    $.each($row.find(':input'), function(){
+                        var $parent = $(this).parent();
+                        if($parent.find('span').length == 0){
+                            $parent.append($('<span></span>'));
+                        }
+                        $parent.find('span').html($(this).val());
+                    });
+                    
+                    this.status = 'list';
+                    $row.removeClass('edit-ref').removeClass('new-ref');
+                };
+                
+                DefineScalesPage.prototype._selectRow = function($selected) {
+                    var self = this;
+                    var $selected_row = $($selected).parents('li');
+                    
+                    if($selected_row.hasClass('neutral') || $selected_row.hasClass('good'))
+                        return false;
+                    
+                    $selected_row.toggleClass('selected');
+                    $('.references-table ol li').not($selected_row).removeClass('selected');
+                    
+                    if($('.references-table ol li.selected').length > 0){
+                        if($('.references-table ol li.neutral').length == 0){
+                            $('button.define-neutral').removeClass('disabled');
+                        }
+                        if($('.references-table ol li.good').length == 0){
+                            $('button.define-good').removeClass('disabled');
+                        }
+                    } else {
+                        $('button.define-neutral').addClass('disabled');
+                        $('button.define-good').addClass('disabled');
+                    }
+                };
+                
+                DefineScalesPage.prototype._selectNeutralRow = function($button) {
+                    var $selected_row = $('.references-table ol li.selected');
+                    $selected_row.removeClass('selected').addClass('neutral');
+                    $button.addClass('disabled');
+                };
+                
+                DefineScalesPage.prototype._selectGoodRow = function($button) {
+                    var $selected_row = $('.references-table ol li.selected');
+                    $selected_row.removeClass('selected').addClass('good');
+                    $button.addClass('disabled');
+                };
+                
+                return DefineScalesPage;
+            })();
+            
+            var define_scales_pagehandler = new DefineScalesPage();
 
         });
     </script>
