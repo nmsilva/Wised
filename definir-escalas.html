@@ -37,11 +37,10 @@
     <!-- Css webexperts -->
     <link href='assets/css/style_general.css' rel='stylesheet'>
     <link href="assets/css/style_wisedon.css" rel="stylesheet">
-    <link href="assets/css/factores.css" rel="stylesheet">
-    <link href="assets/css/sortable.css" rel="stylesheet">
     <link href="assets/css/font-awesome.min.css" rel="stylesheet">
     <link href="assets/css/materialdesignicons.min.css" rel="stylesheet">
     <link href="assets/css/materialdesignicons.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
     
     <script src="global/vendor/modernizr/modernizr.js"></script>
     <script src="global/vendor/breakpoints/breakpoints.js"></script>
@@ -583,7 +582,29 @@
                                             </div>
                                             <div class="question-options">
                                                 
+                                                <!-- http://codepen.io/trevanhetzel/pen/rOVrGK 
+                                                     http://codepen.io/anon/pen/ygwVJj
+                                                -->
+                                                <div class="multisteprange">
+                                                    <ul class="range-labels">
+                                                      <li class="active selected">Indiferente</li>
+                                                      <li>Muito Fraco</li>
+                                                      <li>Fraco</li>
+                                                      <li>Moderado</li>
+                                                      <li>Forte</li>
+                                                      <li>Muito Forte</li>
+                                                      <li>Extremo</li>
+                                                      <!-- <li class="isolated">Não sei</li> -->
+                                                    </ul>
+                                                    
+                                                    <div class="range">
+                                                      <input type="range" min="1" max="7" steps="1" value="1">
+                                                    </div>
+                                                </div>
                                             </div>
+                                        </div>
+                                        <div class="question-controls">
+                                            
                                         </div>
                                     </div>
                                     
@@ -702,17 +723,58 @@
                 FactorDialogPage.prototype.startScoring = function($button) {
                     var self = this;
                     
-                    if ($button.hasClass('disabled'))
-                        return false;
+                    //if ($button.hasClass('disabled'))
+                    //    return false;
                     
                     self.current_page = 'compare-refs';
                     self.refreshPage();
+                    
+                    var sheet = document.createElement('style'),  
+                        $rangeInput = $('.range input'),
+                        prefs = ['webkit-slider-runnable-track', 'moz-range-track', 'ms-track'];
+                    
+                    document.body.appendChild(sheet);
+                    
+                    var getTrackStyle = function (el) {  
+                      var curVal = el.value,
+                          val = (curVal - 1) * 16.666666667,
+                          style = '';
+                      
+                      // Set active label
+                      $('.range-labels li').removeClass('active selected');
+                      
+                      var curLabel = $('.range-labels').find('li:nth-child(' + curVal + ')');
+                      
+                      curLabel.addClass('active selected');
+                      //curLabel.prevAll().addClass('selected');
+                      
+                      /*
+                      // Change background gradient
+                      for (var i = 0; i < prefs.length; i++) {
+                        style += '.range {background: linear-gradient(to right, #37adbf 0%, #37adbf ' + val + '%, #fff ' + val + '%, #fff 100%)}';
+                        //style += '.range input::-' + prefs[i] + '{background: linear-gradient(to right, #37adbf 0%, #37adbf ' + val + '%, #b2b2b2 ' + val + '%, #b2b2b2 100%)}';
+                      }*/
+                    
+                      return style;
+                    }
+                    
+                    $rangeInput.on('input', function () {
+                      sheet.textContent = getTrackStyle(this);
+                    });
+                    
+                    // Change input value on label click
+                    $('.range-labels li').on('click', function () {
+                      var index = $(this).index();
+                      
+                      $rangeInput.val(index + 1).trigger('input');
+                      
+                    });
                 };
                 
                 return FactorDialogPage;
             })();
-            
             var factor_dialog_page = new FactorDialogPage();
+            
             
             
             
@@ -734,7 +796,7 @@
                         opacity: .6,
                         placeholder: 'placeholder',
                         revert: 250,
-                        tabSize: 50,
+                        tabSize: 300,
                         tolerance: 'pointer',
                         toleranceElement: '> div',
                         maxLevels: 1,
@@ -833,6 +895,8 @@
                     
                     if($selected_row.hasClass('neutral') || $selected_row.hasClass('good')){
                         $selected_row.removeClass('neutral').removeClass('good');
+                        
+                        this._updateStartScoringButton();
                         return false;
                     }
                     
@@ -855,6 +919,8 @@
                             $('button.define-neutral').removeClass('disabled');
                         }
                     }
+                    
+                    this._updateStartScoringButton();
                 };
                 
                 DefineScalesPage.prototype._getCurrentRefGoodIndex = function() {
@@ -879,6 +945,8 @@
                     $selected_row.removeClass('selected').addClass('neutral');
                     $button.addClass('disabled');
                     $('button.define-good').addClass('disabled');
+                    
+                    this._updateStartScoringButton();
                 };
                 
                 DefineScalesPage.prototype._selectGoodRow = function($button) {
@@ -889,6 +957,8 @@
                     $selected_row.removeClass('selected').addClass('good');
                     $button.addClass('disabled');
                     $('button.define-neutral').addClass('disabled');
+                    
+                    this._updateStartScoringButton();
                 };
                 
                 DefineScalesPage.prototype._isAllowedToSort = function(placeholder, placeholderParent, currentItem) {
@@ -935,9 +1005,20 @@
                     return true;
                 };
                 
+                DefineScalesPage.prototype._updateStartScoringButton = function() {
+                    var has_good_ref = $('.references-table ol li.good').length > 0;
+                    var has_neutral_ref = $('.references-table ol li.neutral').length > 0;
+                    
+                    if(has_good_ref === true && has_neutral_ref === true){
+                        $('.start-scoring button').removeClass('disabled');
+                    } else {
+                        $('.start-scoring button').addClass('disabled');
+                    }
+                    
+                };
+                
                 return DefineScalesPage;
             })();
-            
             var define_scales_pagehandler = new DefineScalesPage();
 
         });

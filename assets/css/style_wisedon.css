@@ -506,3 +506,14 @@ a.linkwhite.already {
     background: #757171;
     color: #fff;
 }
+
+
+#compare-refs .question-controls{
+    width: calc(100% + 2px);
+    display: block;
+    height: 60px;
+    background: #393939;
+    position: absolute;
+    bottom: -1px;
+    left: -1px;
+}

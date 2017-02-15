@@ -16,15 +16,15 @@ module.exports = function(grunt) {
       js: {
         files: [
           'Gruntfile.js',
-          'js/vendor/**/*.js',
-          'js/app/**/*.js'
+          'assets/js/vendor/**/*.js',
+          'assets/js/app/**/*.js'
         ],
         tasks: [ 'uglify' ]
       },
       css: {
         files: [
-          'css/sass/**/*.scss',
-          'css/sass/*.scss'
+          'assets/sass/**/*.scss',
+          'assets/sass/*.scss'
         ],
         tasks: [ 'sass', 'concat', 'cssmin' ]
       }
@@ -34,9 +34,9 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'js/scripts.min.js': [
-            'js/vendor/**/*.js',
-            'js/app/*.js'
+          'assets/js/scripts.min.js': [
+            'assets/js/vendor/**/*.js',
+            'assets/js/app/*.js'
           ],
         }
       }
@@ -45,7 +45,7 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         files: {
-          'css/style.css' : 'css/sass/style.scss'
+          'assets/css/style.css' : 'assets/sass/style.scss'
         }
       }
     },
@@ -53,11 +53,11 @@ module.exports = function(grunt) {
     concat: {
       dist: {
         files: {
-          'css/style.css': [ 
-				'css/_styles.css', // theme header
-				'css/vendor/**/*.css', // js libs
-				'css/style.css' // base
-			]
+          'assets/css/style.css': [ 
+    				'assets/css/_styles.css', // theme header
+    				'assets/css/vendor/**/*.css', // js libs
+    				'assets/css/style.css' // base
+    			]
         }
       }
     },
@@ -65,7 +65,7 @@ module.exports = function(grunt) {
     cssmin: {
       dist: {
         files: {
-          'style.css': [ 'css/style.css' ]
+          'assets/css/style.css': [ '/assets/css/style.min.css' ]
         }
       }
     },
@@ -78,7 +78,7 @@ module.exports = function(grunt) {
         files: [
           {
             src: 'style.css',
-            dest: 'css/style.min-rtl.css'
+            dest: 'assets/css/style.min-rtl.css'
           }
         ]
       }
