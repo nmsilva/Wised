@@ -21268,6 +21268,9 @@ td.headsub.first {
 .references-table ol li.edit-ref span {
   display: none; }
 
+.references-table ol li.placeholder {
+  height: 65px !important; }
+
 .ref-definition-buttons {
   margin-top: 25px;
   padding-right: 10px; }

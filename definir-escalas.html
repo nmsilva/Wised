@@ -821,19 +821,12 @@
                     var self = this;
                     this._sortable = $('.references-table > ol').nestedSortable({
                         forcePlaceholderSize: true,
-                        handle: 'div',
-                        helper: 'clone',
                         items: 'li:not(.new-ref):not(.edit-ref):not(:last-child)',
                         opacity: .6,
                         placeholder: 'placeholder',
-                        revert: 250,
-                        tabSize: 300,
-                        tolerance: 'pointer',
-                        toleranceElement: '> div',
                         maxLevels: 1,
-                        isTree: true,
+                        isTree: false,
                         expandOnHover: 700,
-                        startCollapsed: false,
                         isAllowed: self._isAllowedToSort
                     });
                 };
@@ -923,23 +916,25 @@
                 DefineScalesPage.prototype._selectRow = function($selected) {
                     var self = this;
                     var $selected_row = $($selected).parents('li');
+                    var good_ref_index = this._getCurrentRefGoodIndex();
+                    var neutral_ref_index = this._getCurrentRefNeutralIndex();
                     
                     if($selected_row.hasClass('neutral') || $selected_row.hasClass('good')){
-                        $selected_row.removeClass('neutral').removeClass('good');
-                        
-                        this._updateStartScoringButton();
                         return false;
                     }
                     
                     $selected_row.toggleClass('selected');
                     $('.references-table ol li').not($selected_row).removeClass('selected');
                     
-                    $('button.define-neutral').addClass('disabled');
-                    $('button.define-good').addClass('disabled');
+                    if ($('.references-table ol li.neutral').length === 0){
+                        $('button.define-neutral').addClass('disabled');
+                    }
+                    
+                    if ($('.references-table ol li.good').length === 0){
+                        $('button.define-good').addClass('disabled');
+                    }
                     
                     if($('.references-table ol li.selected').length > 0){
-                        var good_ref_index = this._getCurrentRefGoodIndex();
-                        var neutral_ref_index = this._getCurrentRefNeutralIndex();
                         var has_good_ref = $('.references-table ol li.good').length > 0;
                         var has_neutral_ref = $('.references-table ol li.neutral').length > 0;
                         
@@ -973,9 +968,19 @@
                         return false;
                         
                     var $selected_row = $('.references-table ol li.selected');
-                    $selected_row.removeClass('selected').addClass('neutral');
-                    $button.addClass('disabled');
-                    $('button.define-good').addClass('disabled');
+                    var $neutral_ref_row = $('.references-table ol li.neutral');
+                    if($neutral_ref_row.length === 0){
+                        $selected_row.removeClass('selected').addClass('neutral');
+                        $button.html('Remover Neutro');
+                    } else {
+                        $neutral_ref_row.removeClass('neutral');
+                        $button.html('Definir Neutro');
+                        $button.addClass('disabled');
+                    }
+                    
+                    if ($('.references-table ol li.good').length === 0){
+                        $('button.define-good').addClass('disabled');
+                    }
                     
                     this._updateStartScoringButton();
                 };
@@ -985,9 +990,19 @@
                         return false;
                         
                     var $selected_row = $('.references-table ol li.selected');
-                    $selected_row.removeClass('selected').addClass('good');
-                    $button.addClass('disabled');
-                    $('button.define-neutral').addClass('disabled');
+                    var $good_ref_row = $('.references-table ol li.good');
+                    if($good_ref_row.length === 0){
+                        $selected_row.removeClass('selected').addClass('good');
+                        $button.html('Remover Bom');
+                    } else {
+                        $good_ref_row.removeClass('good');
+                        $button.html('Definir Bom');
+                        $button.addClass('disabled');
+                    }
+                    
+                    if ($('.references-table ol li.neutral').length === 0){
+                        $('button.define-neutral').addClass('disabled');
+                    }
                     
                     this._updateStartScoringButton();
                 };
