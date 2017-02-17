@@ -555,6 +555,46 @@
                                                     </div>
                                                 </li>
                                                 <li>
+                                                    <div class="ref-sort">
+                                                        <span></span>
+                                                    </div>
+                                                    <div class="row ref-content">
+                                                        <div class="col-md-9 ref-description">
+                                                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</span>
+                                                            <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</textarea>
+                                                        </div>
+                                                        <div class="col-md-2 ref-name">
+                                                            <span>ANDROID</span>
+                                                            <textarea>ANDROID</textarea>
+                                                        </div>
+                                                        <div class="col-md-1 ref-actions">
+                                                            <span class="action-btn delete"><i class="mdi mdi-delete"></i></span>
+                                                            <span class="action-btn edit"><i class="mdi mdi-pencil"></i></span>
+                                                            <span class="action-btn save"><i class="mdi mdi-content-save"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="ref-sort">
+                                                        <span></span>
+                                                    </div>
+                                                    <div class="row ref-content">
+                                                        <div class="col-md-9 ref-description">
+                                                            <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</span>
+                                                            <textarea>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</textarea>
+                                                        </div>
+                                                        <div class="col-md-2 ref-name">
+                                                            <span>ANDROID</span>
+                                                            <textarea>ANDROID</textarea>
+                                                        </div>
+                                                        <div class="col-md-1 ref-actions">
+                                                            <span class="action-btn delete"><i class="mdi mdi-delete"></i></span>
+                                                            <span class="action-btn edit"><i class="mdi mdi-pencil"></i></span>
+                                                            <span class="action-btn save"><i class="mdi mdi-content-save"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
                                                     <div class="row add-new-ref">
                                                         <div class="col-md-11">
                                                             <a id="btn-add-new-ref">+ Adicionar Nova Referência</a>
@@ -740,7 +780,7 @@
                     $('.dialog-breadcrumbs ul li').removeClass('active');
                     $('.dialog-breadcrumbs ul li[page=' + self.current_page + ']').addClass('active');
                     
-                    $('.panel-dialog-container .dialog-page').fadeOut(300, function() {
+                    $('.panel-dialog-container .dialog-page:not(#' + self.current_page + ')').fadeOut(300, function() {
                         $('.dialog-page#' + self.current_page).fadeIn();
                     });
                 };
@@ -751,13 +791,19 @@
                     //if ($button.hasClass('disabled'))
                     //    return false;
                     
-                    $(".references-table li:last-child").hide();
-                    $(".references-table li:not(.good):not(.neutral):not(.new-ref-template):not(:last-child)").fadeTo( "slow" , 0.5, function() {
-                        setTimeout(function() {
-                            self.current_page = 'compare-refs';
-                            self.refreshPage();
-                        }, 2000);    
-                    });
+                    $('#define-scales').addClass('start-scoring');
+                    setTimeout(function() {
+                        $(".references-table li:visible:not(:first):not(:last)").fadeTo( "slow" , 0.4, function() {
+                            $(".references-table li:visible:not(:first):not(:last)").fadeOut(500, function(){
+                                $(".references-table li:visible:first").css('margin-bottom', '80px');
+                                
+                                setTimeout(function() {
+                                    self.current_page = 'compare-refs';
+                                    self.refreshPage();
+                                }, 1000);
+                            });
+                        });
+                    }, 1000);   
                     
                     
                     var sheet = document.createElement('style'),  

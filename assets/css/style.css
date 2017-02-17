@@ -21196,12 +21196,14 @@ td.headsub.first {
   padding: 10px;
   border-top: 1px solid #ccc;
   border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc; }
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc; }
 
 .references-table .ref-name {
   text-align: center;
   border-top: 1px solid #ccc;
   border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
   font-weight: bold;
   padding: 25px 0; }
 
@@ -21273,7 +21275,8 @@ td.headsub.first {
 
 .ref-definition-buttons {
   margin-top: 25px;
-  padding-right: 10px; }
+  padding-right: 10px;
+  height: 35px; }
 
 .ref-definition-buttons button {
   float: right;
@@ -21293,6 +21296,13 @@ td.headsub.first {
 #define-scales .start-scoring button {
   margin: 0 auto;
   display: block; }
+
+#define-scales.start-scoring .ref-definition-buttons button,
+#define-scales.start-scoring .references-table li:last-child,
+#define-scales.start-scoring .references-table .ref-actions,
+#define-scales.start-scoring .references-table .ref-sort,
+#define-scales.start-scoring .start-scoring button {
+  display: none; }
 
 #compare-refs {
   padding-bottom: 60px; }
