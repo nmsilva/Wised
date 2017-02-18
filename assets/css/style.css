@@ -21371,13 +21371,13 @@ td.headsub.first {
 
 .multisteprange {
   display: block;
-  width: 700px;
+  width: 850px;
   padding-left: 20px;
   margin: 0 auto;
   min-height: 90px; }
   .multisteprange .range {
     position: relative;
-    width: 550px;
+    width: 620px;
     height: 5px;
     float: left; }
   .multisteprange .range input {
@@ -21450,7 +21450,7 @@ td.headsub.first {
     .multisteprange .range-labels li {
       position: relative;
       float: left;
-      width: 90.25px;
+      width: 100px;
       text-align: center;
       color: #393939;
       font-size: 14px;
@@ -21479,14 +21479,35 @@ td.headsub.first {
         height: 8px;
         background: #fff;
         z-index: 1001; }
-      .multisteprange .range-labels li:last-child::after {
+      .multisteprange .range-labels li.last:before {
+        left: 3px; }
+      .multisteprange .range-labels li.last:after {
         width: 10px;
         left: -5px; }
+      .multisteprange .range-labels li.isolated:after {
+        width: 0;
+        left: 0; }
       .multisteprange .range-labels li:first-child::after {
         width: 10px;
         left: 5px; }
+      .multisteprange .range-labels li.isolated span {
+        position: absolute;
+        top: 40px;
+        left: 55px;
+        width: 63px; }
+      .multisteprange .range-labels li .interval {
+        position: absolute;
+        background: #ffffff;
+        width: 84px;
+        height: 10px;
+        top: 45px;
+        left: -37px;
+        z-index: 999; }
     .multisteprange .range-labels .active {
       color: #37adbf; }
+      .multisteprange .range-labels .active .interval {
+        left: -42px;
+        width: 68px; }
     .multisteprange .range-labels .selected::before {
       background: #37adbf; }
     .multisteprange .range-labels .selected::after {

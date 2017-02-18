@@ -407,11 +407,14 @@
 
 .multisteprange{
   display: block;
-  width: 700px;
+  width: 850px;
   padding-left: 20px;
   margin: 0 auto;
   min-height: 90px;
-
+  
+  $num_options: 7;
+  $range_width: 620px;
+  $range_paddings: 80px;
 
   @mixin rangeThumb {
     width: 22px;
@@ -434,7 +437,7 @@
   
   .range {
     position: relative;
-    width: 550px;
+    width: $range_width;
     height: 5px;
     float: left;
   }
@@ -498,7 +501,7 @@
     li {
       position: relative;
       float: left;
-      width: 90.25px;
+      width: ($range_width + $range_paddings) / $num_options;
       text-align: center;
       color: #393939;
       font-size: 14px;
@@ -530,18 +533,48 @@
         background: #fff;
         z-index: 1001;
       }
-      &:last-child::after{
+      &.last:before{
+        left: 3px;
+      }
+      &.last:after{
         width: 10px;
-        left:-5px;
+        left: -5px;
+      }
+      &.isolated:after{
+        width: 0;
+        left: 0;
       }
       &:first-child::after{
         width: 10px;
         left: 5px;
       }
+      &.isolated{
+        span{
+          position: absolute;
+          top: 40px;
+          left: 55px;
+          width: 63px;
+        }
+      }
+      
+      .interval{
+        position: absolute;
+        background: #ffffff;
+        width: 84px;
+        height: 10px;
+        top: 45px;
+        left: -37px;
+        z-index: 999;
+      }
     }
     
     .active {
       color: #37adbf;
+      
+      .interval{
+        left: -42px;
+        width: 68px;
+      }
     }
     
     .selected::before {

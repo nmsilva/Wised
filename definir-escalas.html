@@ -644,8 +644,12 @@
                                                       <li>Moderado</li>
                                                       <li>Forte</li>
                                                       <li>Muito Forte</li>
-                                                      <li>Extremo</li>
-                                                      <!-- <li class="isolated">Não sei</li> -->
+                                                      <li class="last">Extremo</li>
+                                                      <!--
+                                                      <li class="isolated">
+                                                          <div class="interval"></div>
+                                                          <span>Não sei</span>
+                                                      </li>-->
                                                     </ul>
                                                     
                                                     <div class="range">
@@ -741,8 +745,10 @@
             var FactorDialogPage;
             FactorDialogPage = (function(){
                 function FactorDialogPage(){
-                    this.current_page = 'define-scales';
+                    //this.current_page = 'define-scales';
+                    this.current_page = 'compare-refs';
                     this._initEventHandlers();
+                    this._initRangeInput();
                 };
                 
                 FactorDialogPage.prototype._initEventHandlers = function() {
@@ -757,6 +763,51 @@
                     
                     $('.start-scoring button').on('click', function() {
                        self.startScoring($(this)); 
+                    });
+                };
+                
+                FactorDialogPage.prototype._initRangeInput = function() {
+                    var self = this;
+                    
+                    var sheet = document.createElement('style'),  
+                        $rangeInput = $('.range input'),
+                        prefs = ['webkit-slider-runnable-track', 'moz-range-track', 'ms-track'];
+                    
+                    document.body.appendChild(sheet);
+                    
+                    var getTrackStyle = function (el) {  
+                      var curVal = el.value,
+                          val = (curVal - 1) * 16.666666667,
+                          style = '';
+                      
+                      // Set active label
+                      $('.range-labels li').removeClass('active selected');
+                      
+                      var curLabel = $('.range-labels').find('li:nth-child(' + curVal + ')');
+                      
+                      curLabel.addClass('active selected');
+                      //curLabel.prevAll().addClass('selected');
+                      
+                      /*
+                      // Change background gradient
+                      for (var i = 0; i < prefs.length; i++) {
+                        style += '.range {background: linear-gradient(to right, #37adbf 0%, #37adbf ' + val + '%, #fff ' + val + '%, #fff 100%)}';
+                        //style += '.range input::-' + prefs[i] + '{background: linear-gradient(to right, #37adbf 0%, #37adbf ' + val + '%, #b2b2b2 ' + val + '%, #b2b2b2 100%)}';
+                      }*/
+                    
+                      return style;
+                    }
+                    
+                    $rangeInput.on('input', function () {
+                      sheet.textContent = getTrackStyle(this);
+                    });
+                    
+                    // Change input value on label click
+                    $('.range-labels li').on('click', function () {
+                      var index = $(this).index();
+                      
+                      $rangeInput.val(index + 1).trigger('input');
+                      
                     });
                 };
                 
@@ -805,47 +856,6 @@
                         });
                     }, 1000);   
                     
-                    
-                    var sheet = document.createElement('style'),  
-                        $rangeInput = $('.range input'),
-                        prefs = ['webkit-slider-runnable-track', 'moz-range-track', 'ms-track'];
-                    
-                    document.body.appendChild(sheet);
-                    
-                    var getTrackStyle = function (el) {  
-                      var curVal = el.value,
-                          val = (curVal - 1) * 16.666666667,
-                          style = '';
-                      
-                      // Set active label
-                      $('.range-labels li').removeClass('active selected');
-                      
-                      var curLabel = $('.range-labels').find('li:nth-child(' + curVal + ')');
-                      
-                      curLabel.addClass('active selected');
-                      //curLabel.prevAll().addClass('selected');
-                      
-                      /*
-                      // Change background gradient
-                      for (var i = 0; i < prefs.length; i++) {
-                        style += '.range {background: linear-gradient(to right, #37adbf 0%, #37adbf ' + val + '%, #fff ' + val + '%, #fff 100%)}';
-                        //style += '.range input::-' + prefs[i] + '{background: linear-gradient(to right, #37adbf 0%, #37adbf ' + val + '%, #b2b2b2 ' + val + '%, #b2b2b2 100%)}';
-                      }*/
-                    
-                      return style;
-                    }
-                    
-                    $rangeInput.on('input', function () {
-                      sheet.textContent = getTrackStyle(this);
-                    });
-                    
-                    // Change input value on label click
-                    $('.range-labels li').on('click', function () {
-                      var index = $(this).index();
-                      
-                      $rangeInput.val(index + 1).trigger('input');
-                      
-                    });
                 };
                 
                 return FactorDialogPage;
