@@ -652,13 +652,12 @@
                                                     </ul>
                                                     <div class="range-line"></div>
                                                     <div class="range">
-                                                      <input type="range" min="1" max="8" steps="1" value="1">
+                                                      <input type="text" name="range-input" value="1">
                                                     </div>
                                                 </div>
                                                 <div class="options">
                                                     <input type="checkbox" name="add-variant"/>
                                                     <label>Adicionar variante</label>
-                                                    <a href="">Limpar valores</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -783,8 +782,8 @@
                         var style = '';
             
                         var cur_label = $('.range-labels').find('li:nth-child(' + index + ')');
-                      
-                        if (self._multiple_steps === true){
+                        
+                        if (self._multiple_steps === true && index > 1 && index < 8){
                             var old_first_index = $('.range-labels li.active').first().index() + 1;
                             var old_last_index = $('.range-labels li.active').last().index() + 1;
                             var new_first_index = 1;
@@ -828,24 +827,26 @@
                           
                             style += '.range-line:after {width: '+ last_index_width +'px;}';
                             style += '.range-line:before {width: '+ first_index_width +'px;}';
+                            
+                            $rangeInput.val(new_first_index + ',' + new_last_index);
                         } else {
                             $('.range-labels li').removeClass('active selected');
                             cur_label.addClass('active selected');
+                            
+                            if(index === 1 || index === 8){
+                                $('input[name=add-variant]').prop('checked', false);
+                                self._multiple_steps = false;
+                            }
+                            $rangeInput.val(index);
                         }
                     
                         return style;
                     }
                     
-                    $rangeInput.on('input', function () {
-                      sheet.textContent = getTrackStyle(this);
-                    });
-                    
                     // Change input value on label click
                     $('.range-labels li').on('click', function () {
                       var index = $(this).index();
-                    
                       sheet.textContent = getTrackStyle(index + 1);
-                      //$rangeInput.val(index + 1).trigger('input');
                       
                     });
                 };
@@ -894,6 +895,14 @@
                             });
                         });
                     }, 1000);   
+                    
+                };
+                
+                FactorDialogPage.prototype.changeQuestion = function($button) {
+                    var self = this;
+                    
+                    //if ($button.hasClass('disabled'))
+                    //    return false;
                     
                 };
                 
