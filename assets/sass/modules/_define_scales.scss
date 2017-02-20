@@ -406,13 +406,14 @@
 }
 
 .multisteprange{
+  position: relative;
   display: block;
   width: 850px;
   padding-left: 20px;
   margin: 0 auto;
   min-height: 90px;
   
-  $num_options: 7;
+  $num_options: 8;
   $range_width: 620px;
   $range_paddings: 80px;
 
@@ -440,6 +441,30 @@
     width: $range_width;
     height: 5px;
     float: left;
+    display: none;
+  }
+  .range-line{
+    position: absolute;
+    width: $range_width;
+    height: 10px;
+    float: left;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    top: 63px;
+    
+    &:before{
+      position: absolute;
+      content: '';
+      height: 8px;
+      background: #fff;
+      z-index: 999;
+    }
+    &:after{
+      position: absolute;
+      content: '';
+      height: 8px;
+      background: #37adbf;
+    }
   }
   
   .range input {
@@ -570,22 +595,24 @@
     
     .active {
       color: #37adbf;
-      
-      .interval{
-        left: -42px;
-        width: 68px;
-      }
     }
     
     .selected::before {
       background: #37adbf;
+      border-color: transparent;
     }
     .selected::after {
       display: none;
     }
     
     .active.selected::before {
-      display: none;
+      width: 22px;
+      height: 22px;
+      margin-top: -3px;
+      border-radius: 50%;
+      background: #fff;
+      cursor: pointer;
+      border: 5px solid #37adbf;
     }
   }
 }
