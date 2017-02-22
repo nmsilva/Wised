@@ -21271,7 +21271,8 @@ td.headsub.first {
   display: none; }
 
 .references-table ol li.placeholder {
-  height: 65px !important; }
+  height: 65px !important;
+  background: #eee; }
 
 .ref-definition-buttons {
   margin-top: 25px;
@@ -21302,7 +21303,7 @@ td.headsub.first {
 #define-scales.start-scoring .references-table .ref-actions,
 #define-scales.start-scoring .references-table .ref-sort,
 #define-scales.start-scoring .start-scoring button {
-  display: none; }
+  display: none !important; }
 
 #compare-refs {
   padding-bottom: 60px; }

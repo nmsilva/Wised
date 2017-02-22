@@ -270,6 +270,7 @@
 }
 .references-table ol li.placeholder{
   height: 65px !important;
+  background: #eee;
 }
 
 .ref-definition-buttons{
@@ -304,7 +305,7 @@
   .references-table .ref-actions,
   .references-table .ref-sort,
   .start-scoring button{
-    display: none;
+    display: none !important;
   }
 }
 

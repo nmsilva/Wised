@@ -604,7 +604,12 @@
                                             </ol>
                                         </div>
                                         <div class="start-scoring">
-                                            <button class="btn-action disabled">Start Scoring</button>
+                                            <a class"left">Show Matrix Table</a>
+                                            <button class="btn-action disabled right">Start Scoring</button>
+                                        </div>
+                                        
+                                        <div class"matrix-table">
+                                            
                                         </div>
                                     </div>
                                     <div id="compare-refs" class="dialog-page">
@@ -666,7 +671,7 @@
                                             <button class="next-question btn-action">Pergunta seguinte</button>
                                         </div>
                                         <div class="questions-controls">
-                                            <buton class="border-button white left">View table mode</buton>
+                                            <buton class="border-button white left" id="view-table-mode">View table mode</buton>
                                             <div class="use-by-default">
                                                 <input type="checkbox"/>
                                                 <label>Use by default</label>
@@ -766,6 +771,10 @@
                     
                     $('input[name=add-variant]').on('change', function() {
                         self._multiple_steps = $(this).is(':checked');
+                    });
+                    
+                    $('#view-table-mode').on('click', function() {
+                       self.showTableMode($(this)); 
                     });
                 };
                 
@@ -889,6 +898,7 @@
                                 $(".references-table li:visible:first").css('margin-bottom', '80px');
                                 
                                 setTimeout(function() {
+                                    
                                     self.current_page = 'compare-refs';
                                     self.refreshPage();
                                 }, 1000);
@@ -903,6 +913,22 @@
                     
                     //if ($button.hasClass('disabled'))
                     //    return false;
+                    
+                };
+                
+                FactorDialogPage.prototype.showTableMode = function($button) {
+                    var self = this;
+                    
+                    self.current_page = 'define-scales';
+                    self.refreshPage();
+                    
+                    setTimeout(function() {   
+                        $(".references-table li:visible").css('margin-bottom', '0');
+                        $(".references-table li:not(.placeholder):not(.new-ref-template)").fadeTo('slow', 1, function(){
+                            $('#define-scales').removeClass('start-scoring');
+                        });
+                    }, 1000);
+                    
                     
                 };
                 
