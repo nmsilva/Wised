@@ -21405,6 +21405,11 @@ td.headsub.first {
     .matrix-table table thead th {
       border: none;
       font-weight: bold; }
+    .matrix-table table tbody td:hover {
+      cursor: pointer;
+      font-weight: bold; }
+    .matrix-table table tbody td.active {
+      color: #3CA735; }
     .matrix-table table th, .matrix-table table td {
       padding: 5px;
       text-align: center;
@@ -21413,8 +21418,12 @@ td.headsub.first {
       .matrix-table table th.featured, .matrix-table table td.featured {
         font-weight: bold;
         background: #eee; }
+        .matrix-table table th.featured:hover, .matrix-table table td.featured:hover {
+          cursor: initial; }
       .matrix-table table th.transparent, .matrix-table table td.transparent {
         border: none; }
+        .matrix-table table th.transparent:hover, .matrix-table table td.transparent:hover {
+          cursor: initial; }
 
 .multisteprange {
   position: relative;

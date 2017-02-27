@@ -471,7 +471,13 @@
       }
     }
     tbody{
-      
+      td:hover{
+        cursor: pointer;
+        font-weight: bold;
+      }
+      td.active{
+        color: #3CA735;
+      }
     }
     th, td{
       padding: 5px;
@@ -482,9 +488,17 @@
       &.featured{
         font-weight: bold;
         background: #eee;
+        
+        &:hover{
+          cursor: initial;
+        }
       }
       &.transparent{
         border: none;
+        
+        &:hover{
+          cursor: initial;
+        }
       }
     }
     tr{
