@@ -710,10 +710,10 @@
                                             </div>
                                         </div>
                                         <div class="row charts">
-                                            <div class="col-md-5">
-                                                <canvas id="bubbleChart" width="250" height="250"></canvas>
+                                            <div class="col-md-6">
+                                                <canvas id="bubbleChart" width="400" height="300"></canvas>
                                             </div>
-                                            <div class="col-md-7">
+                                            <div class="col-md-6">
                                                 <canvas id="lineChart" width="400" height="300"></canvas>
                                             </div>
                                         </div>
@@ -794,13 +794,71 @@
             });
             
             
+            /* =============================== */
+            /* INITIALIZATION OF CHARTS  */
+            
+            lineChartConfig.data.datasets[0].data = [80, 75, 65, 59, 56, 55, 40];
+            lineChartConfig.data.labels = ["Windows", "Android", "IOS", "Windows 8", "Windows 10", "Windows 7", "Linux"];
+            var myLineChart = new Chart($("#lineChart"), lineChartConfig);
+    
+    
+            bubbleChartConfig.data.datasets[0].data = [
+                {
+                    x: 0,
+                    r: 5,
+                    y: 89,
+                    label: 'Apple'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: 72,
+                    label: 'Samsung'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: 45,
+                    label: 'Windows'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: 45,
+                    label: 'Windows 2'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: 0,
+                    label: 'Neutral'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: 100,
+                    label: 'Bom'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: -12,
+                    label: 'Opção 4'
+                }];
+            var myBublleChart = new Chart($("#bubbleChart"), bubbleChartConfig);
+            
+            
+            
+            /* =============================== */
+            /* CONTROLLER - FACTOR DIALOG PAGE  */
+            
             var FactorDialogPage;
             FactorDialogPage = (function(){
                 function FactorDialogPage(config){
                     this._define_scales_handler = config.define_scales;
-                    //this.current_page = 'define-scales';
+                    this.current_page = 'define-scales';
                     //this.current_page = 'compare-refs';
-                    this.current_page = 'obtain-scale';
+                    //this.current_page = 'obtain-scale';
                     this._initEventHandlers();
                     this._initRangeInput();
                     this._multiple_steps = false;
@@ -1069,6 +1127,8 @@
             })();
             
             
+            /* =============================== */
+            /* MODULE - DEFINE SCALES  */
             
             var DefineScalesPage;
             DefineScalesPage = (function(){
@@ -1340,6 +1400,8 @@
                 return DefineScalesPage;
             })();
             
+            
+            /* =============================== */
             /* INITIALIZATIONS OF PAGES */
             
             var define_scales_dialoghandler = new DefineScalesPage();
