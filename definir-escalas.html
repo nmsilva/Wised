@@ -709,7 +709,7 @@
                                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio. Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
                                             </div>
                                         </div>
-                                        <div class="row">
+                                        <div class="row charts">
                                             <div class="col-md-5">
                                                 <canvas id="bubbleChart" width="250" height="250"></canvas>
                                             </div>
@@ -798,9 +798,9 @@
             FactorDialogPage = (function(){
                 function FactorDialogPage(config){
                     this._define_scales_handler = config.define_scales;
-                    this.current_page = 'define-scales';
+                    //this.current_page = 'define-scales';
                     //this.current_page = 'compare-refs';
-                    //this.current_page = 'obtain-scale';
+                    this.current_page = 'obtain-scale';
                     this._initEventHandlers();
                     this._initRangeInput();
                     this._multiple_steps = false;

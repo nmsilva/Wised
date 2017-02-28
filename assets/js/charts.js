@@ -37,13 +37,39 @@ $().ready(function() {
     
           // turn on tooltips
           chart.options.tooltips.enabled = true;
+          var drawed_values = [];
+          $('.bubble-val').remove();
           Chart.helpers.each(chart.pluginTooltips, function(tooltip) {
+                                    
             tooltip.initialize();
             tooltip.update();
-            // we don't actually need this since we are not animating tooltips
-            tooltip._model.x = 60;
             tooltip.pivot();
-            tooltip.transition(easing).draw();
+            
+            var tooltip_value = tooltip._view.dataPoints[0].yLabel;
+            if($.inArray(tooltip_value, drawed_values) === -1){
+              drawed_values.push(tooltip_value);
+              tooltip._model.x = tooltip._model.x + 50;
+              
+              var chart_offset = $('#bubbleChart').offset();
+              
+              var elem = $("<div class='bubble-val'></div>").css({
+                "position": "absolute",
+                "font-size": "12px",
+                "color": "#666",
+                "left": (chart_offset.left - 10) + (tooltip._view.caretX + 25),
+                "top": (chart_offset.top - 10) + tooltip._view.caretY
+              });
+
+              elem.html(tooltip_value);
+              $("body").append(elem);
+            } else {
+              tooltip._model.x = tooltip._model.x - (tooltip._model.width + 50);
+              tooltip._model.xAlign = 'right';
+            }
+                       
+            // we don't actually need this since we are not animating tooltips
+            tooltip.transition(1).draw();
+            
           });
           chart.options.tooltips.enabled = false;
         }
@@ -58,7 +84,6 @@ $().ready(function() {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [
                 {
-                    label: "My First dataset",
                     fill: false,
                     lineTension: 0.1,
                     backgroundColor: "rgba(75,192,192,0.4)",
@@ -74,19 +99,38 @@ $().ready(function() {
                     pointHoverBackgroundColor: "rgba(75,192,192,1)",
                     pointHoverBorderColor: "rgba(220,220,220,1)",
                     pointHoverBorderWidth: 2,
-                    pointRadius: 1,
+                    pointRadius: 3,
                     pointHitRadius: 10,
-                    data: [65, 59, 80, 81, 56, 55, 40],
+                    data: [80, 75, 65, 59, 56, 55, 40],
                     spanGaps: false,
                 }
             ]
         },
         options: {
+            legend: {
+                display: false
+            },
+            layout: {
+                padding: 25  
+            },
             scales: {
                 xAxes: [{
                     gridLines: {
                         display:false
-                    }   
+                    },
+                    ticks: {
+                        display: false
+                    },
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Sistema Operativo'
+                    }
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Pontuação'
+                    }
                 }]
             }
         }
@@ -98,12 +142,6 @@ $().ready(function() {
             datasets: [
                 {
                     data: [
-                        {
-                            x: 0,
-                            y: 100,
-                            r: 5,
-                            label: 'Bom'
-                        },
                         {
                             x: 0,
                             y: 89,
@@ -136,6 +174,12 @@ $().ready(function() {
                         },
                         {
                             x: 0,
+                            y: 100,
+                            r: 5,
+                            label: 'Bom'
+                        },
+                        {
+                            x: 0,
                             y: -12,
                             r: 5,
                             label: 'Opção 4'
@@ -148,10 +192,16 @@ $().ready(function() {
         },
         options: {
             title:{
-                display:true,
-                text:'Chart.js Bubble Chart'
+                display: false
+            },
+            legend: {
+                display: false
+            },
+            layout: {
+              padding: 25  
             },
             tooltips: {
+                enabled: false,
                 mode: 'point',
                 backgroundColor: '#CCC',
                 displayColors: false,
@@ -164,7 +214,7 @@ $().ready(function() {
                         
                         return value.label;
                     },
-                },
+                }
             },
             showAllTooltips: true,
             scales: {
@@ -180,13 +230,11 @@ $().ready(function() {
                 }],
                 xAxes: [{
                     gridLines: {
-                        display:false,
                         lineWidth: 0,
                         color: "#fff"
                     },
                     ticks: {
-                        display: false,
-                        beginAtZero: true
+                        display: false
                     }
                 }]
             }
