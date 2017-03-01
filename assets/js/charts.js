@@ -151,7 +151,7 @@ var bubbleChartConfig = {
             }]
     },
     options: {
-        responsive: false,
+        responsive: $(window).width() > 1500,
         title:{
             display: false
         },
