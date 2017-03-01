@@ -21358,6 +21358,12 @@ td.headsub.first {
           background: #3CA735; }
         #compare-refs .question-container .question-options .questionoption.second {
           background: #00ACEE; }
+        #compare-refs .question-container .question-options .questionoption.no-bg {
+          background: #FFF !important;
+          color: #333;
+          border: 1px solid #ccc; }
+          #compare-refs .question-container .question-options .questionoption.no-bg .name {
+            border-left: 1px solid #ccc; }
         #compare-refs .question-container .question-options .questionoption .description {
           width: 75%;
           float: left; }

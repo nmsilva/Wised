@@ -42,25 +42,23 @@ Chart.pluginService.register({
         tooltip.initialize();
         tooltip.update();
         tooltip.pivot();
-
+        
         var tooltip_value = tooltip._view.dataPoints[0].yLabel;
         if($.inArray(tooltip_value, drawed_values) === -1){
           drawed_values.push(tooltip_value);
           tooltip._model.x = tooltip._model.x + 40;
           tooltip._model.xAlign = 'left';
           
-          var chart_offset = $('#bubbleChart').offset();
-          
           var elem = $("<div class='bubble-val'></div>").css({
             "position": "absolute",
             "font-size": "12px",
             "color": "#666",
-            "left": (chart_offset.left - 10) + (tooltip._view.caretX + 25),
-            "top": (chart_offset.top - 10) + tooltip._view.caretY
+            "left": tooltip._view.caretX + 25,
+            "top": tooltip._view.caretY - 10
           });
 
           elem.html(tooltip_value);
-          $("body").append(elem);
+          $(chart.chart.canvas).parent().append(elem);
         } else {
           tooltip._model.x = tooltip._model.x - (tooltip._model.width + 40);
           tooltip._model.xAlign = 'right';
@@ -75,6 +73,7 @@ Chart.pluginService.register({
   }
 });
 // Show tooltips always even the stats are zero
+
 
 var lineChartConfig = {
     type: 'line',

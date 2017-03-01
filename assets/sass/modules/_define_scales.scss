@@ -399,6 +399,15 @@
         &.second{
           background: #00ACEE;
         }
+        &.no-bg{
+          background: #FFF !important;
+          color: #333;
+          border: 1px solid #ccc;
+          
+          .name{
+            border-left: 1px solid #ccc;
+          }
+        }
         
         .description{
           width: 75%;
