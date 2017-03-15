@@ -1,0 +1,83 @@
+.options-evaluation{
+    table{
+        width: 100%;
+        font-size: 13px;
+        
+        thead{
+            tr:nth-child(1){
+                th:nth-child(2){
+                    background: #6E6E6E;
+                    color: #FFF;
+                    text-transform: uppercase;
+                }
+            }
+            tr:nth-child(2){
+                th:nth-child(1){
+                    background: #393939;  
+                    color: #FFF;
+                    text-transform: uppercase;
+                    text-align: left;
+                }
+                th{
+                    background: #F4F4F4;
+                    color: #393939;
+                }
+            }
+            th{
+                border-color: transparent;
+                
+                input[type=text]{
+                    border: 1px solid #f07d00;
+                    background: transparent;
+                }
+            }
+        }
+        tbody{
+            tr{
+                &:nth-child(even){
+                    background: #F4F4F4;
+                }
+                
+                &.collapsible{
+                    td{
+                        text-align: left;
+                        color: #FFF;
+                    }
+                }
+                &.level-1{
+                    background: #f07d00;
+                    td{
+                        padding-left: 25px;
+                        text-transform: uppercase;
+                    }
+                }
+                &.level-2{
+                    background: #008ec9;
+                    td{
+                        padding-left: 50px;
+                    }
+                }
+                &.option{
+                    input[type=text]{
+                        background: #FFF;
+                    }
+                }
+            }   
+        }
+        td, th{
+            border: 1px solid #ECECEC;
+            padding: 5px 10px;
+            text-align: center;
+            width: 15%;
+            
+            &:nth-child(1){
+                width: 25%;
+            }
+            
+            input[type=text]{
+                width: 100%;
+                padding: 3px;
+            }
+        }
+    }
+}

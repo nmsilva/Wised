@@ -21648,6 +21648,53 @@ a.show-matrix-table {
       cursor: pointer;
       border: 5px solid #37adbf; }
 
+.options-evaluation table {
+  width: 100%;
+  font-size: 13px; }
+  .options-evaluation table thead tr:nth-child(1) th:nth-child(2) {
+    background: #6E6E6E;
+    color: #FFF;
+    text-transform: uppercase; }
+  .options-evaluation table thead tr:nth-child(2) th:nth-child(1) {
+    background: #393939;
+    color: #FFF;
+    text-transform: uppercase;
+    text-align: left; }
+  .options-evaluation table thead tr:nth-child(2) th {
+    background: #F4F4F4;
+    color: #393939; }
+  .options-evaluation table thead th {
+    border-color: transparent; }
+    .options-evaluation table thead th input[type=text] {
+      border: 1px solid #f07d00;
+      background: transparent; }
+  .options-evaluation table tbody tr:nth-child(even) {
+    background: #F4F4F4; }
+  .options-evaluation table tbody tr.collapsible td {
+    text-align: left;
+    color: #FFF; }
+  .options-evaluation table tbody tr.level-1 {
+    background: #f07d00; }
+    .options-evaluation table tbody tr.level-1 td {
+      padding-left: 25px;
+      text-transform: uppercase; }
+  .options-evaluation table tbody tr.level-2 {
+    background: #008ec9; }
+    .options-evaluation table tbody tr.level-2 td {
+      padding-left: 50px; }
+  .options-evaluation table tbody tr.option input[type=text] {
+    background: #FFF; }
+  .options-evaluation table td, .options-evaluation table th {
+    border: 1px solid #ECECEC;
+    padding: 5px 10px;
+    text-align: center;
+    width: 15%; }
+    .options-evaluation table td:nth-child(1), .options-evaluation table th:nth-child(1) {
+      width: 25%; }
+    .options-evaluation table td input[type=text], .options-evaluation table th input[type=text] {
+      width: 100%;
+      padding: 3px; }
+
 a.iconestatic {
   color: #9e9e9e;
   text-decoration: none; }
