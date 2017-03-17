@@ -1,5 +1,18 @@
 .options-evaluation{
     table{
+        color: #393939;
+        
+        &.total-score{
+            margin: 20px 0;
+            
+            td:nth-child(1){
+                color: #f07d00;
+                text-transform: uppercase;
+                text-align: left;
+                padding-left: 15px;
+            }
+        }
+        
         width: 100%;
         font-size: 13px;
         
@@ -20,7 +33,6 @@
                 }
                 th{
                     background: #F4F4F4;
-                    color: #393939;
                 }
             }
             th{
@@ -61,6 +73,10 @@
                     input[type=text]{
                         background: #FFF;
                     }
+                }
+                td{
+                    text-align: left;
+                    padding-left: 75px;
                 }
             }   
         }

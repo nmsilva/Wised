@@ -1,0 +1,34 @@
+.results-panel{
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    
+    &.fixed{
+        
+    }
+    &.collapssible{
+        .content{
+            display: none;
+        }
+    }
+    
+    &.open{
+         .title{
+             color: #f07d00;
+         }
+    }
+    .title{
+        
+        span{
+            color: #f07d00;
+            float: right;
+            font-size: 20px;
+        }
+    }
+    .content{
+        h3{
+            text-align: center;
+            font-size: 26px;
+        }
+    }
+}
