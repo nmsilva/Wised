@@ -1,4 +1,6 @@
 .options-evaluation{
+    margin-top: 20px;
+    
     table{
         color: #393939;
         
@@ -54,6 +56,9 @@
                     td{
                         text-align: left;
                         color: #FFF;
+                    }
+                    span{
+                        font-size: 20px;
                     }
                 }
                 &.level-1{

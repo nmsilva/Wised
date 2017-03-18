@@ -484,7 +484,22 @@
                 $(this).closest('li').toggleClass('mjs-nestedSortable-collapsed').toggleClass('mjs-nestedSortable-expanded');
                 $(this).parent().find('.disclose').toggleClass('ui-icon-plusthick').toggleClass('ui-icon-minusthick');
             });
+    
+            $('.results-panel.collapssible').on('click', function(){
+                $(this).siblings('.collapssible.open').find('.title span').removeClass('mdi-window-minimize').addClass('mdi-plus');
+                $(this).siblings('.collapssible.open').find('.content').slideToggle("faster");
+                $(this).siblings('.collapssible.open').removeClass('open');
+                
 
+                if(!$(this).hasClass('open')){
+                    $(this).addClass('open')
+                           .find('.title span').removeClass('mdi-plus').addClass('mdi-window-minimize'); 
+                } else {
+                    $(this).removeClass('open')
+                           .find('.title span').removeClass('mdi-window-minimize').addClass('mdi-plus');
+                }
+                $(this).find('.content').slideToggle("faster");
+            });
         });
     </script>
 </body>
