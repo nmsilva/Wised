@@ -21686,6 +21686,8 @@ a.show-matrix-table {
         background: transparent; }
     .options-evaluation table tbody tr:nth-child(even) {
       background: #F4F4F4; }
+    .options-evaluation table tbody tr.collapsible:hover {
+      cursor: pointer; }
     .options-evaluation table tbody tr.collapsible td {
       text-align: left;
       color: #FFF; }

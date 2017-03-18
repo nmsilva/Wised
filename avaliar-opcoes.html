@@ -569,6 +569,18 @@
                 $(this).closest('li').toggleClass('mjs-nestedSortable-collapsed').toggleClass('mjs-nestedSortable-expanded');
                 $(this).parent().find('.disclose').toggleClass('ui-icon-plusthick').toggleClass('ui-icon-minusthick');
             });
+            
+            $('.collapsible').on('click', function(){
+                if($(this).hasClass('level-1')){
+                    var childs = $(this).nextUntil('.level-1');
+                    if (childs.filter('.level-2:visible').length > 0){
+                        childs = childs.filter(':visible');
+                    }
+                } else if($(this).hasClass('level-2')){
+                    var childs = $(this).nextUntil('.level-1, .level-2');
+                }
+                childs.toggle("faster");
+            });
 
         });
     </script>

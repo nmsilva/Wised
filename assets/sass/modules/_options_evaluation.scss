@@ -53,6 +53,9 @@
                 }
                 
                 &.collapsible{
+                    &:hover{
+                        cursor: pointer;
+                    }
                     td{
                         text-align: left;
                         color: #FFF;
