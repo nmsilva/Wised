@@ -21748,7 +21748,7 @@ a.show-matrix-table {
 
 .btn-group {
   box-shadow: none;
-  width: 150px !important; }
+  width: 100% !important; }
 
 .bootstrap-select > .dropdown-toggle {
   box-shadow: none;
@@ -21757,6 +21757,8 @@ a.show-matrix-table {
   border-color: transparent; }
   .bootstrap-select > .dropdown-toggle span {
     text-align: center !important; }
+    .bootstrap-select > .dropdown-toggle span .caret {
+      display: none; }
 
 .open > .dropdown-toggle.btn-default, .open > .dropdown-toggle.btn-default:hover, .open > .dropdown-toggle.btn-default:focus {
   background: #FFF; }
