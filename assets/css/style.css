@@ -21788,6 +21788,44 @@ a.show-matrix-table {
       text-align: center;
       font-size: 26px; }
 
+.specifications-table {
+  padding-top: 25px; }
+  .specifications-table table {
+    width: calc(100% + 45px); }
+    .specifications-table table thead th {
+      background: #393939;
+      color: #FFF;
+      width: 10%; }
+      .specifications-table table thead th:nth-child(1) {
+        background: transparent;
+        border: none; }
+      .specifications-table table thead th:last-child {
+        color: #f07d00; }
+    .specifications-table table tbody td:nth-child(1) {
+      background: #f07d00;
+      color: #FFF; }
+    .specifications-table table tbody td:last-child {
+      background: #eaeaea; }
+    .specifications-table table tbody td.good {
+      background: #3CA735; }
+    .specifications-table table tbody td.neutral {
+      background: #009BDE; }
+    .specifications-table table tfoot td {
+      border: none;
+      color: #f07d00; }
+      .specifications-table table tfoot td .weight {
+        border: 1px solid #ccc;
+        padding: 5px 0; }
+    .specifications-table table tr:nth-child(even) {
+      background: #eaeaea; }
+    .specifications-table table th, .specifications-table table td {
+      text-align: center;
+      border: 1px solid #ccc;
+      padding: 5px 0; }
+
+.bottom-line {
+  border-bottom: 1px solid #ccc; }
+
 a.iconestatic {
   color: #9e9e9e;
   text-decoration: none; }

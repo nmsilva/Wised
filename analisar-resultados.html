@@ -402,6 +402,12 @@
                     <div class="results-panel fixed">
                         <div class="content">
                             <h3>Pontuações Globais</h3>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <canvas id="barChart1" width="400" height="150"></canvas>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="results-panel collapssible">
@@ -410,6 +416,110 @@
                         </div>
                         <div class="content">
                             <p class="basictext">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce augue orci, imperdiet ut tincidunt quis, molestie quis odio.<br> Sed convallis, nibh ut fermentum aliquet, felis odio finibus nulla, sed accumsan lacus magna id turpis.</p>
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <canvas id="barChart2" width="400" height="150"></canvas>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="specifications-table">
+                                        <table>
+                                            <thead>
+                                                <tr>
+                                                    <th></th>
+                                                    <th>Área Técnica</th>
+                                                    <th>Preço do Equipamento</th>
+                                                    <th>Cor</th>
+                                                    <th>TOTAL</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="good">Bom</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Apple</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Windows</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Samsung</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="neutral">Neutro</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Opção 4</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                    <td>100</td>
+                                                </tr>
+                                            </tbody>
+                                            <tfoot>
+                                                <tr>
+                                                    <td>Pesos</td>
+                                                    <td><div class="weight">100</div></td>
+                                                    <td><div class="weight">100</div></td>
+                                                    <td><div class="weight">100</div></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tfoot>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <canvas id="bubbleChart" width="400" height="300"></canvas>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="bottom-line"></div>
+                                </div>
+                            </div>
+                            
+                            <div class="row">
+                                <div class="col-md-6">
+                                    
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <input type="range" min="10" max="1000" step="10" value="300" />
+                                        </div>
+                                        
+                                    </div>
+                                    <div class="row">
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                     <div class="results-panel collapssible">
@@ -475,32 +585,145 @@
     <script src="global/js/components/peity.js"></script>
     <script src="assets/examples/js/dashboard/v1.js"></script>
     <script src="assets/js/jquery.mjs.nestedSortable.js" type="text/javascript"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <script src="assets/js/charts.js"></script>
+    
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.js"></script>
     <script>
         $().ready(function() {
+            
+            /* INITIALIZATION OF CHARTS  */
+            /* ========================================================== */
+            
+            var bar1Config = JSON.parse(JSON.stringify(barChartConfig));
+            
+            bar1Config.data.datasets[0].data = [78, 64, 47, 28]
+            bar1Config.data.datasets[0].backgroundColor = [
+                'rgb(0, 90, 148)',
+                'rgb(240, 125, 0)',
+                'rgb(255, 214, 0)',
+                'rgb(67, 160, 71)',
+            ];
+            bar1Config.data.labels = ["Samsung", "Apple", "Windows", "Opção 4"];
+            bar1Config.options.scales.yAxes[0].gridLines.display = true;
+            bar1Config.options.scales.yAxes[0].ticks.display = true;
+            bar1Config.options.scales.yAxes[0].scaleLabel = {
+                display: true,
+                labelString: 'Lorem ipslium'
+            };
+            var myBarChart1 = new Chart($("#barChart1"), bar1Config);
+            
+            
+            var bar2Config = JSON.parse(JSON.stringify(barChartConfig));
+            bar2Config.data.datasets[0].data = [25, 78, 35]
+            bar2Config.data.datasets[0].backgroundColor = [
+                'rgb(67, 160, 71)',
+                'rgb(67, 160, 71)',
+                'rgb(67, 160, 71)',
+            ];
+            bar2Config.data.labels = ["Área Técnica", "Preço de Equipamento", "Cor"];
+            bar2Config.options.scales.yAxes[0].gridLines.display = true;
+            bar2Config.options.scales.yAxes[0].ticks.display = true;
+            bar2Config.options.scales.yAxes[0].scaleLabel = {
+                display: true,
+                labelString: 'Lorem ipslium'
+            };
+            var myBarChart2 = new Chart($("#barChart2"), bar2Config);
+            
+            
+            bubbleChartConfig.data.datasets[0].data = [
+                {
+                    x: 0,
+                    r: 5,
+                    y: 89,
+                    label: 'Apple'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: 72,
+                    label: 'Samsung'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: 45,
+                    label: 'Windows'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: 45,
+                    label: 'Windows 2'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: 0,
+                    label: 'Neutral'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: 100,
+                    label: 'Bom'
+                },
+                {
+                    x: 0,
+                    r: 5,
+                    y: -12,
+                    label: 'Opção 4'
+                }];
+            var myBublleChart = new Chart($("#bubbleChart"), bubbleChartConfig);
+            
 
-            $('.disclose').attr('title', 'Click to show/hide children');
-
-            $('.disclose, .itemTitle').on('click', function() {
-                $(this).closest('li').toggleClass('mjs-nestedSortable-collapsed').toggleClass('mjs-nestedSortable-expanded');
-                $(this).parent().find('.disclose').toggleClass('ui-icon-plusthick').toggleClass('ui-icon-minusthick');
-            });
-    
-            $('.results-panel.collapssible').on('click', function(){
+            $('.results-panel.collapssible').on('click', function(e){
                 $(this).siblings('.collapssible.open').find('.title span').removeClass('mdi-window-minimize').addClass('mdi-plus');
                 $(this).siblings('.collapssible.open').find('.content').slideToggle("faster");
                 $(this).siblings('.collapssible.open').removeClass('open');
                 
-
                 if(!$(this).hasClass('open')){
                     $(this).addClass('open')
                            .find('.title span').removeClass('mdi-plus').addClass('mdi-window-minimize'); 
                 } else {
+                    
+                    if ($(e.target)[0] != $(this).find('.title span')[0])
+                        return;
+                        
                     $(this).removeClass('open')
                            .find('.title span').removeClass('mdi-window-minimize').addClass('mdi-plus');
                 }
                 $(this).find('.content').slideToggle("faster");
             });
+            
+            $('input[type="range"]').rangeslider({
+
+                // Feature detection the default is `true`.
+                // Set this to `false` if you want to use
+                // the polyfill also in Browsers which support
+                // the native <input type="range"> element.
+                polyfill: true,
+            
+                // Default CSS classes
+                rangeClass: 'rangeslider',
+                disabledClass: 'rangeslider--disabled',
+                horizontalClass: 'rangeslider--horizontal',
+                verticalClass: 'rangeslider--vertical',
+                fillClass: 'rangeslider__fill',
+                handleClass: 'rangeslider__handle',
+            
+                // Callback function
+                onInit: function() {},
+            
+                // Callback function
+                onSlide: function(position, value) {},
+            
+                // Callback function
+                onSlideEnd: function(position, value) {}
+            });
         });
+        
     </script>
 </body>
 </html>
