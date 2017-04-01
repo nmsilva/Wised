@@ -510,7 +510,21 @@
                                 <div class="col-md-6">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <input type="range" min="10" max="1000" step="10" value="300" />
+                                            <label>Resolução</label>
+                                            <div class="range-slider">
+                                              <input class="range-slider__range" type="range" value="100" min="0" max="500">
+                                              <span class="range-slider__value">0</span>
+                                            </div>
+                                            <label>Sistema Operativo</label>
+                                            <div class="range-slider">
+                                              <input class="range-slider__range" type="range" value="100" min="0" max="500">
+                                              <span class="range-slider__value">0</span>
+                                            </div>
+                                            <label>Autonomia</label>
+                                            <div class="range-slider">
+                                              <input class="range-slider__range" type="range" value="100" min="0" max="500">
+                                              <span class="range-slider__value">0</span>
+                                            </div>
                                         </div>
                                         
                                     </div>
@@ -588,8 +602,6 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="assets/js/charts.js"></script>
     
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.css" />
-    <script src="//cdnjs.cloudflare.com/ajax/libs/rangeslider.js/2.3.0/rangeslider.min.js"></script>
     <script>
         $().ready(function() {
             
@@ -697,31 +709,27 @@
                 $(this).find('.content').slideToggle("faster");
             });
             
-            $('input[type="range"]').rangeslider({
-
-                // Feature detection the default is `true`.
-                // Set this to `false` if you want to use
-                // the polyfill also in Browsers which support
-                // the native <input type="range"> element.
-                polyfill: true,
             
-                // Default CSS classes
-                rangeClass: 'rangeslider',
-                disabledClass: 'rangeslider--disabled',
-                horizontalClass: 'rangeslider--horizontal',
-                verticalClass: 'rangeslider--vertical',
-                fillClass: 'rangeslider__fill',
-                handleClass: 'rangeslider__handle',
+            var rangeSlider = function(){
+              var slider = $('.range-slider'),
+                  range = $('.range-slider__range'),
+                  value = $('.range-slider__value');
+                
+              slider.each(function(){
             
-                // Callback function
-                onInit: function() {},
+                value.each(function(){
+                  var value = $(this).prev().attr('value');
+                  $(this).html(value);
+                });
             
-                // Callback function
-                onSlide: function(position, value) {},
+                range.on('input', function(){
+                  $(this).next(value).html(this.value);
+                });
+              });
+            };
             
-                // Callback function
-                onSlideEnd: function(position, value) {}
-            });
+            rangeSlider();
+            
         });
         
     </script>
