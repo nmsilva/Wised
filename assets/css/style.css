@@ -21778,11 +21778,17 @@ a.show-matrix-table {
       background: #f07d00; }
       .options-evaluation table tbody tr.level-1 td:nth-child(1) {
         padding-left: 25px;
-        text-transform: uppercase; }
+        text-transform: uppercase;
+        text-align: left; }
+      .options-evaluation table tbody tr.level-1 td {
+        text-align: center; }
     .options-evaluation table tbody tr.level-2 {
       background: #008ec9; }
       .options-evaluation table tbody tr.level-2 td:nth-child(1) {
-        padding-left: 50px; }
+        padding-left: 50px;
+        text-align: left; }
+      .options-evaluation table tbody tr.level-2 td {
+        text-align: center; }
     .options-evaluation table tbody tr.level-3 td:nth-child(1) {
       color: #333;
       padding-left: 75px; }
