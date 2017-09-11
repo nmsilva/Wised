@@ -835,6 +835,13 @@ a.show-matrix-table{
         background: #fff;
         z-index: 1001;
       }
+      &.first:before{
+        
+      }
+      &.first:after{
+        width: 10px;
+        left: 5px;
+      }
       &.last:before{
         left: 3px;
       }
@@ -851,8 +858,18 @@ a.show-matrix-table{
         left: 5px;
       }
       &.isolated{
+        
+        &:nth-child(1){
+          
+          &:after{
+            display: none;
+          }
+          
+          .interval{
+            left: 50px;
+          }
+        }
         span{
-          position: absolute;
           top: 40px;
           left: 55px;
           width: 63px;

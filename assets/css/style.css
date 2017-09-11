@@ -21703,6 +21703,9 @@ a.show-matrix-table {
         height: 8px;
         background: #fff;
         z-index: 1001; }
+      .multisteprange .range-labels li.first:after {
+        width: 10px;
+        left: 5px; }
       .multisteprange .range-labels li.last:before {
         left: 3px; }
       .multisteprange .range-labels li.last:after {
@@ -21714,8 +21717,11 @@ a.show-matrix-table {
       .multisteprange .range-labels li:first-child::after {
         width: 10px;
         left: 5px; }
+      .multisteprange .range-labels li.isolated:nth-child(1):after {
+        display: none; }
+      .multisteprange .range-labels li.isolated:nth-child(1) .interval {
+        left: 50px; }
       .multisteprange .range-labels li.isolated span {
-        position: absolute;
         top: 40px;
         left: 55px;
         width: 63px; }
