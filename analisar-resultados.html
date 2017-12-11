@@ -931,12 +931,12 @@
                     {
                         label: 'Samsung',
                         color: 'rgba(0, 90, 148, 1)',
-                        active: false
+                        active: true
                     },
                     {
                         label: 'Apple',
                         color: 'rgba(240, 125, 0, 1)',
-                        active: true
+                        active: false
                     },
                     {
                         label: 'windows',
@@ -1174,6 +1174,9 @@
                         var is_active = (this.active === true) ? 'active' : '';
                         var option = '<li><a href="" class="'+ is_active +'"><span style="background: '+ this.color +';"></span>'+ this.label +'</a></li>';
                         $('.comparison-labels ul').append(option);
+                    });
+                    $('.comparison-labels ul').on('click', 'a', function(e) {
+                        console.log('LABEL CLICK - UPDATE VALUES'); 
                     });
                 };
                 var update_profile_analysis_tree = function(data){
